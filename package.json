@@ -1,0 +1,32 @@
+{
+  "name": "css-audit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-audit": "node ./src/index.js",
+    "lint:js": "wp-scripts lint-js src",
+    "format:js": "wp-scripts format-js src"
+  },
+  "author": "Kelly Dwan",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@wordpress/scripts": "7.2.0",
+    "chalk": "4.0.0",
+    "cli-table3": "0.6.0",
+    "css-tree": "1.0.0-alpha.39",
+    "cssom": "0.4.4",
+    "get-css-colors": "3.3.1",
+    "glob": "7.1.6",
+    "postcss": "7.0.27",
+    "tinycolor2": "1.4.1"
+  },
+  "eslintConfig": {
+    "extends": "plugin:@wordpress/eslint-plugin/esnext",
+    "env": {
+      "node": true,
+      "jest": true
+    }
+  },
+  "prettier": "@wordpress/scripts/config/.prettierrc.js"
+}
