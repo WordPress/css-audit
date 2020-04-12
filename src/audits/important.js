@@ -1,4 +1,4 @@
-const postcss = require( 'postcss' );
+const csstree = require( 'css-tree' );
 
 /**
  * Internal dependencies
@@ -10,12 +10,15 @@ module.exports = function( files = [] ) {
 	const properties = [];
 
 	files.forEach( ( { content } ) => {
-		const ast = postcss.parse( content );
-		ast.walkDecls( ( decl ) => {
-			if ( decl.important ) {
-				count++;
-				properties.push( decl.prop );
-			}
+		const ast = csstree.parse( content );
+		csstree.walk( ast, {
+			visit: 'Declaration',
+			enter( node ) {
+				if ( node.important ) {
+					count++;
+					properties.push( node.property );
+				}
+			},
 		} );
 	} );
 
