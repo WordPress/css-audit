@@ -1,5 +1,5 @@
+const csstree = require( 'css-tree' );
 const getColors = require( 'get-css-colors' );
-const postcss = require( 'postcss' );
 const tinycolor2 = require( 'tinycolor2' );
 
 /**
@@ -11,14 +11,16 @@ module.exports = function( files = [] ) {
 	const colors = [];
 
 	files.forEach( ( { content } ) => {
-		const ast = postcss.parse( content );
-		ast.walkDecls( ( decl ) => {
-			if ( decl.value ) {
-				const hasColors = getColors( decl.value );
+		const ast = csstree.parse( content );
+		csstree.walk( ast, {
+			visit: 'Value',
+			enter( node ) {
+				const nodeContent = csstree.generate( node );
+				const hasColors = getColors( nodeContent );
 				if ( Array.isArray( hasColors ) ) {
-					colors.push( ...hasColors );
+					colors.push( ...hasColors.map( ( i ) => i.toLowerCase() ) );
 				}
-			}
+			},
 		} );
 	} );
 
