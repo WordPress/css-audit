@@ -6,6 +6,7 @@ const fs = require( 'fs' );
 const colors = require( './audits/colors' );
 const important = require( './audits/important' );
 const propertyValues = require( './audits/property-values' );
+const displayNone = require( './audits/display-none' );
 const selectors = require( './audits/selectors' );
 const formatReport = require( './utils/format-report' );
 
@@ -35,6 +36,7 @@ const reports = [
 	...colors( cssFiles ),
 	...important( cssFiles ),
 	...propertyValues( cssFiles, [ 'display' ] ),
+	...displayNone( cssFiles ),
 	...selectors( cssFiles ),
 ];
 
