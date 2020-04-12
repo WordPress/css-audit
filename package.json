@@ -5,19 +5,22 @@
   "main": "index.js",
   "scripts": {
     "css-audit": "node ./src/index.js",
-    "lint:js": "wp-scripts lint-js src",
-    "format:js": "wp-scripts format-js src"
+    "lint:js": "eslint src",
+    "format:js": "prettier {src,.}/**/*.js --write"
   },
   "author": "Kelly Dwan",
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "@wordpress/scripts": "7.2.0",
+    "@wordpress/eslint-plugin": "4.1.0",
+    "@wordpress/prettier-config": "^0.1.0",
     "chalk": "4.0.0",
     "cli-table3": "0.6.0",
     "css-tree": "1.0.0-alpha.39",
     "cssom": "0.4.4",
+    "eslint": "6.8.0",
     "get-css-colors": "3.3.1",
     "glob": "7.1.6",
+    "prettier": "npm:wp-prettier@1.19.1",
     "tinycolor2": "1.4.1"
   },
   "eslintConfig": {
@@ -27,5 +30,5 @@
       "jest": true
     }
   },
-  "prettier": "@wordpress/scripts/config/.prettierrc.js"
+  "prettier": "@wordpress/prettier-config"
 }
