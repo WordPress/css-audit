@@ -3,14 +3,27 @@ const fs = require( 'fs' );
 /**
  * Internal dependencies
  */
-const colors = require( './audits/colors' );
-const important = require( './audits/important' );
-const propertyValues = require( './audits/property-values' );
-const displayNone = require( './audits/display-none' );
-const selectors = require( './audits/selectors' );
 const formatReport = require( './utils/format-report' );
 
-const input = process.argv.slice( 2 );
+const argv = require( 'yargs' )
+	.usage( 'Usage: $0 <files...> [options]' )
+	.demandCommand( 1 )
+	.describe( 'colors', 'Run colors audit.' )
+	.describe( 'important', 'Run !important audit.' )
+	.describe( 'display-none', 'Run display: none audit.' )
+	.describe( 'selectors', 'Run selectors audit.' )
+	.describe(
+		'recommended',
+		'Run recommended audits (colors, important, selectors).'
+	)
+	.default( 'recommended', true )
+	.describe( 'all', 'Run all audits (except property values).' )
+	.describe(
+		'property-values',
+		'Run audit for a given set of property values, comma-separated.'
+	).argv;
+
+const input = argv._;
 if ( ! input.length ) {
 	// Download css from svn…
 	// `svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files`
@@ -32,15 +45,26 @@ input.forEach( ( file ) => {
 	} );
 } );
 
-const reports = [
-	...colors( cssFiles ),
-	...important( cssFiles ),
-	...propertyValues( cssFiles, [ 'display' ] ),
-	...displayNone( cssFiles ),
-	...selectors( cssFiles ),
+const runColors = argv.all || argv.recommended || argv.colors;
+const runImportant = argv.all || argv.recommended || argv.important;
+const runDisplayNone = argv.all || argv[ 'display-none' ];
+const runSelectors = argv.all || argv.recommended || argv.selectors;
+const runPropertyValues = !! argv[ 'property-values' ];
+
+const audits = [
+	runColors && require( './audits/colors' )( cssFiles ),
+	runImportant && require( './audits/important' )( cssFiles ),
+	runDisplayNone && require( './audits/display-none' )( cssFiles ),
+	runSelectors && require( './audits/selectors' )( cssFiles ),
+	runPropertyValues &&
+		require( './audits/property-values' )(
+			cssFiles,
+			argv[ 'property-values' ].split( ',' )
+		),
 ];
 
-// We'll use some formatter for displaying these.
+const reports = audits.flat().filter( Boolean );
+
 console.log( reports.map( formatReport ).join( '\n' ) ); // eslint-disable-line no-console
 
 process.exit( 0 );

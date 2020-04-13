@@ -21,7 +21,8 @@
     "get-css-colors": "3.3.1",
     "glob": "7.1.6",
     "prettier": "npm:wp-prettier@1.19.1",
-    "tinycolor2": "1.4.1"
+    "tinycolor2": "1.4.1",
+    "yargs": "15.3.1"
   },
   "eslintConfig": {
     "extends": "plugin:@wordpress/eslint-plugin/esnext",
