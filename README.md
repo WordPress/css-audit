@@ -37,7 +37,7 @@ Options:
 ## Available Audits
 
 - `colors`
-  - Number of unique colors
+  - Number of unique colors — normalizes hex colors so that uppercase & lowercase are not counted twice
   - Number of unique colors (ignoring opacity)
   - List of all colors
   - Top 10 most-used colors
@@ -51,7 +51,7 @@ Options:
   - Top 10 least-used values for display
 - `selectors`
   - Total number of selectors
-  - Number of selectors with IDs
+  - Number of selectors with IDs — not "number of IDs", a lot of selectors use multiple IDs, but they'd only be counted once
   - Top 10 selectors with the highest specificity
   - Top 10 selectors by length
 - `display-none`
@@ -71,7 +71,7 @@ Use this command to get just the css files from SVN:
 
 For other version comparisons, `/trunk/` could be replaced with `/tags/5.3/`.
 
-Other notes…
+**Other notes…**
 
 Initially this used the `postcss` parser, but that didn't generate enough information for the `selectors` audit.
 
