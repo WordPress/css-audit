@@ -21,7 +21,15 @@ const argv = require( 'yargs' )
 	.describe(
 		'property-values',
 		'Run audit for a given set of property values, comma-separated.'
-	).argv;
+	)
+	.boolean( [
+		'colors',
+		'display-none',
+		'important',
+		'selectors',
+		'recommended',
+		'all',
+	] ).argv;
 
 const input = argv._;
 if ( ! input.length ) {
