@@ -3,7 +3,7 @@ const fs = require( 'fs' );
 /**
  * Internal dependencies
  */
-const formatReport = require( './utils/format-report' );
+const { formatReport, formats } = require( './utils/format-report' );
 
 const argv = require( 'yargs' )
 	.usage( 'Usage: $0 <files...> [options]' )
@@ -22,6 +22,11 @@ const argv = require( 'yargs' )
 		'property-values',
 		'Run audit for a given set of property values, comma-separated.'
 	)
+	.describe(
+		'format',
+		`Format to use for displaying report: ${ formats.join( ', ' ) }`
+	)
+	.default( 'format', formats[ 0 ] )
 	.boolean( [
 		'colors',
 		'display-none',
@@ -73,6 +78,6 @@ const audits = [
 
 const reports = audits.flat().filter( Boolean );
 
-console.log( reports.map( formatReport ).join( '\n' ) ); // eslint-disable-line no-console
+console.log( formatReport( reports, argv.format ) ); // eslint-disable-line no-console
 
 process.exit( 0 );

@@ -1,54 +1,33 @@
-const colors = require( 'colors' );
-const Table = require( 'cli-table3' );
+const FMT_CLI_TABLE = 'cli-table';
+const FMT_JSON = 'json';
 
-const tableSettings = {
-	chars: {
-		top: '-',
-		'top-mid': '-',
-		'top-left': ' ',
-		'top-right': ' ',
-		bottom: '-',
-		'bottom-mid': '-',
-		'bottom-left': ' ',
-		'bottom-right': ' ',
-		left: '|',
-		'left-mid': '|',
-		mid: '-',
-		'mid-mid': '|',
-		right: '|',
-		'right-mid': '|',
-		middle: '│',
-	},
-};
-
-module.exports = function( { label, value } ) {
-	let valueString = value;
-
-	if ( Array.isArray( value ) && value.length ) {
-		let table = '';
-		if ( 'object' === typeof value[ 0 ] ) {
-			tableSettings.head = Object.keys( value[ 0 ] );
-			table = new Table( tableSettings );
-			value.forEach( ( row ) => {
-				table.push(
-					Object.values( row ).map( ( item ) => {
-						item = String( item );
-						if ( item.length > 80 ) {
-							return item.slice( 0, 80 ) + '…';
-						}
-						return item;
-					} )
-				);
-			} );
-		} else {
-			table = new Table( tableSettings );
-			value.forEach( ( row ) => {
-				table.push( [ row ] );
-			} );
-		}
-
-		valueString = table.toString();
+/**
+ * Format the reports using the specified reporter format.
+ *
+ * @param {Array<Array<Object>>} reports The list of report data.
+ * @param {FMT_CLI_TABLE|FMT_JSON} format One of the predefined formats. Defaults to FMT_CLI_TABLE.
+ * @return {string} The formatted reports.
+ */
+function formatReport( reports, format = FMT_CLI_TABLE ) {
+	let formatCallback = false;
+	switch ( format ) {
+		case FMT_JSON:
+			formatCallback = require( '../formats/json' );
+			break;
+		case FMT_CLI_TABLE:
+		default:
+			formatCallback = require( '../formats/cli-table' );
 	}
 
-	return `${ colors.green.bold( label ) }:\n\n${ valueString }\n\n`;
+	const formattedReports = formatCallback( reports );
+	if ( Array.isArray( formattedReports ) ) {
+		return formattedReports.join( '\n' );
+	}
+
+	return formattedReports;
+}
+
+module.exports = {
+	formats: [ FMT_CLI_TABLE, FMT_JSON ],
+	formatReport,
 };
