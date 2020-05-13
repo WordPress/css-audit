@@ -33,6 +33,7 @@ const getHelp = () => {
 --important       Run !important audit.
 --display-none    Run display: none audit.
 --selectors       Run selectors audit.
+--media-queries   Run media queries audit.
 --property-values Run audit for a given set of property values, comma-separated.
 --recommended     Run recommended audits (colors, important, selectors). Default: true.
 --all             Run all audits (except property values, as it requires a value).

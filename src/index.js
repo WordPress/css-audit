@@ -37,6 +37,8 @@ const runImportant = runAll || runRecommended || getArgFromCLI( '--important' );
 const runDisplayNone = runAll || getArgFromCLI( '--display-none' );
 const runSelectors = runAll || runRecommended || getArgFromCLI( '--selectors' );
 const runPropertyValues = !! getArgFromCLI( '--property-values' );
+const runMediaQueries =
+	runAll || runRecommended || getArgFromCLI( '--media-queries' );
 
 const audits = [
 	runColors && require( './audits/colors' )( cssFiles ),
@@ -48,6 +50,7 @@ const audits = [
 			cssFiles,
 			getArgFromCLI( '--property-values' ).split( ',' )
 		),
+	runMediaQueries && require( './audits/media-queries' )( cssFiles ),
 ];
 
 const reports = audits.flat().filter( Boolean );
