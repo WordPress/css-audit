@@ -34,6 +34,12 @@ Options:
   --property-values  Run audit for a given set of property values, comma-separated.
 ```
 
+If using `npm`, the css-audit command syntax is slightly different:
+
+```
+$ npm run css-audit -- <files ...> [options]
+```
+
 ## Available Audits
 
 - `colors`

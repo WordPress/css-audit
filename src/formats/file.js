@@ -11,13 +11,14 @@ module.exports = function( reports ) {
 	const filename = path.join( __dirname, '../../result/colors.json' );
 	
 	try {
-		fs.openSync( filename, 'w' );
+		const file = fs.openSync( filename, 'w' );
 		
 		fs.writeFileSync( filename, JSON.stringify( reports ) );
 		
-		return "File is created.";
+		console.log("File is created.");
 	} catch (error) {
 		console.log(error);
 	}
 	
+	// return JSON.stringify( reports );
 };
