@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Core colors visualization</title>
 	<style>
 	.color {
 		width: 200px;
@@ -12,6 +12,7 @@
 		margin-top: 30px;
 		position: relative;
 		border: 3px solid;
+		font-family: helvetica;
 	}
 	.data {
 		position: absolute;
@@ -20,13 +21,14 @@
 	</style>
 </head>
 <body>
+	<h1>Top 50 Colors in wp-admin/**/*.css</h1>
 	<ol id="colors-container"></ol>
 	
 	<template id="color-template">
 		<li class="color">
 			<div class="data">
-				<span class="hex"></span> – 
-				<span class="count"></span>
+				<span class="count"></span> – 
+				<span class="hex"></span>
 			</div>
 		</li>
 	</template>
