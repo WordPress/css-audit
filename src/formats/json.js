@@ -1,12 +1,7 @@
 const fs = require( 'fs' );
 const path = require( 'path' );
 
-/**
- * Convert the report data to a JSON string.
- *
- * @param {Array<Array<Object>>} reports The list of report data.
- * @return {string} reports as a JSON string.
- */
+// Temporarily outputting to file from JSON arg for speed - will be --file
 module.exports = function( reports ) {
 	const filename = path.join( __dirname, '../../result/colors.json' );
 	
@@ -21,3 +16,14 @@ module.exports = function( reports ) {
 	}
 	
 };
+
+
+/**
+ * Convert the report data to a JSON string.
+ *
+ * @param {Array<Array<Object>>} reports The list of report data.
+ * @return {string} reports as a JSON string.
+ */
+// module.exports = function( reports ) {
+// 	return JSON.stringify( reports );
+// };
