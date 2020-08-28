@@ -50,8 +50,8 @@ module.exports = function( files = [] ) {
 			value: uniqColors,
 		},
 		{
-			label: 'Top 50 most-used colors',
-			value: colorsByCount.slice( 0, 50 ),
+			label: 'Top 10 most-used colors',
+			value: colorsByCount.slice( 0, 10 ),
 		},
 		{
 			label: 'Top 10 least-used colors',
