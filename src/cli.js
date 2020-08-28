@@ -1,13 +1,10 @@
-#!/usr/bin/env node
-'use strict';
-
 const fs = require( 'fs' );
 
 /**
  * Internal dependencies
  */
-const { formatReport } = require( '../src/utils/format-report' );
-const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( '../src/utils/cli' );
+const { formatReport } = require( './utils/format-report' );
+const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( './utils/cli' );
 
 const input = getFileArgsFromCLI();
 if ( getArgFromCLI( '--help' ) || ! input.length ) {
@@ -44,16 +41,16 @@ const runMediaQueries =
 	runAll || runRecommended || getArgFromCLI( '--media-queries' );
 
 const audits = [
-	runColors && require( '../src/audits/colors' )( cssFiles ),
-	runImportant && require( '../src/audits/important' )( cssFiles ),
-	runDisplayNone && require( '../src/audits/display-none' )( cssFiles ),
-	runSelectors && require( '../src/audits/selectors' )( cssFiles ),
+	runColors && require( './audits/colors' )( cssFiles ),
+	runImportant && require( './audits/important' )( cssFiles ),
+	runDisplayNone && require( './audits/display-none' )( cssFiles ),
+	runSelectors && require( './audits/selectors' )( cssFiles ),
 	runPropertyValues &&
-		require( '../src/audits/property-values' )(
+		require( './audits/property-values' )(
 			cssFiles,
 			getArgFromCLI( '--property-values' ).split( ',' )
 		),
-	runMediaQueries && require( '../src/audits/media-queries' )( cssFiles ),
+	runMediaQueries && require( './audits/media-queries' )( cssFiles ),
 ];
 
 const reports = audits.flat().filter( Boolean );
