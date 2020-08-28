@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css-audit": "node ./src/index.js",
+    "css-audit": "css-audit",
     "lint:js": "eslint src",
     "format:js": "prettier {src,.}/**/*.js --write"
+  },
+  "bin": {
+    "css-audit": "bin/cli.js"
   },
   "author": "Kelly Dwan",
   "license": "GPL-2.0-or-later",
