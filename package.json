@@ -6,7 +6,8 @@
   "scripts": {
     "css-audit": "node ./src/index.js",
     "lint:js": "eslint src",
-    "format:js": "prettier {src,.}/**/*.js --write"
+    "format:js": "prettier {src,.}/**/*.js --write",
+    "test": "jest"
   },
   "author": "Kelly Dwan",
   "license": "GPL-2.0-or-later",
@@ -31,5 +32,8 @@
       "jest": true
     }
   },
-  "prettier": "@wordpress/prettier-config"
+  "prettier": "@wordpress/prettier-config",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
