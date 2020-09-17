@@ -1,7 +1,5 @@
-
 {% for item in data %}
 	<h3>{{ item.label}}</h3>
-	
 	{% if item.value is iterable %}
 		<ul>
 		{% for value in item.value %}
