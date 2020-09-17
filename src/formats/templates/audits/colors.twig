@@ -1,6 +1,6 @@
 {% for item in data %}
-	<h3>{{ item.label}}</h3>
 	{% if item.value is iterable %}
+		<h3>{{ item.label}}</h3>
 		<ul>
 		{% for value in item.value %}
 			{% if value.name %}
@@ -14,6 +14,6 @@
 		{% endfor %}
 		</ul>
 	{% else %}
-		<p>{{item.value}}</p>
+		<h3>{{ item.label}}: {{item.value}}</h3>
 	{% endif %}
 {% endfor %}
