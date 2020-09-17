@@ -1,19 +1,22 @@
-{% for item in data %}
-	{% if item.value is iterable %}
-		<h3>{{ item.label}}</h3>
-		<ul>
-		{% for value in item.value %}
-			{% if value.name %}
-				<li>
-					<span class="box" style="--box-bg-color:{{value.name}};"></span>
-					{{value.name}} – {{value.count}}
-				</li>
-			{% else %}
-				<li><span class="box" style="--box-bg-color:{{value}};"></span>{{value}}</li>
-			{% endif %}
-		{% endfor %}
-		</ul>
-	{% else %}
-		<h3>{{ item.label}}: {{item.value}}</h3>
-	{% endif %}
-{% endfor %}
+<section>
+	<h2>{{title}}</h2>
+	{% for item in data %}
+		{% if item.value is iterable %}
+			<h3>{{ item.label}}</h3>
+			<ul>
+			{% for value in item.value %}
+				{% if value.name %}
+					<li>
+						<span class="box" style="--box-bg-color:{{value.name}};"></span>
+						{{value.name}} – {{value.count}}
+					</li>
+				{% else %}
+					<li><span class="box" style="--box-bg-color:{{value}};"></span>{{value}}</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		{% else %}
+			<h3>{{ item.label}}: {{item.value}}</h3>
+		{% endif %}
+	{% endfor %}
+</section>
