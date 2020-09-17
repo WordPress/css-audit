@@ -1,54 +1,46 @@
 const fs = require( 'fs-extra' );
 const path = require( 'path' );
-const Handlebars = require( 'handlebars' );
+const {TwingEnvironment, TwingLoaderFilesystem} = require( 'twing' );
 
 /**
  * Internal dependencies
  */
 const { getArgFromCLI } = require( '../utils/cli' );
 
-const getAuditPartial = ( audit ) => {
-	return fs.readFileSync( path.join( __dirname, `./templates/audits/${name}.hbs` ) );
+/**
+ * Get the source of a template to compile.
+ * 
+ * @param {string} subdir 
+ * @param {string} name 
+ * 
+ * @returns {string} Template contnet
+ */
+const getTemplateSrc = ( name ) => {
+	const templatePath = ( name ) => path.join( __dirname, `./templates/${name}.twig` );
+	const fileName = fs.existsSync( templatePath( name ) ) ? name : 'base';
+	
+	return fileName + '.twig';
 };
 
-// TODO: read the audits/ directory for these
-const audits = ( () => [
-	'colors',
-	'property-values',
-	''
-])();
-
-audits.forEach( audit => {
-	Handlebars.registerPartial( audit, getAuditPartial( audit ) );
-})
+let loader = new TwingLoaderFilesystem( path.join( __dirname, './templates' ) );
+let twing = new TwingEnvironment( loader, { debug: true } );
 
 module.exports = module.exports = function( reports ) {
 	
 	const reportName = getArgFromCLI('--report');
 	const reportDest = path.join( __dirname, `../../public/${reportName}.html` );
-	
-	const templateSrc = ( ( name ) => {
-		const templatePath = ( name ) => path.join( __dirname, `./templates/${name}.hbs` );
-		const fileName = fs.existsSync( templatePath( name ) ) ? name : 'base';
-		
-		return fs.readFileSync( templatePath( fileName ) );
-	} )( reportName );
-	
-	const reportTemplate = Handlebars.compile( templateSrc.toString() );
+	const reportTemplate = getTemplateSrc( reportName );
 	const context = {
-		title: `CSS Audit Report: ${reportName}`,
 		reports,
-		data: JSON.stringify( reports )
+		title: `CSS Audit for ${reportName}`
 	};
-	const html = reportTemplate( context );
-
-	if ( undefined === typeof reportName ) {
-		return 'You must provide a report name in the `--report=` CLI argument.';
-	}
-
-	// let content = '--- here is a report -- \n';
-	// content += JSON.stringify(reports);
 	
-	fs.writeFileSync( reportDest, html );
+	twing.render( reportTemplate, context ).then( ( output ) => {
+		console.log( `Generated template for ${reportTemplate}.` );
+		fs.writeFileSync( reportDest, output );
+	}).catch( ( e ) => {
+		console.error( e );
+	});
+	
 };
 

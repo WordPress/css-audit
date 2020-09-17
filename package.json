@@ -36,6 +36,7 @@
   "prettier": "@wordpress/prettier-config",
   "devDependencies": {
     "handlebars": "^4.7.6",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "twing": "^5.0.2"
   }
 }

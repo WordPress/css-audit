@@ -3,62 +3,304 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CSS Audit Report: test</title>
+	<title>CSS Audit for test</title>
 </head>
 <body>
-	<h1>CSS Audit Report: test</h1>
+	<h1>CSS Audit for test</h1>
 	
-			<section>
-				<h2>Number of unique colors</h2>
-				<ul>
-						<li>1</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Number of unique colors (ignoring opacity)</h2>
-				<ul>
-						<li>1</li>
-				</ul>
-			</section>
-			<section>
-				<h2>List of all colors</h2>
-				<ul>
-								<li>green
-				</ul>
-			</section>
-			<section>
-				<h2>Top 10 most-used colors</h2>
-				<ul>
-								<li>green / 1</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Top 10 least-used colors</h2>
-				<ul>
-								<li>green / 1</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Total number of selectors</h2>
-				<ul>
-						<li>1</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Top 10 selectors with the highest specificity</h2>
-				<ul>
-								<li>[object Object]
-				</ul>
-			</section>
-			<section>
-				<h2>Top 10 selectors by length</h2>
-				<ul>
-								<li>[object Object]
-				</ul>
-			</section>
-
-	<pre><code>
-		[{"label":"Number of unique colors","value":1},{"label":"Number of unique colors (ignoring opacity)","value":1},{"label":"List of all colors","value":["green"]},{"label":"Top 10 most-used colors","value":[{"name":"green","count":1}]},{"label":"Top 10 least-used colors","value":[{"name":"green","count":1}]},{"label":"Number of times `!important` is used","value":0},{"label":"Number of times `!important` is used per file","value":[]},{"label":"Top properties that use !important","value":[]},{"label":"Number of times `display: none` is used","value":0},{"label":"Places where `display: none` is used","value":[]},{"label":"Total number of selectors","value":1},{"label":"Number of selectors with IDs","value":0},{"label":"Top 10 selectors with the highest specificity","value":[{"file":"src/__tests__/css/test.css","selector":".test","a":0,"b":1,"c":0,"sum":10}]},{"label":"Top 10 selectors by length","value":[{"file":"src/__tests__/css/test.css","selector":".test","a":0,"b":1,"c":0,"sum":10}]},{"label":"Number of total media queries","value":0},{"label":"Number of seemingly-unique media queries","value":0},{"label":"Top 10 most-used media queries","value":[]},{"label":"Number of unique breakpoint sizes","value":0},{"label":"Top 10 most-used breakpoint sizes","value":[]},{"label":"Top 10 least-used breakpoint sizes","value":[]},{"label":"Non-width related media queries","value":[]}]
-	</code></pre>
+						<h2>colors</h2>
+			
+	<h3>Number of unique colors</h3>
+	
+			<p>1</p>
+		<h3>Number of unique colors (ignoring opacity)</h3>
+	
+			<p>1</p>
+		<h3>List of all colors</h3>
+	
+			<ul>
+									<li>green</li>
+							</ul>
+		<h3>Top 10 most-used colors</h3>
+	
+			<ul>
+									<li>green – 1</li>
+							</ul>
+		<h3>Top 10 least-used colors</h3>
+	
+			<ul>
+									<li>green – 1</li>
+							</ul>
+									<section>
+			<h2>Number of times `!important` is used: 0</h2>
+	</section>								<section>
+			<h2>Number of times `!important` is used per file</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Top properties that use !important</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Number of times `display: none` is used: 0</h2>
+	</section>								<section>
+			<h2>Places where `display: none` is used</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Total number of selectors: 1</h2>
+	</section>								<section>
+			<h2>Number of selectors with IDs: 0</h2>
+	</section>								<section>
+			<h2>Top 10 selectors with the highest specificity</h2>
+		<ul>
+												<li> - </li>
+																		</ul>
+	</section>								<section>
+			<h2>Top 10 selectors by length</h2>
+		<ul>
+												<li> - </li>
+																		</ul>
+	</section>								<section>
+			<h2>Number of total media queries: 0</h2>
+	</section>								<section>
+			<h2>Number of seemingly-unique media queries: 0</h2>
+	</section>								<section>
+			<h2>Top 10 most-used media queries</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Number of unique breakpoint sizes: 0</h2>
+	</section>								<section>
+			<h2>Top 10 most-used breakpoint sizes</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Top 10 least-used breakpoint sizes</h2>
+		<ul>
+					</ul>
+	</section>								<section>
+			<h2>Non-width related media queries</h2>
+		<ul>
+					</ul>
+	</section>				
+	<pre>
+		<code>array(17) {
+    [0] =>
+    array(2) {
+            [audit] =>
+            string(6) "colors"
+            [data] =>
+            array(5) {
+                    [0] =>
+                    array(2) {
+                            [label] =>
+                            string(23) "Number of unique colors"
+                            [value] =>
+                            int(1)
+                    }
+                    [1] =>
+                    array(2) {
+                            [label] =>
+                            string(42) "Number of unique colors (ignoring opacity)"
+                            [value] =>
+                            int(1)
+                    }
+                    [2] =>
+                    array(2) {
+                            [label] =>
+                            string(18) "List of all colors"
+                            [value] =>
+                            array(1) {
+                                    [0] =>
+                                    string(5) "green"
+                            }
+                    }
+                    [3] =>
+                    array(2) {
+                            [label] =>
+                            string(23) "Top 10 most-used colors"
+                            [value] =>
+                            array(1) {
+                                    [0] =>
+                                    array(2) {
+                                            [name] =>
+                                            string(5) "green"
+                                            [count] =>
+                                            int(1)
+                                    }
+                            }
+                    }
+                    [4] =>
+                    array(2) {
+                            [label] =>
+                            string(24) "Top 10 least-used colors"
+                            [value] =>
+                            array(1) {
+                                    [0] =>
+                                    array(2) {
+                                            [name] =>
+                                            string(5) "green"
+                                            [count] =>
+                                            int(1)
+                                    }
+                            }
+                    }
+            }
+    }
+    [1] =>
+    array(2) {
+            [label] =>
+            string(36) "Number of times `!important` is used"
+            [value] =>
+            int(0)
+    }
+    [2] =>
+    array(2) {
+            [label] =>
+            string(45) "Number of times `!important` is used per file"
+            [value] =>
+            array(0) {
+            }
+    }
+    [3] =>
+    array(2) {
+            [label] =>
+            string(34) "Top properties that use !important"
+            [value] =>
+            array(0) {
+            }
+    }
+    [4] =>
+    array(2) {
+            [label] =>
+            string(39) "Number of times `display: none` is used"
+            [value] =>
+            int(0)
+    }
+    [5] =>
+    array(2) {
+            [label] =>
+            string(36) "Places where `display: none` is used"
+            [value] =>
+            array(0) {
+            }
+    }
+    [6] =>
+    array(2) {
+            [label] =>
+            string(25) "Total number of selectors"
+            [value] =>
+            int(1)
+    }
+    [7] =>
+    array(2) {
+            [label] =>
+            string(28) "Number of selectors with IDs"
+            [value] =>
+            int(0)
+    }
+    [8] =>
+    array(2) {
+            [label] =>
+            string(45) "Top 10 selectors with the highest specificity"
+            [value] =>
+            array(1) {
+                    [0] =>
+                    array(6) {
+                            [file] =>
+                            string(26) "src/__tests__/css/test.css"
+                            [selector] =>
+                            string(5) ".test"
+                            [a] =>
+                            int(0)
+                            [b] =>
+                            int(1)
+                            [c] =>
+                            int(0)
+                            [sum] =>
+                            int(10)
+                    }
+            }
+    }
+    [9] =>
+    array(2) {
+            [label] =>
+            string(26) "Top 10 selectors by length"
+            [value] =>
+            array(1) {
+                    [0] =>
+                    array(6) {
+                            [file] =>
+                            string(26) "src/__tests__/css/test.css"
+                            [selector] =>
+                            string(5) ".test"
+                            [a] =>
+                            int(0)
+                            [b] =>
+                            int(1)
+                            [c] =>
+                            int(0)
+                            [sum] =>
+                            int(10)
+                    }
+            }
+    }
+    [10] =>
+    array(2) {
+            [label] =>
+            string(29) "Number of total media queries"
+            [value] =>
+            int(0)
+    }
+    [11] =>
+    array(2) {
+            [label] =>
+            string(40) "Number of seemingly-unique media queries"
+            [value] =>
+            int(0)
+    }
+    [12] =>
+    array(2) {
+            [label] =>
+            string(30) "Top 10 most-used media queries"
+            [value] =>
+            array(0) {
+            }
+    }
+    [13] =>
+    array(2) {
+            [label] =>
+            string(33) "Number of unique breakpoint sizes"
+            [value] =>
+            int(0)
+    }
+    [14] =>
+    array(2) {
+            [label] =>
+            string(33) "Top 10 most-used breakpoint sizes"
+            [value] =>
+            array(0) {
+            }
+    }
+    [15] =>
+    array(2) {
+            [label] =>
+            string(34) "Top 10 least-used breakpoint sizes"
+            [value] =>
+            array(0) {
+            }
+    }
+    [16] =>
+    array(2) {
+            [label] =>
+            string(31) "Non-width related media queries"
+            [value] =>
+            array(0) {
+            }
+    }
+}
+</code>
+	</pre>
 </body>
 </html>

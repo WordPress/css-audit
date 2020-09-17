@@ -1,0 +1,19 @@
+<section>
+	{% if report.value is iterable %}
+		<h2>{{report.label}}</h2>
+		<ul>
+			{% for value in report.value %}
+				{# Check for data format #}
+				{% if value.name %}
+					<li>{{value.name}} - {{value.count}}</li>
+				{% endif %}
+				
+				{% if value.file %}
+					<li>{{value.file}} - {{value.selector}}</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h2>{{report.label}}: {{ report.value }}</h2>
+	{% endif %}
+</section>

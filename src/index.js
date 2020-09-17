@@ -56,5 +56,3 @@ const audits = [
 const reports = audits.flat().filter( Boolean );
 
 console.log( formatReport( reports, getArgFromCLI( '--format' ) ) ); // eslint-disable-line no-console
-
-process.exit( 0 );

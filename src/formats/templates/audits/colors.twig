@@ -1,0 +1,21 @@
+
+{% for item in data %}
+	<h3>{{ item.label}}</h3>
+	
+	{% if item.value is iterable %}
+		<ul>
+		{% for value in item.value %}
+			{% if value.name %}
+				<li>
+					<span class="box" style="--box-bg-color:{{value.name}};"></span>
+					{{value.name}} – {{value.count}}
+				</li>
+			{% else %}
+				<li><span class="box" style="--box-bg-color:{{value}};"></span>{{value}}</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>{{item.value}}</p>
+	{% endif %}
+{% endfor %}
