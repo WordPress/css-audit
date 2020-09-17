@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css-audit": "node ./src/cli.js",
+    "css-audit": "node ./src/index.js",
     "lint:js": "eslint src",
-    "format:js": "prettier {src,.}/**/*.js --write"
+    "format:js": "prettier {src,.}/**/*.js --write",
+    "test": "jest"
   },
   "author": "Kelly Dwan",
   "license": "GPL-2.0-or-later",
@@ -34,6 +35,7 @@
   },
   "prettier": "@wordpress/prettier-config",
   "devDependencies": {
+    "handlebars": "^4.7.6",
     "jest": "^26.4.2"
   }
 }
