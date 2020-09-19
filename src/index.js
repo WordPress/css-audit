@@ -1,4 +1,8 @@
+/**
+ * Node dependencies
+ */
 const fs = require( 'fs' );
+const path = require( 'path' );
 
 /**
  * Internal dependencies
@@ -8,15 +12,14 @@ const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( './utils/cli' );
 
 const input = getFileArgsFromCLI();
 if ( getArgFromCLI( '--help' ) || ! input.length ) {
-	// Download css from svn…
-	// `svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files`
 	console.log( getHelp() ); // eslint-disable-line no-console
 	process.exit( 0 );
 }
 
 const cssFiles = [];
 input.forEach( ( file ) => {
-	const stats = fs.statSync( file );
+	const filePath = path.resolve( process.env.INIT_CWD, file );
+	const stats = fs.statSync( filePath );
 	if ( stats.isDirectory() ) {
 		return;
 	}
@@ -25,7 +28,7 @@ input.forEach( ( file ) => {
 	}
 	cssFiles.push( {
 		name: file,
-		content: String( fs.readFileSync( file ) ),
+		content: String( fs.readFileSync( filePath ) ),
 	} );
 } );
 
