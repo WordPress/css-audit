@@ -35,29 +35,35 @@ input.forEach( ( file ) => {
 const runAll = getArgFromCLI( '--all' );
 const runRecommended = getArgFromCLI( '--recommended' );
 
-const runColors = runAll || runRecommended || getArgFromCLI( '--colors' );
-const runImportant = runAll || runRecommended || getArgFromCLI( '--important' );
-const runDisplayNone = runAll || getArgFromCLI( '--display-none' );
-const runSelectors = runAll || runRecommended || getArgFromCLI( '--selectors' );
-const runPropertyValues = !! getArgFromCLI( '--property-values' );
-const runMediaQueries =
-	runAll || runRecommended || getArgFromCLI( '--media-queries' );
+const audits = [];
 
-const audits = [
-	runColors && require( './audits/colors' )( cssFiles ),
-	runImportant && require( './audits/important' )( cssFiles ),
-	runDisplayNone && require( './audits/display-none' )( cssFiles ),
-	runSelectors && require( './audits/selectors' )( cssFiles ),
-	runPropertyValues &&
+if ( runAll || runRecommended || getArgFromCLI( '--colors' ) ) {
+	audits.push( require( './audits/colors' )( cssFiles ) );
+}
+if ( runAll || runRecommended || getArgFromCLI( '--important' ) ) {
+	audits.push( require( './audits/important' )( cssFiles ) );
+}
+if ( runAll || getArgFromCLI( '--display-none' ) ) {
+	audits.push( require( './audits/display-none' )( cssFiles ) );
+}
+if ( runAll || runRecommended || getArgFromCLI( '--selectors' ) ) {
+	audits.push( require( './audits/selectors' )( cssFiles ) );
+}
+if ( runAll || runRecommended || getArgFromCLI( '--media-queries' ) ) {
+	audits.push( require( './audits/media-queries' )( cssFiles ) );
+}
+if ( !! getArgFromCLI( '--property-values' ) ) {
+	audits.push(
 		require( './audits/property-values' )(
 			cssFiles,
 			getArgFromCLI( '--property-values' ).split( ',' )
-		),
-	runMediaQueries && require( './audits/media-queries' )( cssFiles ),
-];
+		)
+	);
+}
 
 const reports = audits.flat().filter( Boolean );
 
-console.log( formatReport( reports, getArgFromCLI( '--format' ) ) ); // eslint-disable-line no-console
+// eslint-disable-next-line no-console
+console.log( formatReport( reports, getArgFromCLI( '--format' ) ) );
 
 process.exit( 0 );
