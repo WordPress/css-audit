@@ -38,22 +38,27 @@ module.exports = function( files = [] ) {
 
 	return [
 		{
+			id: 'unique',
 			label: 'Number of unique colors',
 			value: uniqColors.length,
 		},
 		{
+			id: 'unique-opaque',
 			label: 'Number of unique colors (ignoring opacity)',
 			value: uniqOpaqueColors.length,
 		},
 		{
+			id: 'all-colors',
 			label: 'List of all colors',
 			value: uniqColors,
 		},
 		{
+			id: 'top-10-colors',
 			label: 'Top 10 most-used colors',
 			value: colorsByCount.slice( 0, 10 ),
 		},
 		{
+			id: 'bottom-10-colors',
 			label: 'Top 10 least-used colors',
 			value: colorsByCount.slice( -10 ).reverse(),
 		},
