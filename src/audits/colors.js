@@ -7,7 +7,7 @@ const tinycolor2 = require( 'tinycolor2' );
  */
 const getValuesCount = require( '../utils/get-values-count' );
 
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	const colors = [];
 
 	files.forEach( ( { content } ) => {

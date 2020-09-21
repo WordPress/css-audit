@@ -5,7 +5,7 @@ const csstree = require( 'css-tree' );
  */
 const getValuesCount = require( '../utils/get-values-count' );
 
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	const allQueries = [];
 	const allSizes = [];
 	const nonWidthQueries = [];

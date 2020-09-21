@@ -46,7 +46,7 @@ function calculateSpecificty( [ a, b, c ], selector ) {
 	return [ a, b, c ];
 }
 
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	// let longest = 0;
 	const selectors = [];
 

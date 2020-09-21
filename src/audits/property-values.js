@@ -5,7 +5,7 @@ const csstree = require( 'css-tree' );
  */
 const getValuesCount = require( '../utils/get-values-count' );
 
-module.exports = function( files = [], properties ) {
+module.exports = function ( files = [], properties ) {
 	const values = [];
 	if ( ! Array.isArray( properties ) ) {
 		properties = Array( properties );

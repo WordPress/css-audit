@@ -1,6 +1,6 @@
 const csstree = require( 'css-tree' );
 
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	const instances = [];
 
 	files.forEach( ( { name, content } ) => {

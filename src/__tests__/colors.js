@@ -105,7 +105,9 @@ describe( 'Audit: Colors', () => {
 			},
 		];
 		const results = audit( files );
-		const { value } = results.find( ( { id } ) => 'bottom-10-colors' === id );
+		const { value } = results.find(
+			( { id } ) => 'bottom-10-colors' === id
+		);
 		expect( value[ 0 ].name ).toBe( 'pink' );
 	} );
 } );
