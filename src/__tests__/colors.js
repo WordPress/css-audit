@@ -1,28 +1,6 @@
 const audit = require( '../audits/colors' );
 
 describe( 'Audit: Colors', () => {
-	it( 'should not error with empty files', () => {
-		const files = [
-			{
-				name: 'a.css',
-				content: '',
-			},
-		];
-		const results = audit( files );
-		expect( results ).toHaveLength( 5 );
-	} );
-
-	it( 'should not error with invalid CSS', () => {
-		const files = [
-			{
-				name: 'a.css',
-				content: 'p {',
-			},
-		];
-		const results = audit( files );
-		expect( results ).toHaveLength( 5 );
-	} );
-
 	it( 'should return no colors when no colors are used', () => {
 		const files = [
 			{
