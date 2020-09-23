@@ -5,7 +5,7 @@ const csstree = require( 'css-tree' );
  */
 const getValuesCount = require( '../utils/get-values-count' );
 
-module.exports = function ( files = [], properties ) {
+module.exports = function ( files = [], properties = [] ) {
 	const values = [];
 	if ( ! Array.isArray( properties ) ) {
 		properties = Array( properties );
@@ -33,14 +33,22 @@ module.exports = function ( files = [], properties ) {
 
 	return [
 		{
+			id: 'count',
+			label: `Number of values for ${ properties.join( ', ' ) }`,
+			value: values.length,
+		},
+		{
+			id: 'count-unique',
 			label: `Number of unique values for ${ properties.join( ', ' ) }`,
 			value: uniqueValues.length,
 		},
 		{
+			id: 'top-10-values',
 			label: `Top 10 most-used values for ${ properties.join( ', ' ) }`,
 			value: valuesByCount.slice( 0, 10 ),
 		},
 		{
+			id: 'bottom-10-values',
 			label: `Top 10 least-used values for ${ properties.join( ', ' ) }`,
 			value: valuesByCount.slice( -10 ).reverse(),
 		},

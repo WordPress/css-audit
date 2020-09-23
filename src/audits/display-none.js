@@ -29,10 +29,12 @@ module.exports = function ( files = [] ) {
 
 	return [
 		{
+			id: 'count',
 			label: 'Number of times `display: none` is used',
 			value: instances.length,
 		},
 		{
+			id: 'instances',
 			label: 'Places where `display: none` is used',
 			value: instances,
 		},
