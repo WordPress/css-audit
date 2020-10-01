@@ -6,12 +6,12 @@
 				<h3>{{item.label}}</h3>
 				<ul>
 					{% for value in item.value %}
-					
+
 						{# Check for data format #}
 						{% if value.name %}
 							<li>{{value.name}} - {{value.count}}</li>
 						{% endif %}
-						
+
 						{% if value.file %}
 							<li><code>{{value.selector}}</code><br>in {{value.file}}</li>
 						{% endif %}
