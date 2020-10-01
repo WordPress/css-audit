@@ -39,26 +39,27 @@ module.exports = function ( files = [] ) {
 
 	const selectorsWithIds = selectors.filter( ( { a } ) => a > 0 );
 
-	return {
-		audit: 'selectors',
-		data: [
-			{
-				// This is not totally accurate, since nested `:not` selectors and keyframes are also counted.
-				label: 'Total number of selectors',
-				value: selectors.length,
-			},
-			{
-				label: 'Number of selectors with IDs',
-				value: selectorsWithIds.length,
-			},
-			{
-				label: 'Top 10 selectors with the highest specificity',
-				value: selectors.slice( 0, 10 ),
-			},
-			{
-				label: 'Top 10 selectors by length',
-				value: selectorsByLength.slice( 0, 10 ),
-			},
-		],
-	};
+	return [
+		{
+			// This is not totally accurate, since nested `:not` selectors and keyframes are also counted.
+			id: 'count',
+			label: 'Total number of selectors',
+			value: selectors.length,
+		},
+		{
+			id: 'count-with-ids',
+			label: 'Number of selectors with IDs',
+			value: selectorsWithIds.length,
+		},
+		{
+			id: 'top-10-selectors',
+			label: 'Top 10 selectors with the highest specificity',
+			value: selectors.slice( 0, 10 ),
+		},
+		{
+			id: 'bottom-10-selectors',
+			label: 'Top 10 selectors by length',
+			value: selectorsByLength.slice( 0, 10 ),
+		},
+	];
 };
