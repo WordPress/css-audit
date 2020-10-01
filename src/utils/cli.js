@@ -27,7 +27,7 @@ const getArgFromCLI = ( arg ) => {
 const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
 
 const getHelp = () => {
-	return `Usage: css-audit <files...> [options]
+	return `Usage: css-audit -- <files...> [options]
 
 --colors          Run colors audit.
 --important       Run !important audit.
