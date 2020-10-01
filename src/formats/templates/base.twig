@@ -10,6 +10,11 @@
 	<h1>{{title}}</h1>
 	
 	{% for report in reports %}
+		{# 
+			Note: 
+			There's a lot of redundnacy in these audit partials at the moment, but it might 
+			be useful to have very different markup for the design of various audit categories, 
+			so there is support for that. #}
 		{% if report.audit %}
 			<hr>
 			{% include 'audits/' ~ report.audit ~ '.twig' with { data: report.data, title: report.audit } %}
