@@ -59,6 +59,6 @@ module.exports = function ( files = [] ) {
 				label: 'Top 10 least-used colors',
 				value: colorsByCount.slice( -10 ).reverse(),
 			},
-		]
-	}
+		],
+	};
 };

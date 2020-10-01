@@ -59,6 +59,6 @@ module.exports = function ( files = [] ) {
 				label: 'Top 10 selectors by length',
 				value: selectorsByLength.slice( 0, 10 ),
 			},
-		]
+		],
 	};
 };
