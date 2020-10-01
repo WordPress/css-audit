@@ -12,9 +12,9 @@
   "author": "Kelly Dwan",
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "@wordpress/eslint-plugin": "4.1.0",
-    "@wordpress/prettier-config": "^0.1.0",
-    "chalk": "4.0.0",
+    "@wordpress/eslint-plugin": "7.2.1",
+    "@wordpress/prettier-config": "0.4.0",
+    "chalk": "4.1.0",
     "cli-table3": "0.6.0",
     "css-tree": "1.0.0-alpha.39",
     "cssom": "0.4.4",
@@ -23,11 +23,14 @@
     "get-css-colors": "3.3.1",
     "glob": "7.1.6",
     "minimist": "^1.2.5",
-    "prettier": "npm:wp-prettier@1.19.1",
+    "prettier": "npm:wp-prettier@2.0.5",
     "tinycolor2": "1.4.1"
   },
   "eslintConfig": {
-    "extends": "plugin:@wordpress/eslint-plugin/esnext",
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/esnext",
+      "plugin:prettier/recommended"
+    ],
     "env": {
       "node": true,
       "jest": true

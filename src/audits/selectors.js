@@ -1,52 +1,8 @@
 const csstree = require( 'css-tree' );
 
-function calculateSpecificty( [ a, b, c ], selector ) {
-	if ( ! selector.type ) {
-		return;
-	}
-	if ( 'lang' !== selector.name && selector.children ) {
-		return selector.children
-			.toArray()
-			.reduce( calculateSpecificty, [ a, b, c ] );
-	}
+const { calculateSpecificity } = require( '../utils/get-specificity' );
 
-	switch ( selector.type ) {
-		case 'IdSelector':
-			a++;
-			break;
-		case 'ClassSelector':
-		case 'AttributeSelector':
-		case 'Nth':
-			b++;
-			break;
-		case 'PseudoClassSelector':
-			if ( 'not' === selector.name ) {
-				break;
-			}
-			b++;
-			break;
-		case 'TypeSelector':
-		case 'PseudoElementSelector':
-			if ( '*' === selector.name ) {
-				break;
-			}
-			c++;
-			break;
-		case 'WhiteSpace':
-		case 'Combinator':
-		case 'Identifier':
-			// Whitespace, adjacent selectors (>, ~), … do not impact specificity.
-			break;
-		case 'Percentage':
-			// Part of a keyframe, not to be calculated.
-			break;
-		default:
-			console.warn( 'Unhandled selector type:', selector.type ); // eslint-disable-line no-console
-	}
-	return [ a, b, c ];
-}
-
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	// let longest = 0;
 	const selectors = [];
 
@@ -57,7 +13,7 @@ module.exports = function( files = [] ) {
 			enter( node ) {
 				const selectorName = csstree.generate( node );
 				const selectorList = node.children.toArray();
-				const [ a, b, c ] = selectorList.reduce( calculateSpecificty, [
+				const [ a, b, c ] = selectorList.reduce( calculateSpecificity, [
 					0,
 					0,
 					0,

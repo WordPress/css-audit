@@ -70,6 +70,6 @@ function formatReport( { label, value } ) {
  * @param {Array<Array<Object>>} reports The list of report data.
  * @return {string} reports as a JSON string.
  */
-module.exports = function( reports ) {
+module.exports = function ( reports ) {
 	return reports.map( formatReport );
 };

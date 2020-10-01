@@ -1,4 +1,4 @@
-module.exports = function( values ) {
+module.exports = function ( values ) {
 	const uniqueValues = [ ...new Set( values ) ];
 
 	return uniqueValues

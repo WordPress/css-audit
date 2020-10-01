@@ -40,6 +40,36 @@ If using `npm`, the css-audit command syntax is slightly different:
 $ npm run css-audit -- <files ...> [options]
 ```
 
+## Getting core CSS files
+
+You can download the source files of CSS (not minified or RTL'd) from the svn repository. The following code will create a new directory, `v5.5`, and download just the files from each `css` folder.
+
+```
+mkdir v5.5
+svn export https://develop.svn.wordpress.org/tags/5.5/src/wp-admin/css --depth files v5.5/admin
+svn export https://develop.svn.wordpress.org/tags/5.5/src/wp-admin/css --depth files v5.5/includes
+```
+
+If you want to run this on trunk (code currently in development), you can swap out `tags/5.5` for `trunk`. You could also swap the `5.5` for `5.4`, etc. Example:
+
+```
+mkdir trunk
+svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files trunk/admin
+svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files trunk/includes
+```
+
+Now you can run the audits:
+
+```
+yarn css-audit v5.5/**/* --recommended
+```
+
+or with npm,
+
+```
+npm run css-audit -- v5.5/**/* --recommended
+```
+
 ## Available Audits
 
 - `colors`
@@ -51,10 +81,11 @@ $ npm run css-audit -- <files ...> [options]
 - `important`
   - Number of times `!important` is used
   - Top properties that use !important
-- `property-values` — needs a list of properties to inspect, for example, display.
-  - Number of unique values for display
-  - Top 10 most-used values for display
-  - Top 10 least-used values for display
+- `property-values` — needs a list of properties to inspect.
+  - Usage: `--property-values=[properties]`. For example: `--property-values=display`, or `--property-values=padding,margin`
+  - Number of unique values for [property]
+  - Top 10 most-used values for [property]
+  - Top 10 least-used values for [property]
 - `selectors`
   - Total number of selectors
   - Number of selectors with IDs — not "number of IDs", a lot of selectors use multiple IDs, but they'd only be counted once

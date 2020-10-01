@@ -5,7 +5,7 @@ const csstree = require( 'css-tree' );
  */
 const getValuesCount = require( '../utils/get-values-count' );
 
-module.exports = function( files = [] ) {
+module.exports = function ( files = [] ) {
 	let count = 0;
 	const properties = [];
 	const fileInstances = [];
@@ -38,14 +38,17 @@ module.exports = function( files = [] ) {
 
 	return [
 		{
+			id: 'count',
 			label: 'Number of times `!important` is used',
 			value: count,
 		},
 		{
+			id: 'count-per-file',
 			label: 'Number of times `!important` is used per file',
 			value: instancesPerFile,
 		},
 		{
+			id: 'top-10-properties',
 			label: 'Top properties that use !important',
 			value: propertiesByCount.slice( 0, 10 ),
 		},
