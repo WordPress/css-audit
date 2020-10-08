@@ -2,3 +2,5 @@ node_modules
 _css/
 _build/
 *-notes.md
+v*.*/
+trunk/
