@@ -19,7 +19,9 @@ const { getArgFromCLI } = require( '../utils/cli' );
 const getTemplateSrc = ( name ) => {
 	const templatePath = ( name ) =>
 		path.join( __dirname, `./templates/${ name }.twig` );
-	const fileName = fs.existsSync( templatePath( name ) ) ? name : 'base';
+
+	// Allow a new base template that matches the report name.
+	const fileName = fs.existsSync( templatePath( name ) ) ? name : 'report';
 
 	return fileName + '.twig';
 };
@@ -29,7 +31,7 @@ module.exports = function ( reports ) {
 	const loader = new TwingLoaderFilesystem( path.join( __dirname, './templates' ) );
 	const twing = new TwingEnvironment( loader, { debug: true } );
 
-	const reportName = getArgFromCLI( '--report' );
+	const reportName = getArgFromCLI( '--filename' );
 	const reportTemplate = getTemplateSrc( reportName );
 	const reportDest = path.join(
 		__dirname,
@@ -52,7 +54,7 @@ module.exports = function ( reports ) {
 	twing
 		.render( reportTemplate, context )
 		.then( ( output ) => {
-			console.log( `Generated template for ${ reportTemplate }.` );
+			console.log( `Generated template for ${ reportName }.` );
 			fs.writeFileSync( reportDest, output );
 		} )
 		.catch( ( e ) => {
