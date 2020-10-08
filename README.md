@@ -39,6 +39,12 @@ Usage: css-audit -- <files...> [options]
 
 To generate an HTML report, use the `--format=html` option and specify a name for the file with the `--filename=name` option. This will output a `{name}.html` file in public/ that is viewable on Github Pages.
 
+For example, generating a report for wp-admin using the below strategy for pulling down CSS files from SVN:
+
+```
+npm run css-audit -- v5.5/**/* --format=html --all --filename=wp-admin
+```
+
 ## Getting core CSS files
 
 You can download the source files of CSS (not minified or RTL'd) from the svn repository. The following code will create a new directory, `v5.5`, and download just the files from each `css` folder.
