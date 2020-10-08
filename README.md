@@ -31,8 +31,13 @@ Usage: css-audit -- <files...> [options]
 --recommended     Run recommended audits (colors, important, selectors). Default: true.
 --all             Run all audits (except property values, as it requires a value).
 --format          Format to use for displaying report.
+--filename        If using a format that outputs to a file, specify the file name.
 --help            Show this message.
 ```
+
+## Generating HTML Reports
+
+To generate an HTML report, use the `--format=html` option and specify a name for the file with the `--filename=name` option. This will output a `{name}.html` file in public/ that is viewable on Github Pages.
 
 ## Getting core CSS files
 
@@ -85,7 +90,7 @@ npm run css-audit -- v5.5/**/* --recommended
 
 ## Technical details
 
-Uses [`csstree`](https://github.com/csstree/csstree) to parse each CSS file's contents. This creates an AST, which each audit traverses to pull out the data. 
+Uses [`csstree`](https://github.com/csstree/csstree) to parse each CSS file's contents. This creates an AST, which each audit traverses to pull out the data.
 
 - [csstree's docs](https://github.com/csstree/csstree/tree/master/docs) are very good
 - [AST Explorer](https://astexplorer.net/) — great tool for identifying how the CSS is parsed.
