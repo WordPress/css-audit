@@ -8,25 +8,12 @@
 </head>
 <body>
 	<h1>{{title}}</h1>
-	
-	{% for report in reports %}
-		{# 
-			Note: 
-			There's a lot of redundnacy in these audit partials at the moment, but it might 
-			be useful to have very different markup for the design of various audit categories, 
-			so there is support for that. #}
-		{% if report.audit %}
-			<hr>
-			{% include 'audits/' ~ report.audit ~ '.twig' with { data: report.data, title: report.audit } %}
-			<hr>
-		{% else %}
-			{% include 'audits/default.twig' with { data: report.data } %}
-		{% endif %}
-	{% endfor %}
-	
-	{# Uncomment this to see the reports object - useful for debugging. #}
-	{# <pre>
-		<code>{{dump(reports)}}</code>
-	</pre> #}
+
+	{% include 'audits/default.twig' with { data: displayNoneData } %}
+	{% include 'audits/default.twig' with { data: importantData } %}
+
+	{% include 'audits/selectors.twig' with { data: selectorsData } %}
+	{% include 'audits/colors.twig' with { data: colorsData } %}
+
 </body>
 </html>

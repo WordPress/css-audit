@@ -1,5 +1,5 @@
 <section>
-	<h2>{{title}}</h2>
+	<h2>{{data[0].audit|capitalize}}</h2>
 	{% for item in data %}
 		{% if item.value is iterable %}
 			<h3>{{ item.label}}</h3>
@@ -16,7 +16,7 @@
 			{% endfor %}
 			</ul>
 		{% else %}
-			<h3>{{ item.label}}: {{item.value}}</h3>
+			<h3>{{ item.label}}: {{ item.value }}</h3>
 		{% endif %}
 	{% endfor %}
 </section>

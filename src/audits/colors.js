@@ -36,29 +36,36 @@ module.exports = function ( files = [] ) {
 		),
 	];
 
-	return {
-		audit: 'colors',
-		data: [
-			{
-				label: 'Number of unique colors',
-				value: uniqColors.length,
-			},
-			{
-				label: 'Number of unique colors (ignoring opacity)',
-				value: uniqOpaqueColors.length,
-			},
-			{
-				label: 'List of all colors',
-				value: uniqColors,
-			},
-			{
-				label: 'Top 10 most-used colors',
-				value: colorsByCount.slice( 0, 10 ),
-			},
-			{
-				label: 'Top 10 least-used colors',
-				value: colorsByCount.slice( -10 ).reverse(),
-			},
-		],
-	};
+	return [
+		{
+			id: 'unique',
+			audit: 'colors',
+			label: 'Number of unique colors',
+			value: uniqColors.length,
+		},
+		{
+			id: 'unique-opaque',
+			audit: 'colors',
+			label: 'Number of unique colors (ignoring opacity)',
+			value: uniqOpaqueColors.length,
+		},
+		{
+			id: 'all-colors',
+			audit: 'colors',
+			label: 'List of all colors',
+			value: uniqColors,
+		},
+		{
+			id: 'top-10-colors',
+			audit: 'colors',
+			label: 'Top 10 most-used colors',
+			value: colorsByCount.slice( 0, 10 ),
+		},
+		{
+			id: 'bottom-10-colors',
+			audit: 'colors',
+			label: 'Top 10 least-used colors',
+			value: colorsByCount.slice( -10 ).reverse(),
+		},
+	];
 };
