@@ -63,7 +63,4 @@ if ( !! getArgFromCLI( '--property-values' ) ) {
 
 const reports = audits.flat().filter( Boolean );
 
-// eslint-disable-next-line no-console
-console.log( formatReport( reports, getArgFromCLI( '--format' ) ) );
-
-process.exit( 0 );
+console.log( formatReport( reports, getArgFromCLI( '--format' ) ) ); // eslint-disable-line no-console

@@ -18,7 +18,8 @@
     "cli-table3": "0.6.0",
     "css-tree": "1.0.0-alpha.39",
     "cssom": "0.4.4",
-    "eslint": "7.9.0",
+    "eslint": "6.8.0",
+    "fs-extra": "^9.0.1",
     "get-css-colors": "3.3.1",
     "glob": "7.1.6",
     "minimist": "^1.2.5",
@@ -37,6 +38,8 @@
   },
   "prettier": "@wordpress/prettier-config",
   "devDependencies": {
-    "jest": "^26.4.2"
+    "handlebars": "^4.7.6",
+    "jest": "^26.4.2",
+    "twing": "^5.0.2"
   }
 }
