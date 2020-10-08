@@ -1,5 +1,6 @@
 const fs = require( 'fs-extra' );
 const path = require( 'path' );
+const { exit } = require('process');
 const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
 
 /**
@@ -23,18 +24,28 @@ const getTemplateSrc = ( name ) => {
 	return fileName + '.twig';
 };
 
-let loader = new TwingLoaderFilesystem( path.join( __dirname, './templates' ) );
-let twing = new TwingEnvironment( loader, { debug: true } );
+module.exports = function ( reports ) {
 
-module.exports = module.exports = function ( reports ) {
+	const loader = new TwingLoaderFilesystem( path.join( __dirname, './templates' ) );
+	const twing = new TwingEnvironment( loader, { debug: true } );
+
 	const reportName = getArgFromCLI( '--report' );
+	const reportTemplate = getTemplateSrc( reportName );
 	const reportDest = path.join(
 		__dirname,
 		`../../public/${ reportName }.html`
 	);
-	const reportTemplate = getTemplateSrc( reportName );
+
+	const colorsData = reports.filter( ( { audit } ) => 'colors' === audit );
+	const selectorsData = reports.filter( ( { audit } ) => 'selectors' === audit );
+	const importantData = reports.filter( ( { audit } ) => 'important' === audit );
+	const displayNoneData = reports.filter( ( { audit } ) => 'display-none' === audit );
+
 	const context = {
-		reports,
+		colorsData,
+		selectorsData,
+		displayNoneData,
+		importantData,
 		title: `CSS Audit for ${ reportName }`,
 	};
 
