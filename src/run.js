@@ -1,15 +1,8 @@
 /**
- * Node dependencies
- */
-const fs = require( 'fs' );
-const path = require( 'path' );
-
-/**
  * Internal dependencies
  */
 const { formatReport } = require( './utils/format-report' );
-const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( './utils/cli' );
-
+const { getArgFromCLI } = require( './utils/cli' );
 
 const runAuditsFromCLIArgs = ( cssFiles ) => {
 	const audits = [];
@@ -64,35 +57,11 @@ const runAuditsFromConfig = ( config, cssFiles ) => {
 	return formatReport( reports, format );
 }
 
-const runAudits = ( config = false ) => {
+const runAudits = ( config = false, cssFiles ) => {
 
-	const input = getFileArgsFromCLI();
-
-	if ( getArgFromCLI( '--help' ) || ! input.length ) {
-		console.log( getHelp() ); // eslint-disable-line no-console
-		process.exit( 0 );
-	}
-
-	const cssFiles = [];
-	input.forEach( ( file ) => {
-		const filePath = path.resolve( process.env.INIT_CWD, file );
-		const stats = fs.statSync( filePath );
-		if ( stats.isDirectory() ) {
-			return;
-		}
-		if ( file.match( /min\.css$/ ) ) {
-			return;
-		}
-		cssFiles.push( {
-			name: file,
-			content: String( fs.readFileSync( filePath ) ),
-		} );
-	} );
-
-	const result = false !== config ? runAuditsFromConfig( config, cssFiles ) : runAuditsFromCLIArgs( cssFiles );
+	const result = config ? runAuditsFromConfig( config, cssFiles ) : runAuditsFromCLIArgs( cssFiles );
 
 	return result;
-
 }
 
 module.exports = {
