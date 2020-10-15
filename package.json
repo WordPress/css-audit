@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css-audit": "node ./src/index.js",
+    "css-audit": "node ./index.js",
     "lint:js": "eslint src",
     "format:js": "prettier {src,.}/**/*.js --write",
     "test": "jest"
