@@ -1,19 +1,23 @@
 <section>
-	{% if report.value is iterable %}
-		<h2>{{report.label}}</h2>
-		<ul>
-			{% for value in report.value %}
-				{# Check for data format #}
-				{% if value.name %}
-					<li>{{value.name}} - {{value.count}}</li>
-				{% endif %}
-				
-				{% if value.file %}
-					<li>{{value.file}} - {{value.selector}}</li>
-				{% endif %}
-			{% endfor %}
-		</ul>
-	{% else %}
-		<h2>{{report.label}}: {{ report.value }}</h2>
+	{% if data is iterable %}
+		<h2>{{data[0].audit|capitalize}}</h2>
+		{% for item in data %}
+			{% if item.value is iterable %}
+				<h3>{{item.label}}</h3>
+				<ul>
+				{% for value in item.value %}
+					{% if value.name %}
+						<li>{{value.name}} - {{value.count}}</li>
+					{% endif %}
+
+					{% if value.file %}
+						<li>{{value.file}} - {{value.selector}}</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			{% else %}
+				<h3>{{item.label}}: {{item.value}}</h3>
+			{% endif %}
+		{% endfor %}
 	{% endif %}
 </section>

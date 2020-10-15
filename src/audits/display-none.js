@@ -30,11 +30,13 @@ module.exports = function ( files = [] ) {
 	return [
 		{
 			id: 'count',
+			audit: 'display-none',
 			label: 'Number of times `display: none` is used',
 			value: instances.length,
 		},
 		{
 			id: 'instances',
+			audit: 'display-none',
 			label: 'Places where `display: none` is used',
 			value: instances,
 		},

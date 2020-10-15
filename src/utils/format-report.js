@@ -1,6 +1,6 @@
 const FMT_CLI_TABLE = 'cli-table';
 const FMT_JSON = 'json';
-const FMT_REPORT = 'report';
+const FMT_HTML = 'html';
 
 /**
  * Format the reports using the specified reporter format.
@@ -15,8 +15,8 @@ function formatReport( reports, format = FMT_CLI_TABLE ) {
 		case FMT_JSON:
 			formatCallback = require( '../formats/json' );
 			break;
-		case FMT_REPORT:
-			formatCallback = require( '../formats/report' );
+		case FMT_HTML:
+			formatCallback = require( '../formats/html' );
 			break;
 		case FMT_CLI_TABLE:
 		default:

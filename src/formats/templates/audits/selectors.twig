@@ -1,13 +1,12 @@
 <section>
-	<h2>{{title}}</h2>
 	{% if data is iterable %}
+		<h2>{{data[0].audit|capitalize}}</h2>
 		{% for item in data %}
 			{% if item.value is iterable %}
 				<h3>{{item.label}}</h3>
 				<ul>
 					{% for value in item.value %}
 
-						{# Check for data format #}
 						{% if value.name %}
 							<li>{{value.name}} - {{value.count}}</li>
 						{% endif %}
@@ -21,7 +20,5 @@
 				<h3>{{item.label}}: {{item.value}}</h3>
 			{% endif %}
 		{% endfor %}
-	{% else %}
-		<h2>{{data.label}}: {{ data.value }}</h2>
 	{% endif %}
 </section>

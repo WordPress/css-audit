@@ -18,26 +18,31 @@ If you want to work on the audits yourself, [fork this repo](https://help.github
 To run the audits, you need a list of CSS files, and to indicate which audits you want to run. `yarn` and `npm` both automatically expand globs (`folder/*`), so you can use that, or pass in a list of CSS files. The audits are described below.
 
 ```
-$ yarn css-audit ./wp-admin/* --help
-Usage: index.js <files...> [options]
-
-Options:
-  --help             Show help                                         [boolean]
-  --version          Show version number                               [boolean]
-  --colors           Run colors audit.
-  --important        Run !important audit.
-  --display-none     Run display: none audit.
-  --selectors        Run selectors audit.
-  --recommended      Run recommended audits (colors, important, selectors).
-                                                                 [default: true]
-  --all              Run all audits (except property values).
-  --property-values  Run audit for a given set of property values, comma-separated.
-```
-
-If using `npm`, the css-audit command syntax is slightly different:
-
-```
 $ npm run css-audit -- <files ...> [options]
+
+Usage: css-audit -- <files...> [options]
+
+--colors          Run colors audit.
+--important       Run !important audit.
+--display-none    Run display: none audit.
+--selectors       Run selectors audit.
+--media-queries   Run media queries audit.
+--property-values Run audit for a given set of property values, comma-separated.
+--recommended     Run recommended audits (colors, important, selectors). Default: true.
+--all             Run all audits (except property values, as it requires a value).
+--format          Format to use for displaying report.
+--filename        If using a format that outputs to a file, specify the file name.
+--help            Show this message.
+```
+
+## Generating HTML Reports
+
+To generate an HTML report, use the `--format=html` option and specify a name for the file with the `--filename=name` option. This will output a `{name}.html` file in public/ that is viewable on Github Pages.
+
+For example, generating a report for wp-admin using the below strategy for pulling down CSS files from SVN:
+
+```
+npm run css-audit -- v5.5/**/* --format=html --all --filename=wp-admin
 ```
 
 ## Getting core CSS files
@@ -59,12 +64,6 @@ svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth file
 ```
 
 Now you can run the audits:
-
-```
-yarn css-audit v5.5/**/* --recommended
-```
-
-or with npm,
 
 ```
 npm run css-audit -- v5.5/**/* --recommended
@@ -97,7 +96,7 @@ npm run css-audit -- v5.5/**/* --recommended
 
 ## Technical details
 
-Uses [`csstree`](https://github.com/csstree/csstree) to parse each CSS file's contents. This creates an AST, which each audit traverses to pull out the data. 
+Uses [`csstree`](https://github.com/csstree/csstree) to parse each CSS file's contents. This creates an AST, which each audit traverses to pull out the data.
 
 - [csstree's docs](https://github.com/csstree/csstree/tree/master/docs) are very good
 - [AST Explorer](https://astexplorer.net/) — great tool for identifying how the CSS is parsed.

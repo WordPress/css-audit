@@ -39,16 +39,19 @@ module.exports = function ( files = [] ) {
 	return [
 		{
 			id: 'count',
+			audit: 'important',
 			label: 'Number of times `!important` is used',
 			value: count,
 		},
 		{
 			id: 'count-per-file',
+			audit: 'important',
 			label: 'Number of times `!important` is used per file',
 			value: instancesPerFile,
 		},
 		{
 			id: 'top-10-properties',
+			audit: 'important',
 			label: 'Top properties that use !important',
 			value: propertiesByCount.slice( 0, 10 ),
 		},
