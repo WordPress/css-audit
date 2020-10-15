@@ -9,8 +9,8 @@ const path = require( 'path' );
  */
 const { formatReport } = require( './utils/format-report' );
 const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( './utils/cli' );
-
 const input = getFileArgsFromCLI();
+
 if ( getArgFromCLI( '--help' ) || ! input.length ) {
 	console.log( getHelp() ); // eslint-disable-line no-console
 	process.exit( 0 );
@@ -32,10 +32,22 @@ input.forEach( ( file ) => {
 	} );
 } );
 
+const audits = [];
+
+const config = require( '../css-audit.config.js' );
+const usingConfig = getArgFromCLI( '--config' );
+
+if ( usingConfig ) {
+
+	// TODO: Support value for config arg, and default to css-audit.config filename
+	config.audits.forEach( audit => {
+		// TODO: check for and support property-values array
+		audits.push( require( `./audits/${audit}` )( cssFiles ) );
+	});
+}
+
 const runAll = getArgFromCLI( '--all' );
 const runRecommended = getArgFromCLI( '--recommended' );
-
-const audits = [];
 
 if ( runAll || runRecommended || getArgFromCLI( '--colors' ) ) {
 	audits.push( require( './audits/colors' )( cssFiles ) );
@@ -63,4 +75,7 @@ if ( !! getArgFromCLI( '--property-values' ) ) {
 
 const reports = audits.flat().filter( Boolean );
 
-console.log( formatReport( reports, getArgFromCLI( '--format' ) ) ); // eslint-disable-line no-console
+// TODO: This needs more thought
+const format = usingConfig ? config.format : getArgFromCLI( '--format' );
+
+console.log( formatReport( reports, format ) ); // eslint-disable-line no-console
