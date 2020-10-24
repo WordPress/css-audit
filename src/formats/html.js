@@ -1,6 +1,6 @@
 const fs = require( 'fs-extra' );
 const path = require( 'path' );
-const { exit } = require('process');
+const { exit } = require( 'process' );
 const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
 
 /**
@@ -27,8 +27,9 @@ const getTemplateSrc = ( name ) => {
 };
 
 module.exports = function ( reports ) {
-
-	const loader = new TwingLoaderFilesystem( path.join( __dirname, './templates' ) );
+	const loader = new TwingLoaderFilesystem(
+		path.join( __dirname, './templates' )
+	);
 	const twing = new TwingEnvironment( loader, { debug: true } );
 
 	const reportName = getArgFromCLI( '--filename' );
@@ -39,9 +40,15 @@ module.exports = function ( reports ) {
 	);
 
 	const colorsData = reports.filter( ( { audit } ) => 'colors' === audit );
-	const selectorsData = reports.filter( ( { audit } ) => 'selectors' === audit );
-	const importantData = reports.filter( ( { audit } ) => 'important' === audit );
-	const displayNoneData = reports.filter( ( { audit } ) => 'display-none' === audit );
+	const selectorsData = reports.filter(
+		( { audit } ) => 'selectors' === audit
+	);
+	const importantData = reports.filter(
+		( { audit } ) => 'important' === audit
+	);
+	const displayNoneData = reports.filter(
+		( { audit } ) => 'display-none' === audit
+	);
 
 	const context = {
 		colorsData,
