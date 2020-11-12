@@ -33,13 +33,10 @@ const runAuditsFromCLIArgs = ( cssFiles ) => {
 		);
 	}
 
-	console.log( audits );
-
 	const reports = audits.flat().filter( Boolean );
 
 	const format = getArgFromCLI( '--format' );
 
-	// console.log( reports );
 	return formatReport( reports, format );
 };
 

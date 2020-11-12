@@ -1,6 +1,5 @@
 const fs = require( 'fs-extra' );
 const path = require( 'path' );
-const { exit } = require( 'process' );
 const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
 
 /**
@@ -11,14 +10,13 @@ const { getArgFromCLI } = require( '../utils/cli' );
 /**
  * Get the source of a template to compile.
  *
- * @param {string} subdir
  * @param {string} name
  *
- * @returns {string} Template contnet
+ * @return {string} Template contnet
  */
 const getTemplateSrc = ( name ) => {
-	const templatePath = ( name ) =>
-		path.join( __dirname, `./templates/${ name }.twig` );
+	const templatePath = ( tmplName ) =>
+		path.join( __dirname, `./templates/${ tmplName }.twig` );
 
 	// Allow a new base template that matches the report name.
 	const fileName = fs.existsSync( templatePath( name ) ) ? name : 'report';
@@ -61,10 +59,10 @@ module.exports = function ( reports ) {
 	twing
 		.render( reportTemplate, context )
 		.then( ( output ) => {
-			console.log( `Generated template for ${ reportName }.` );
+			console.log( `Generated template for ${ reportName }.` ); // eslint-disable-line no-console
 			fs.writeFileSync( reportDest, output );
 		} )
 		.catch( ( e ) => {
-			console.error( e );
+			console.error( e ); // eslint-disable-line no-console
 		} );
 };
