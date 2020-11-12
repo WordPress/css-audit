@@ -1,7 +1,7 @@
 const { runAudits } = require( '../run' );
 
 describe( 'Run the audits', () => {
-	it( 'there will be tests', () => {
+	it( 'runs with a configuration object', () => {
 		const config = {
 			"format": "json",
 			"audits": [
@@ -9,7 +9,20 @@ describe( 'Run the audits', () => {
 				"important",
 				"display-none",
 				"selectors",
-				"media-queries"
+				"media-queries",
+				[
+					"property-values",
+					[ "font-size" ]
+				],
+				[
+					"property-values",
+					[
+						"padding-top",
+						"padding-bottom",
+						"padding-left",
+						"padding-right"
+					]
+				]
 			]
 		};
 		const result = runAudits( config, [
@@ -20,7 +33,18 @@ describe( 'Run the audits', () => {
 		] );
 
 		config.audits.forEach( audit => {
-			expect( result ).toContain( audit );
+
+			if ( Array.isArray( audit ) ) {
+
+				audit[1].forEach( property => {
+					expect( result ).toContain( property );
+				});
+
+			} else {
+
+				expect( result ).toContain( audit );
+
+			}
 		});
 	} );
 } );

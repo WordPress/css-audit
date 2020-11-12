@@ -33,33 +33,48 @@ const runAuditsFromCLIArgs = ( cssFiles ) => {
 		);
 	}
 
+	console.log(audits);
+
 	const reports = audits.flat().filter( Boolean );
 
 	const format = getArgFromCLI( '--format' );
 
+	// console.log( reports );
 	return formatReport( reports, format );
 
 };
 
 const runAuditsFromConfig = ( config, cssFiles ) => {
 	const audits = [];
+	const { format } = config;
 
 	// TODO: Support value for config arg, and default to css-audit.config filename
 	config.audits.forEach( audit => {
-		// TODO: check for and support property-values array
-		audits.push( require( `./audits/${audit}` )( cssFiles ) );
+
+		if ( Array.isArray( audit ) ) {
+
+			const [ auditName, auditTerms ] = audit;
+
+			audits.push(
+				require( `./audits/${auditName}` )(
+					cssFiles,
+					auditTerms
+				)
+			);
+		} else {
+			audits.push( require( `./audits/${audit}` )( cssFiles ) );
+		}
+
 	});
 
 	const reports = audits.flat().filter( Boolean );
 
-	const format = config.format;
-
 	return formatReport( reports, format );
 }
 
-const runAudits = ( config = false, cssFiles ) => {
+const runAudits = ( config = {}, cssFiles ) => {
 
-	const result = config ? runAuditsFromConfig( config, cssFiles ) : runAuditsFromCLIArgs( cssFiles );
+	const result = 0 < Object.keys( config ).length ? runAuditsFromConfig( config, cssFiles ) : runAuditsFromCLIArgs( cssFiles );
 
 	return result;
 }
