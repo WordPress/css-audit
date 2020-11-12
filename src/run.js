@@ -33,7 +33,7 @@ const runAuditsFromCLIArgs = ( cssFiles ) => {
 		);
 	}
 
-	console.log(audits);
+	console.log( audits );
 
 	const reports = audits.flat().filter( Boolean );
 
@@ -41,7 +41,6 @@ const runAuditsFromCLIArgs = ( cssFiles ) => {
 
 	// console.log( reports );
 	return formatReport( reports, format );
-
 };
 
 const runAuditsFromConfig = ( config, cssFiles ) => {
@@ -49,36 +48,32 @@ const runAuditsFromConfig = ( config, cssFiles ) => {
 	const { format } = config;
 
 	// TODO: Support value for config arg, and default to css-audit.config filename
-	config.audits.forEach( audit => {
-
+	config.audits.forEach( ( audit ) => {
 		if ( Array.isArray( audit ) ) {
-
 			const [ auditName, auditTerms ] = audit;
 
 			audits.push(
-				require( `./audits/${auditName}` )(
-					cssFiles,
-					auditTerms
-				)
+				require( `./audits/${ auditName }` )( cssFiles, auditTerms )
 			);
 		} else {
-			audits.push( require( `./audits/${audit}` )( cssFiles ) );
+			audits.push( require( `./audits/${ audit }` )( cssFiles ) );
 		}
-
-	});
+	} );
 
 	const reports = audits.flat().filter( Boolean );
 
 	return formatReport( reports, format );
-}
+};
 
 const runAudits = ( config = {}, cssFiles ) => {
-
-	const result = 0 < Object.keys( config ).length ? runAuditsFromConfig( config, cssFiles ) : runAuditsFromCLIArgs( cssFiles );
+	const result =
+		0 < Object.keys( config ).length
+			? runAuditsFromConfig( config, cssFiles )
+			: runAuditsFromCLIArgs( cssFiles );
 
 	return result;
-}
+};
 
 module.exports = {
-	runAudits
+	runAudits,
 };
