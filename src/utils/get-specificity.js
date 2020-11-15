@@ -51,7 +51,7 @@ function calculateSpecificity( [ a, b, c ], selector ) {
 			// Part of a keyframe, not to be calculated.
 			break;
 		default:
-			console.warn( 'Unhandled selector type:', selector.type ); // eslint-disable-line no-console
+			console.warn( 'Unhandled selector type:', selector.type );
 	}
 	return [ a, b, c ];
 }

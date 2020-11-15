@@ -31,6 +31,9 @@
       "plugin:@wordpress/eslint-plugin/esnext",
       "plugin:prettier/recommended"
     ],
+    "rules": {
+      "no-console": "off"
+    },
     "env": {
       "node": true,
       "jest": true
