@@ -38,7 +38,7 @@ describe( 'Audit: Selectors', () => {
 				content: `body { color: white; }
 				p#test { color: white; }
 				div { color: white; }
-				.class { color: white; }`,
+				span, .class { color: white; }`,
 			},
 		];
 		const { results } = audit( files );

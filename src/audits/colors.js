@@ -1,5 +1,8 @@
-const csstree = require( 'css-tree' );
-const getColors = require( 'get-css-colors' );
+/**
+ * External dependencies
+ */
+const { parse } = require( 'postcss' );
+const { parse: parseValue } = require( 'postcss-values-parser' );
 const tinycolor2 = require( 'tinycolor2' );
 
 /**
@@ -10,17 +13,22 @@ const getValuesCount = require( '../utils/get-values-count' );
 module.exports = function ( files = [] ) {
 	const colors = [];
 
-	files.forEach( ( { content } ) => {
-		const ast = csstree.parse( content );
-		csstree.walk( ast, {
-			visit: 'Value',
-			enter( node ) {
-				const nodeContent = csstree.generate( node );
-				const hasColors = getColors( nodeContent );
-				if ( Array.isArray( hasColors ) ) {
-					colors.push( ...hasColors.map( ( i ) => i.toLowerCase() ) );
+	files.forEach( ( { content, name } ) => {
+		const root = parse( content, { from: name } );
+		root.walkDecls( function ( { value } ) {
+			const valueRoot = parseValue( value );
+
+			valueRoot.walkWords( ( node ) => {
+				if ( node.isColor ) {
+					colors.push( node.value );
 				}
-			},
+			} );
+
+			valueRoot.walkFuncs( ( node ) => {
+				if ( node.isColor ) {
+					colors.push( node.toString() );
+				}
+			} );
 		} );
 	} );
 

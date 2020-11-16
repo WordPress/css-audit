@@ -45,7 +45,25 @@ describe( 'Audit: Media Queries', () => {
 		const { results } = audit( files );
 		const { value: count } = results.find( ( { id } ) => 'count' === id );
 		expect( count ).toBe( 5 );
+	} );
 
+	it( 'should track different sizes in media queries', () => {
+		const files = [
+			{
+				name: 'a.css',
+				content: `body { font-size: 1em; line-height: 1.6; }
+				@media (max-width: 30rem) { body { font-size: 2em; } }
+				@media screen and (max-width: 20rem) { body { font-size: 1.5em; } }
+				@media (max-width: 20rem) { body { font-size: 1.5em; } }`,
+			},
+			{
+				name: 'b.css',
+				content: `body { font-size: 1em; line-height: 1.6; }
+				@media (max-width: 15rem) { body { font-size: 2em; } }
+				@media (max-width: 20rem) { body { font-size: 1.5em; } }`,
+			},
+		];
+		const { results } = audit( files );
 		const { value: uniqueQueries } = results.find(
 			( { id } ) => 'count-unique-queries' === id
 		);

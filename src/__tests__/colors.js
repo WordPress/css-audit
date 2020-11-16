@@ -13,7 +13,7 @@ describe( 'Audit: Colors', () => {
 		expect( value ).toBe( 0 );
 	} );
 
-	it.skip( 'should ignore colors in non-color properties', () => {
+	it( 'should ignore colors in non-color properties', () => {
 		const files = [
 			{
 				name: 'a.css',
@@ -23,6 +23,18 @@ describe( 'Audit: Colors', () => {
 		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'unique' === id );
 		expect( value ).toBe( 0 );
+	} );
+
+	it( 'should count colors in shorthand properties', () => {
+		const files = [
+			{
+				name: 'a.css',
+				content: `body { border: 3px solid red; }`,
+			},
+		];
+		const { results } = audit( files );
+		const { value } = results.find( ( { id } ) => 'unique' === id );
+		expect( value ).toBe( 1 );
 	} );
 
 	it( 'should count the number of colors in a file', () => {
@@ -45,7 +57,7 @@ describe( 'Audit: Colors', () => {
 			},
 			{
 				name: 'b.css',
-				content: `body { color: #f00; }`,
+				content: `body { color: rgba(0,0,0,0.5); }`,
 			},
 		];
 		const { results } = audit( files );
