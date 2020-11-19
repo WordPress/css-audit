@@ -7,31 +7,27 @@ const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
  */
 const { getArgFromCLI } = require( '../utils/cli' );
 
+const templatePath = path.join( __dirname, './templates' );
+
 /**
- * Get the source of a template to compile.
+ * Get the template file, falling back to report.twig if a custom file is not found.
  *
- * @param {string} name
- *
- * @return {string} Template contnet
+ * @param {string} name Name of the current report.
+ * @return {string} File name.
  */
-const getTemplateSrc = ( name ) => {
-	const templatePath = ( tmplName ) =>
-		path.join( __dirname, `./templates/${ tmplName }.twig` );
-
-	// Allow a new base template that matches the report name.
-	const fileName = fs.existsSync( templatePath( name ) ) ? name : 'report';
-
-	return fileName + '.twig';
-};
+function getTemplateFile( name ) {
+	if ( fs.existsSync( `${ templatePath }/${ name }.twig` ) ) {
+		return `${ name }.twig`;
+	}
+	return 'report.twig';
+}
 
 module.exports = function ( reports ) {
-	const loader = new TwingLoaderFilesystem(
-		path.join( __dirname, './templates' )
-	);
+	const loader = new TwingLoaderFilesystem( templatePath );
 	const twing = new TwingEnvironment( loader, { debug: true } );
 
 	const reportName = getArgFromCLI( '--filename' );
-	const reportTemplate = getTemplateSrc( reportName );
+	const reportTemplate = getTemplateFile( reportName );
 	const reportDest = path.join(
 		__dirname,
 		`../../public/${ reportName }.html`

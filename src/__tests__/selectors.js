@@ -1,7 +1,7 @@
 const audit = require( '../audits/selectors' );
 
 describe( 'Audit: Selectors', () => {
-	it.only( 'should count the number of selectors used', () => {
+	it( 'should count the number of selectors used', () => {
 		const files = [
 			{
 				name: 'a.css',
