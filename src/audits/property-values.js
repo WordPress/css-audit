@@ -34,21 +34,25 @@ module.exports = function ( files = [], properties = [] ) {
 	return [
 		{
 			id: 'count',
+			audit: 'property-values',
 			label: `Number of values for ${ properties.join( ', ' ) }`,
 			value: values.length,
 		},
 		{
 			id: 'count-unique',
+			audit: 'property-values',
 			label: `Number of unique values for ${ properties.join( ', ' ) }`,
 			value: uniqueValues.length,
 		},
 		{
 			id: 'top-10-values',
+			audit: 'property-values',
 			label: `Top 10 most-used values for ${ properties.join( ', ' ) }`,
 			value: valuesByCount.slice( 0, 10 ),
 		},
 		{
 			id: 'bottom-10-values',
+			audit: 'property-values',
 			label: `Top 10 least-used values for ${ properties.join( ', ' ) }`,
 			value: valuesByCount.slice( -10 ).reverse(),
 		},

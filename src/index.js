@@ -12,7 +12,7 @@ const { getArgFromCLI, getFileArgsFromCLI, getHelp } = require( './utils/cli' );
 
 const input = getFileArgsFromCLI();
 if ( getArgFromCLI( '--help' ) || ! input.length ) {
-	console.log( getHelp() ); // eslint-disable-line no-console
+	console.log( getHelp() );
 	process.exit( 0 );
 }
 
@@ -63,4 +63,4 @@ if ( !! getArgFromCLI( '--property-values' ) ) {
 
 const reports = audits.flat().filter( Boolean );
 
-console.log( formatReport( reports, getArgFromCLI( '--format' ) ) ); // eslint-disable-line no-console
+console.log( formatReport( reports, getArgFromCLI( '--format' ) ) );

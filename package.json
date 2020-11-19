@@ -16,13 +16,13 @@
     "@wordpress/prettier-config": "0.4.0",
     "chalk": "4.1.0",
     "cli-table3": "0.6.0",
-    "css-tree": "1.0.0-alpha.39",
+    "css-tree": "1.0.1",
     "cssom": "0.4.4",
-    "eslint": "7.12.0",
-    "fs-extra": "^9.0.1",
-    "get-css-colors": "3.3.1",
+    "eslint": "7.13.0",
+    "fs-extra": "9.0.1",
+    "get-css-colors": "3.5.0",
     "glob": "7.1.6",
-    "minimist": "^1.2.5",
+    "minimist": "1.2.5",
     "prettier": "npm:wp-prettier@^2.0.5",
     "tinycolor2": "1.4.2"
   },
@@ -31,6 +31,9 @@
       "plugin:@wordpress/eslint-plugin/esnext",
       "plugin:prettier/recommended"
     ],
+    "rules": {
+      "no-console": "off"
+    },
     "env": {
       "node": true,
       "jest": true
@@ -38,8 +41,8 @@
   },
   "prettier": "@wordpress/prettier-config",
   "devDependencies": {
-    "handlebars": "^4.7.6",
-    "jest": "26.6.1",
-    "twing": "^5.0.2"
+    "handlebars": "4.7.6",
+    "jest": "26.6.3",
+    "twing": "5.0.2"
   }
 }
