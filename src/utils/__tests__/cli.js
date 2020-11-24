@@ -58,29 +58,28 @@ describe( 'Get args', () => {
 			const checkTerm = ( list ) => {
 
 				if ( 0 === list.length ) {
-					return 'not found';
+					return false;
 				}
 
 				const key = list[0];
 
-				// console.log( key === term );
-				// console.log( config[term] );
-
-				if ( key === term && !! config[term] ) {
-					return 'hmm';
-					return config[term];
+				if ( key === term ) {
+					return 'undefined' === typeof config[term] ? true : config[term];
 				}
-
-				if ( Array === typeof config[key] ) {
+		;
+				if ( config[key].includes(term) ) {
 
 					if ( term === config[key][0] ) {
-						console.log('config[key][0]');
-						return config[key][0];
+						return true;
 					}
-
-					console.log('nothon');
-					return checkTerm( config[key] );
+					return 'object??';
 				}
+
+				list.shift();
+
+				return checkTerm( list );
+
+
 			};
 
 			return checkTerm( configKeys );
@@ -88,8 +87,8 @@ describe( 'Get args', () => {
 		};
 
 		expect( getValue( 'single' ) ).toBe( 'value' );
-		expect( getValue( 'key1' ) ).toBe( 'key1');
-		// expect( getValue( 'key2' ) ).toBe( 'value in array');
+		expect( getValue( 'key1' ) ).toBe( true );
+		expect( getValue( 'key2' ) ).toBe( 'value in array');
 
 	});
 
