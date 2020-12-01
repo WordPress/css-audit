@@ -7,13 +7,13 @@
 	<title>{{title}}</title>
 </head>
 <body>
-	<h1>{{title}}</h1>
-
-	{% include 'audits/default.twig' with { data: displayNoneData } %}
-	{% include 'audits/default.twig' with { data: importantData } %}
-
-	{% include 'audits/selectors.twig' with { data: selectorsData } %}
+   <h1 id="top">{{title}}</h1>
+   <hr />
+   {% include 'nav.twig' with { data: idsForNav } %}
 	{% include 'audits/colors.twig' with { data: colorsData } %}
+	{% include 'audits/display-none.twig' with { data: displayNoneData } %}
+	{% include 'audits/important.twig' with { data: importantData } %}
+	{% include 'audits/selectors.twig' with { data: selectorsData } %}
 
 </body>
 </html>
