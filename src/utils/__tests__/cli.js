@@ -1,7 +1,7 @@
 const { getArgFromCLI, getArgsFromCLI } = require( '../cli' );
 const path = require( 'path' );
 
-const getValue = ( term ) => {
+const getValue = ( config, term ) => {
 
 	for (const key in config) {
 
@@ -43,44 +43,27 @@ const getValueFromList = ( list, term ) => {
 
 const getArg = ( arg ) => {
 
+	const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
+
 	for ( const cliArg of getArgsFromCLI() ) {
+
 		const [ name, value ] = cliArg.split( '=' );
+
 		if ( name === arg ) {
 			return 'undefined' === typeof value ? true : value || null;
 		}
+
 	}
 
+	const term = arg.substr(2);
 
-	const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
+	return getValue( config, term );
 
-	const getValue = ( term, key ) => {
-		let value = config[key];
-
-		console.log( term );
-
-		if ( Array === typeof term ) {
-			console.log( 'arry' );
-			return value[1];
-		}
-
-		if ( term === key ) {
-			return 'undefined' === typeof value ? true : value;
-		}
-
-		getValue( term, key );
-	}
-
-	for ( const key of Object.keys( config ) ) {
-		const term = arg.slice(2);
-
-		return getValue( term );
-	}
 };
-
 
 describe( 'Get args', () => {
 
-	it.only( 'should get the value for simple args and arrays', () => {
+	it( 'should get the value for simple args and arrays', () => {
 
 		const config = {
 			'single': 'value',
@@ -90,13 +73,13 @@ describe( 'Get args', () => {
 			]
 		};
 
-		expect( getValue( 'single' ) ).toBe( 'value' );
-		expect( getValue( 'key1' ) ).toBe( true );
-		expect( getValue( 'key2' ) ).toBe( 'value in array');
+		expect( getValue( config, 'single' ) ).toBe( 'value' );
+		expect( getValue( config, 'key1' ) ).toBe( true );
+		expect( getValue( config, 'key2' ) ).toBe( 'value in array');
 
 	});
 
-	it.only( 'should recursively get required values from an array in the config', () => {
+	it( 'should recursively get required values from an array values in the config', () => {
 
 		const testList = [
 			'key1',
@@ -129,7 +112,7 @@ describe( 'Get args', () => {
 
 		expect( getArg( '--format' ) ).toBe( 'json' );
 		expect( getArg( '--media-queries' ) ).toBe( true );
-		expect( getArg( '--property-values' ) ).toBe( 'padding-top,padding-bottom' );
+		expect( getArg( '--property-values' ) ).toBe( 'font-size' );
 
 	});
 
