@@ -1,6 +1,46 @@
 const { getArgFromCLI, getArgsFromCLI } = require( '../cli' );
 const path = require( 'path' );
 
+const getValue = ( term ) => {
+
+	for (const key in config) {
+
+		if ( config.hasOwnProperty(key) ) {
+
+			if ( term === key ) {
+				return 'undefined' === typeof config[term] ? true : config[term];
+			}
+		}
+
+		if ( 'object' === typeof config[key] ) {
+			return getValueFromList( config[key], term );
+		}
+
+	}
+};
+
+const getValueFromList = ( list, term ) => {
+
+	if ( 0 === list.length ) {
+		return false;
+	}
+
+	const currItem = list[0];
+
+	if ( term === currItem ) {
+		return true;
+	}
+
+	if ( term === currItem[0] ) {
+		return currItem[1];
+	}
+
+	list.shift();
+
+	return getValueFromList( list, term );
+
+};
+
 const getArg = ( arg ) => {
 
 	for ( const cliArg of getArgsFromCLI() ) {
@@ -38,7 +78,6 @@ const getArg = ( arg ) => {
 };
 
 
-
 describe( 'Get args', () => {
 
 	it.only( 'should get the value for simple args and arrays', () => {
@@ -51,46 +90,23 @@ describe( 'Get args', () => {
 			]
 		};
 
-		const getValue = ( term ) => {
-
-			const configKeys = Object.keys( config );
-
-			const checkTerm = ( list ) => {
-
-				if ( 0 === list.length ) {
-					return false;
-				}
-
-				const key = list[0];
-
-				if ( key === term ) {
-					return 'undefined' === typeof config[term] ? true : config[term];
-				}
-		;
-				if ( config[key].includes(term) ) {
-
-					if ( term === config[key][0] ) {
-						return true;
-					}
-					return 'object??';
-				}
-
-				list.shift();
-
-				return checkTerm( list );
-
-
-			};
-
-			return checkTerm( configKeys );
-
-		};
-
 		expect( getValue( 'single' ) ).toBe( 'value' );
 		expect( getValue( 'key1' ) ).toBe( true );
 		expect( getValue( 'key2' ) ).toBe( 'value in array');
 
 	});
+
+	it.only( 'should recursively get required values from an array in the config', () => {
+
+		const testList = [
+			'key1',
+			'key2',
+			[ 'key3', 'value' ]
+		];
+
+		expect( getValueFromList( testList, 'key2' ) ).toBe( true );
+		expect( getValueFromList( testList, 'key3' ) ).toBe( 'value' );
+	})
 
 	it( 'should get args from the CLI', () => {
 		process.argv = [ '', '', '--format=html', '--property-values=padding,padding-top', '--media-queries' ];
