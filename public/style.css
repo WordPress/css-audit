@@ -1,6 +1,92 @@
-.box {
-	background-color: var( --box-bg-color );
-	height: 20px;
-	width: 20px;
-	display: inline-block;
+body {
+   font-family: sans-serif;
+   margin: 3rem;
+}
+
+h2, h3 {
+   font-weight: normal;
+}
+
+h2.audit__title {
+   color: #666;
+   border-bottom: 2px solid #eee;
+}
+
+h2.audit__title strong {
+   color: #000;
+}
+
+hr {
+   border: 0;
+   border-bottom: 4px solid #eee;
+}
+
+/**
+ * Nav
+ */
+.nav {
+   margin-bottom: 6rem;
+}
+
+.nav ul
+
+/**
+ * Audits
+ */
+.audit {
+   margin-bottom: 6rem;
+}
+
+code {
+   background-color: #eee;
+   border: 1px solid #aaa;
+   border-radius: 1px;
+   display: block;
+   padding: 0.5em;
+}
+
+code,
+.audit li {
+   font-family: monospace;
+}
+
+.audit ul {
+   list-style: none;
+   padding: 0;
+}
+
+.audit li {
+   display: inline-block;
+   margin: 0 0 2em 0;
+}
+
+/**
+ * Audit: Colors
+ */
+.audit--colors ul {
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+}
+
+.audit--colors li {
+   height: 3em;
+   line-height: 3em;
+   text-align: center;
+   width: 18em;
+}
+
+.audit--colors .box {
+   background-color: var( --box-bg-color );
+   display: inline-block;
+   font-family: monospace;
+}
+
+.audit--colors .count {
+   background-color: #333;
+   border-radius: 50%;
+   box-sizing: border-box;
+   color: white;
+   min-width: 2em;
+   padding: 0.25em;
 }
