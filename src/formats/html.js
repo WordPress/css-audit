@@ -33,31 +33,9 @@ module.exports = function ( reports ) {
 		`../../public/${ reportName }.html`
 	);
 
-	const colorsData = reports.filter( ( { audit } ) => 'colors' === audit );
-	const selectorsData = reports.filter(
-		( { audit } ) => 'selectors' === audit
-	);
-	const importantData = reports.filter(
-		( { audit } ) => 'important' === audit
-	);
-	const displayNoneData = reports.filter(
-		( { audit } ) => 'display-none' === audit
-	);
-
-   // Create array of audit IDs for jump menu
-   const idsForNav = [];
-   if( colorsData.length ) idsForNav.push( "colors" );
-   if( selectorsData.length ) idsForNav.push( "selectors" );
-   if( importantData.length ) idsForNav.push( "important" );
-   if( displayNoneData.length ) idsForNav.push( "display-none" );
-
 	const context = {
-      idsForNav,
-		colorsData,
-		displayNoneData,
-		importantData,
-		selectorsData,
 		title: `CSS Audit for ${ reportName }`,
+		reports,
 	};
 
 	twing

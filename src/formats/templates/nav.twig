@@ -1,9 +1,9 @@
-{% if data|length > 1 %}
-   <nav class="nav">
-      <ul>
-         {% for item in data %}
-            <li><a href="#{{item}}">{{item|capitalize}}</a></li>
-         {% endfor %}
-      </ul>
-   </nav>
+{% if reports|length > 1 %}
+	<nav class="nav">
+		<ul>
+		{% for report in reports %}
+			<li><a href="#{{report.audit}}">{{report.name}}</a></li>
+		 {% endfor %}
+		</ul>
+	</nav>
 {% endif %}
