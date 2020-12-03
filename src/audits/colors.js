@@ -38,6 +38,7 @@ module.exports = function ( files = [] ) {
 
 	return {
 		name: 'Colors',
+		template: 'colors',
 		results: [
 			{
 				id: 'unique',

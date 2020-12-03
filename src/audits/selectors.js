@@ -41,6 +41,7 @@ module.exports = function ( files = [] ) {
 
 	return {
 		name: 'Selectors',
+		template: 'selectors',
 		results: [
 			{
 				// This is not totally accurate, since nested `:not` selectors and keyframes are also counted.
