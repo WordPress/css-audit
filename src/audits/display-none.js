@@ -30,6 +30,7 @@ module.exports = function ( files = [] ) {
 	return {
 		audit: 'display-none',
 		name: 'Display: None',
+		template: 'selectors',
 		results: [
 			{
 				id: 'count',
