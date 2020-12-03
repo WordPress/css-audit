@@ -12,7 +12,7 @@ module.exports = function ( files = [], properties = [] ) {
 	}
 	// Skip out if no properties are passed in.
 	if ( ! properties.length ) {
-		return [];
+		return { results: [] };
 	}
 
 	files.forEach( ( { content } ) => {
@@ -31,30 +31,35 @@ module.exports = function ( files = [], properties = [] ) {
 	const uniqueValues = [ ...new Set( values ) ];
 	const valuesByCount = getValuesCount( values );
 
-	return [
-		{
-			id: 'count',
-			audit: 'property-values',
-			label: `Number of values for ${ properties.join( ', ' ) }`,
-			value: values.length,
-		},
-		{
-			id: 'count-unique',
-			audit: 'property-values',
-			label: `Number of unique values for ${ properties.join( ', ' ) }`,
-			value: uniqueValues.length,
-		},
-		{
-			id: 'top-10-values',
-			audit: 'property-values',
-			label: `Top 10 most-used values for ${ properties.join( ', ' ) }`,
-			value: valuesByCount.slice( 0, 10 ),
-		},
-		{
-			id: 'bottom-10-values',
-			audit: 'property-values',
-			label: `Top 10 least-used values for ${ properties.join( ', ' ) }`,
-			value: valuesByCount.slice( -10 ).reverse(),
-		},
-	];
+	return {
+		name: `Property Values: ${ properties.join( ', ' ) }`,
+		results: [
+			{
+				id: 'count',
+				label: `Number of values for ${ properties.join( ', ' ) }`,
+				value: values.length,
+			},
+			{
+				id: 'count-unique',
+				label: `Number of unique values for ${ properties.join(
+					', '
+				) }`,
+				value: uniqueValues.length,
+			},
+			{
+				id: 'top-10-values',
+				label: `Top 10 most-used values for ${ properties.join(
+					', '
+				) }`,
+				value: valuesByCount.slice( 0, 10 ),
+			},
+			{
+				id: 'bottom-10-values',
+				label: `Top 10 least-used values for ${ properties.join(
+					', '
+				) }`,
+				value: valuesByCount.slice( -10 ).reverse(),
+			},
+		],
+	};
 };
