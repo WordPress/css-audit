@@ -31,14 +31,16 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * @param {string} term
  */
 const getValue = ( config, term ) => {
-	for (const key in config) {
-		if ( config.hasOwnProperty(key) ) {
+	for ( const key in config ) {
+		if ( config.hasOwnProperty( key ) ) {
 			if ( term === key ) {
-				return 'undefined' === typeof config[term] ? true : config[term];
+				return 'undefined' === typeof config[ term ]
+					? true
+					: config[ term ];
 			}
 		}
-		if ( 'object' === typeof config[key] ) {
-			return getValueFromList( config[key], term );
+		if ( 'object' === typeof config[ key ] ) {
+			return getValueFromList( config[ key ], term );
 		}
 	}
 };
@@ -66,25 +68,23 @@ const getValue = ( config, term ) => {
  * @param {string} term
  */
 const getValueFromList = ( list, term ) => {
-
 	if ( 0 === list.length ) {
 		return false;
 	}
 
-	const currItem = list[0];
+	const currItem = list[ 0 ];
 
 	if ( term === currItem ) {
 		return true;
 	}
 
-	if ( term === currItem[0] ) {
-		return currItem[1];
+	if ( term === currItem[ 0 ] ) {
+		return currItem[ 1 ];
 	}
 
 	list.shift();
 
 	return getValueFromList( list, term );
-
 };
 
 /**
@@ -97,7 +97,6 @@ const getValueFromList = ( list, term ) => {
  */
 
 const getArg = ( arg ) => {
-
 	// Maybe we don't want to hard code this? Allow for other file names?
 	const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
 
@@ -108,7 +107,7 @@ const getArg = ( arg ) => {
 		}
 	}
 
-	return getValue( config, arg.substr(2) );
+	return getValue( config, arg.substr( 2 ) );
 };
 
 const getHelp = () => {
