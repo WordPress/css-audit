@@ -30,7 +30,7 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * @param {object} config
  * @param {string} term
  */
-const getValue = ( config, term ) => {
+const getValueFromConfig = ( config, term ) => {
 	for ( const key in config ) {
 		if ( config.hasOwnProperty( key ) ) {
 			if ( term === key ) {
@@ -40,7 +40,7 @@ const getValue = ( config, term ) => {
 			}
 		}
 		if ( 'object' === typeof config[ key ] ) {
-			return getValueFromList( config[ key ], term );
+			return getValueFromConfigList( config[ key ], term );
 		}
 	}
 };
@@ -54,12 +54,12 @@ const getValue = ( config, term ) => {
  * a nested array, return the second item of the array who's
  * first item is the term.
  *
- * getValueFromList(
+ * getValueFromConfigList(
  * 	[ 'term', [ 'term-2', 'value' ] ],
  * 	'term'
  * ) - returns true
  *
- * getValueFromList(
+ * getValueFromConfigList(
  * 	[ 'term', [ 'term-2', 'value' ] ],
  * 	'term-2'
  * ) - returns 'value'
@@ -67,7 +67,7 @@ const getValue = ( config, term ) => {
  * @param {array} list
  * @param {string} term
  */
-const getValueFromList = ( list, term ) => {
+const getValueFromConfigList = ( list, term ) => {
 	if ( 0 === list.length ) {
 		return false;
 	}
@@ -84,7 +84,7 @@ const getValueFromList = ( list, term ) => {
 
 	list.shift();
 
-	return getValueFromList( list, term );
+	return getValueFromConfigList( list, term );
 };
 
 /**
@@ -94,9 +94,10 @@ const getValueFromList = ( list, term ) => {
  * config if its not present.
  *
  * @param {string} arg
+ * @param {bool} cliOnly
  */
 
-const getArg = ( arg ) => {
+const getArg = ( arg, cliOnly = false ) => {
 	// Maybe we don't want to hard code this? Allow for other file names?
 	const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
 
@@ -107,7 +108,9 @@ const getArg = ( arg ) => {
 		}
 	}
 
-	return getValue( config, arg.substr( 2 ) );
+	if ( ! cliOnly ) {
+		return getValueFromConfig( config, arg.substr( 2 ) );
+	}
 };
 
 const getHelp = () => {
@@ -129,8 +132,8 @@ const getHelp = () => {
 module.exports = {
 	getArgsFromCLI,
 	getFileArgsFromCLI,
-	getValue,
-	getValueFromList,
+	getValueFromConfig,
+	getValueFromConfigList,
 	getArg,
 	getHelp,
 };

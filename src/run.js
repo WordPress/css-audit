@@ -2,40 +2,40 @@
  * Internal dependencies
  */
 const { formatReport } = require( './utils/format-report' );
-const { getArgFromCLI } = require( './utils/cli' );
+const { getArg } = require( './utils/cli' );
 
 const runAuditsFromCLIArgs = ( cssFiles ) => {
 	const audits = [];
-	const runAll = getArgFromCLI( '--all' );
-	const runRecommended = getArgFromCLI( '--recommended' );
+	const runAll = getArg( '--all' );
+	const runRecommended = getArg( '--recommended' );
 
-	if ( runAll || runRecommended || getArgFromCLI( '--colors' ) ) {
+	if ( runAll || runRecommended || getArg( '--colors' ) ) {
 		audits.push( require( './audits/colors' )( cssFiles ) );
 	}
-	if ( runAll || runRecommended || getArgFromCLI( '--important' ) ) {
+	if ( runAll || runRecommended || getArg( '--important' ) ) {
 		audits.push( require( './audits/important' )( cssFiles ) );
 	}
-	if ( runAll || getArgFromCLI( '--display-none' ) ) {
+	if ( runAll || getArg( '--display-none' ) ) {
 		audits.push( require( './audits/display-none' )( cssFiles ) );
 	}
-	if ( runAll || runRecommended || getArgFromCLI( '--selectors' ) ) {
+	if ( runAll || runRecommended || getArg( '--selectors' ) ) {
 		audits.push( require( './audits/selectors' )( cssFiles ) );
 	}
-	if ( runAll || runRecommended || getArgFromCLI( '--media-queries' ) ) {
+	if ( runAll || runRecommended || getArg( '--media-queries' ) ) {
 		audits.push( require( './audits/media-queries' )( cssFiles ) );
 	}
-	if ( !! getArgFromCLI( '--property-values' ) ) {
+	if ( !! getArg( '--property-values' ) ) {
 		audits.push(
 			require( './audits/property-values' )(
 				cssFiles,
-				getArgFromCLI( '--property-values' ).split( ',' )
+				getArg( '--property-values' ).split( ',' )
 			)
 		);
 	}
 
 	const reports = audits.flat().filter( Boolean );
 
-	const format = getArgFromCLI( '--format' );
+	const format = getArg( '--format' );
 
 	return formatReport( reports, format );
 };

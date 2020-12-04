@@ -1,7 +1,7 @@
 const {
 	getArg,
-	getValueFromList,
-	getValue,
+	getValueFromConfigList,
+	getValueFromConfig,
 	getArgsFromCLI,
 } = require( '../cli' );
 const path = require( 'path' );
@@ -13,16 +13,16 @@ describe( 'Get args', () => {
 			list: [ 'key1', [ 'key2', 'value in array' ] ],
 		};
 
-		expect( getValue( config, 'single' ) ).toBe( 'value' );
-		expect( getValue( config, 'key1' ) ).toBe( true );
-		expect( getValue( config, 'key2' ) ).toBe( 'value in array' );
+		expect( getValueFromConfig( config, 'single' ) ).toBe( 'value' );
+		expect( getValueFromConfig( config, 'key1' ) ).toBe( true );
+		expect( getValueFromConfig( config, 'key2' ) ).toBe( 'value in array' );
 	} );
 
 	it( 'should recursively get required values from an array values in the config', () => {
 		const testList = [ 'key1', 'key2', [ 'key3', 'value' ] ];
 
-		expect( getValueFromList( testList, 'key2' ) ).toBe( true );
-		expect( getValueFromList( testList, 'key3' ) ).toBe( 'value' );
+		expect( getValueFromConfigList( testList, 'key2' ) ).toBe( true );
+		expect( getValueFromConfigList( testList, 'key3' ) ).toBe( 'value' );
 	} );
 
 	it( 'should get args from the CLI', () => {

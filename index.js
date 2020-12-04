@@ -9,7 +9,7 @@ const path = require( 'path' );
  */
 const { runAudits } = require( './src/run' );
 const {
-	getArgFromCLI,
+	getArg,
 	getFileArgsFromCLI,
 	getHelp,
 } = require( './src/utils/cli' );
@@ -17,7 +17,7 @@ const {
 const config = require( './css-audit.config' );
 const input = getFileArgsFromCLI();
 
-if ( getArgFromCLI( '--help' ) || ! input.length ) {
+if ( getArg( '--help', true ) || ! input.length ) {
 	console.log( getHelp() ); // eslint-disable-line no-console
 	process.exit( 0 );
 }
