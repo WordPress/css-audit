@@ -39,6 +39,9 @@
       "jest": true
     }
   },
+  "jest": {
+    "modulePathIgnorePatterns": ["fixtures"]
+  },
   "prettier": "@wordpress/prettier-config",
   "devDependencies": {
     "handlebars": "4.7.6",
