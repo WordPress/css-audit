@@ -111,6 +111,8 @@ const getArg = ( arg, cliOnly = false ) => {
 	if ( ! cliOnly ) {
 		return getValueFromConfig( config, arg.substr( 2 ) );
 	}
+
+	return false;
 };
 
 const getHelp = () => {

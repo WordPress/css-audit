@@ -61,4 +61,11 @@ describe( 'Get args', () => {
 		expect( getArg( '--media-queries' ) ).toBe( true );
 		expect( getArg( '--property-values' ) ).toBe( 'font-size' );
 	} );
+
+	it( 'should return false if config is not supported for the arg', () => {
+		process.argv = [ '', '', '' ];
+		process.cwd = () => path.join( __dirname, 'fixtures' );
+
+		expect( getArg( '--help', true ) ).toBe( false );
+	} );
 } );
