@@ -1,18 +1,15 @@
 module.exports = {
-	"format": "cli-table",
-	"audits": [
+	format: 'cli-table',
+	audits: [
+		[ 'property-values', [ 'font-size' ] ],
 		[
-			"property-values",
-			[ "font-size" ]
-		],
-		[
-			"property-values",
+			'property-values',
 			[
-				"padding-top",
-				"padding-bottom",
-				"padding-left",
-				"padding-right"
-			]
-		]
-	]
+				'padding-top',
+				'padding-bottom',
+				'padding-left',
+				'padding-right',
+			],
+		],
+	],
 };
