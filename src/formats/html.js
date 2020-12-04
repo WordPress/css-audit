@@ -5,7 +5,7 @@ const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
 /**
  * Internal dependencies
  */
-const { getArgFromCLI } = require( '../utils/cli' );
+const { getArg } = require( '../utils/cli' );
 
 const templatePath = path.join( __dirname, './templates' );
 
@@ -26,7 +26,7 @@ module.exports = function ( reports ) {
 	const loader = new TwingLoaderFilesystem( templatePath );
 	const twing = new TwingEnvironment( loader, { debug: true } );
 
-	const reportName = getArgFromCLI( '--filename' );
+	const reportName = getArg( '--filename' );
 	const reportTemplate = getTemplateFile( reportName );
 	const reportDest = path.join(
 		__dirname,
