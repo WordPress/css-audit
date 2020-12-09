@@ -50,6 +50,7 @@ module.exports = function ( files = [] ) {
 	const nonWidthByCount = getValuesCount( nonWidthQueries );
 
 	return {
+		audit: 'media-queries',
 		name: 'Media Queries',
 		results: [
 			{

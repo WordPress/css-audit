@@ -32,6 +32,7 @@ module.exports = function ( files = [], properties = [] ) {
 	const valuesByCount = getValuesCount( values );
 
 	return {
+		audit: 'property-values',
 		name: `Property Values: ${ properties.join( ', ' ) }`,
 		results: [
 			{

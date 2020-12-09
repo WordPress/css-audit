@@ -37,6 +37,7 @@ module.exports = function ( files = [] ) {
 	];
 
 	return {
+		audit: 'colors',
 		name: 'Colors',
 		template: 'colors',
 		results: [

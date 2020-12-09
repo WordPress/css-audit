@@ -37,6 +37,7 @@ module.exports = function ( files = [] ) {
 		.sort( ( a, b ) => b.count - a.count );
 
 	return {
+		audit: 'important',
 		name: 'Important Overrides',
 		results: [
 			{

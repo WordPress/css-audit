@@ -40,6 +40,7 @@ module.exports = function ( files = [] ) {
 	const selectorsWithIds = selectors.filter( ( { a } ) => a > 0 );
 
 	return {
+		audit: 'selectors',
 		name: 'Selectors',
 		template: 'selectors',
 		results: [
