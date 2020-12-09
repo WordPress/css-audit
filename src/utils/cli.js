@@ -31,6 +31,7 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * @param {string} term
  */
 const getValueFromConfig = ( config, term ) => {
+
 	for ( const key in config ) {
 		if ( config.hasOwnProperty( key ) ) {
 			if ( term === key ) {
@@ -40,7 +41,9 @@ const getValueFromConfig = ( config, term ) => {
 			}
 		}
 		if ( 'object' === typeof config[ key ] ) {
-			return getValueFromConfigList( config[ key ], term );
+			const list = () => config[ key ];
+
+			return getValueFromConfigList( list, term );
 		}
 	}
 };
@@ -97,9 +100,9 @@ const getValueFromConfigList = ( list, term ) => {
  * @param {bool} cliOnly
  */
 
+const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
+
 const getArg = ( arg, cliOnly = false ) => {
-	// Maybe we don't want to hard code this? Allow for other file names?
-	const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
 
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
