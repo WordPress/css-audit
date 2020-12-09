@@ -7,16 +7,6 @@ const {
 const path = require( 'path' );
 
 describe( 'Get args', () => {
-	it( 'should get the value for simple args and arrays', () => {
-		const config = {
-			single: 'value',
-			list: [ 'key1', [ 'key2', 'value in array' ] ],
-		};
-
-		expect( getValueFromConfig( config, 'single' ) ).toBe( 'value' );
-		expect( getValueFromConfig( config, 'key1' ) ).toBe( true );
-		expect( getValueFromConfig( config, 'key2' ) ).toBe( 'value in array' );
-	} );
 
 	it( 'should recursively get required values from an array values in the config', () => {
 		const testList = [ 'key1', 'key2', [ 'key3', 'value' ] ];
@@ -53,18 +43,28 @@ describe( 'Get args', () => {
 		expect( getArg( '--property-values' ) ).toBe( 'padding,padding-top' );
 	} );
 
-	it( 'should fallback to a config file if CLI arg is not available', () => {
-		process.argv = [ '', '', '' ];
-		process.cwd = () => path.join( __dirname, 'fixtures' );
+	it( 'should return false if an arg does not exist in CLI or config', () => {
+		process.argv = [
+			'',
+			'',
+			'--media-queries',
+		];
 
+		expect( getArg( '--nonexistant' ) ).toBe( false );
+	})
+
+	it.only( 'should fallback to the config file if CLI arg is not available', () => {
+		process.argv = [ '', '', '' ];
+
+		// These values are in fixtures/css-audit.config.js
 		expect( getArg( '--format' ) ).toBe( 'json' );
+		expect( getArg( '--important' ) ).toBe( true );
 		expect( getArg( '--media-queries' ) ).toBe( true );
 		expect( getArg( '--property-values' ) ).toBe( 'font-size' );
 	} );
 
-	it( 'should return false if config is not supported for the arg', () => {
+	it( 'should return false if arg is CLI only', () => {
 		process.argv = [ '', '', '' ];
-		process.cwd = () => path.join( __dirname, 'fixtures' );
 
 		expect( getArg( '--help', true ) ).toBe( false );
 	} );

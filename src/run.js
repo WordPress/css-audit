@@ -4,7 +4,7 @@
 const { formatReport } = require( './utils/format-report' );
 const { getArg } = require( './utils/cli' );
 
-const runAuditsFromCLIArgs = ( cssFiles ) => {
+const runAudits = ( cssFiles ) => {
 	const audits = [];
 	const runAll = getArg( '--all' );
 	const runRecommended = getArg( '--recommended' );
@@ -38,37 +38,6 @@ const runAuditsFromCLIArgs = ( cssFiles ) => {
 	const format = getArg( '--format' );
 
 	return formatReport( reports, format );
-};
-
-const runAuditsFromConfig = ( config, cssFiles ) => {
-	const audits = [];
-	const { format } = config;
-
-	// TODO: Support value for config arg, and default to css-audit.config filename
-	config.audits.forEach( ( audit ) => {
-		if ( Array.isArray( audit ) ) {
-			const [ auditName, auditTerms ] = audit;
-
-			audits.push(
-				require( `./audits/${ auditName }` )( cssFiles, auditTerms )
-			);
-		} else {
-			audits.push( require( `./audits/${ audit }` )( cssFiles ) );
-		}
-	} );
-
-	const reports = audits.flat().filter( Boolean );
-
-	return formatReport( reports, format );
-};
-
-const runAudits = ( config = {}, cssFiles ) => {
-	const result =
-		0 < Object.keys( config ).length
-			? runAuditsFromConfig( config, cssFiles )
-			: runAuditsFromCLIArgs( cssFiles );
-
-	return result;
 };
 
 module.exports = {

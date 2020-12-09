@@ -32,20 +32,23 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  */
 const getValueFromConfig = ( config, term ) => {
 
-	for ( const key in config ) {
+	return Object.keys( config ).forEach( ( key ) => {
+
 		if ( config.hasOwnProperty( key ) ) {
 			if ( term === key ) {
+
 				return 'undefined' === typeof config[ term ]
 					? true
 					: config[ term ];
 			}
 		}
+
 		if ( 'object' === typeof config[ key ] ) {
-			const list = () => config[ key ];
+			const list = ( () => config[ key ] )();
 
 			return getValueFromConfigList( list, term );
 		}
-	}
+	});
 };
 
 /**
@@ -76,6 +79,7 @@ const getValueFromConfigList = ( list, term ) => {
 	}
 
 	const currItem = list[ 0 ];
+	const listCopy = ( () => list )();
 
 	if ( term === currItem ) {
 		return true;
@@ -85,9 +89,9 @@ const getValueFromConfigList = ( list, term ) => {
 		return currItem[ 1 ];
 	}
 
-	list.shift();
+	listCopy.shift();
 
-	return getValueFromConfigList( list, term );
+	return getValueFromConfigList( listCopy, term );
 };
 
 /**
@@ -100,9 +104,16 @@ const getValueFromConfigList = ( list, term ) => {
  * @param {bool} cliOnly
  */
 
-const config = require( path.join( process.cwd(), 'css-audit.config.js' ) );
 
 const getArg = ( arg, cliOnly = false ) => {
+
+	const configPath = () => {
+		if ( 'test' === process.env.NODE_ENV ) {
+			return path.join( __dirname, '/__tests__/fixtures/css-audit.config.js' );
+		}
+
+		return path.join( process.cwd(), 'css-audit.config.js' );
+	};
 
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
@@ -112,6 +123,15 @@ const getArg = ( arg, cliOnly = false ) => {
 	}
 
 	if ( ! cliOnly ) {
+
+		const config = ( () => {
+			try {
+				return require( configPath() ) ;
+			} catch {
+				console.error( 'Can\'t find config file. \nMake sure there is css-audit.config.js in the directory where you run this command.' );
+			}
+		} )();
+
 		return getValueFromConfig( config, arg.substr( 2 ) );
 	}
 

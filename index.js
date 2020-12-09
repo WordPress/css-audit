@@ -14,7 +14,6 @@ const {
 	getHelp,
 } = require( './src/utils/cli' );
 
-const config = require( './css-audit.config' );
 const input = getFileArgsFromCLI();
 
 if ( getArg( '--help', true ) || ! input.length ) {
@@ -38,6 +37,6 @@ input.forEach( ( file ) => {
 	} );
 } );
 
-const result = runAudits( config, cssFiles );
+const result = runAudits( cssFiles );
 
 console.log( result );
