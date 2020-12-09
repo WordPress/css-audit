@@ -2,7 +2,11 @@
    <nav class="nav">
       <ul>
          {% for item in data %}
-            <li><a href="#{{item}}">{{item|capitalize}}</a></li>
+            <li>
+               <a href="#{{item}}">
+                  <strong>{{item|capitalize}}</strong> audit
+               </a>
+            </li>
          {% endfor %}
       </ul>
    </nav>

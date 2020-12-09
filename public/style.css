@@ -1,92 +1,238 @@
-body {
-   font-family: sans-serif;
-   margin: 3rem;
+/*
+   Config
+*/
+:root {
+   --body-margin: 2rem;
+
+   /* Body colours */
+   --body-bg: #fff;
+   --body-fg: #111;
+
+   /* Nav colours */
+   --nav-bg: #eee;
+   --nav-bg-hover: #bbb;
+
+   /* Heading colours */
+   --h-fg: #222;
+   --h-bg: #eee;
+
+   /* <hr> */
+   --hr: 4px solid var(--h-bg);
+
+   /* ul li::marker */
+   --ul-marker: #1114;
+   --ul-marker-hover: #111f;
+
+   /* Border style for bordered components */
+   --component-border: 1px solid #aaa;
+
+   /* Consistent component margins */
+   --component-margin-sm: 1.5rem;
+   --component-margin-lg: 3rem;
+
+   /* Code boxes */
+   --code-bg: #eee;
+   --code-border: var(--component-border);
+
+   /* Colour chips */
+   --chip-text-shadow: #fff;
+   --chip-border: var(--component-border);
+   --count-bg: #eee;
+   --count-border: var(--component-border);
 }
 
-h2, h3 {
+/*
+   General
+*/
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: var(--body-bg);
+   color: var(--body-fg);
+   font-family: sans-serif;
+   margin: var(--body-margin);
+}
+
+h1, h2 {
    font-weight: normal;
 }
-
-h2.audit__title {
-   color: #666;
-   border-bottom: 2px solid #eee;
-}
-
-h2.audit__title strong {
-   color: #000;
+h1, h2, h3 {
+   color: var(--h-fg);
+   margin: 0 0 var(--component-margin-sm) 0;
 }
 
 hr {
    border: 0;
-   border-bottom: 4px solid #eee;
+   border-bottom: var(--hr);
 }
 
-/**
- * Nav
- */
+/*
+   Header, nav, `back to top` button
+*/
+.site__header {
+   align-items: baseline;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
 .nav {
-   margin-bottom: 6rem;
+   margin-bottom: var(--component-margin-sm);
 }
 
-.nav ul
-
-/**
- * Audits
- */
-.audit {
-   margin-bottom: 6rem;
-}
-
-code {
-   background-color: #eee;
-   border: 1px solid #aaa;
-   border-radius: 1px;
-   display: block;
-   padding: 0.5em;
-}
-
-code,
-.audit li {
-   font-family: monospace;
-}
-
-.audit ul {
+.nav ul {
+   display: flex;
+   justify-content: flex-start;
    list-style: none;
    padding: 0;
 }
 
-.audit li {
+.nav li {
+   margin-bottom: var(--component-margin-sm);
+   margin: 0 0.5em 0 0;
+}
+
+.nav a {
+   display: block;
+   height: 100%;
+}
+
+.nav a,
+.btn {
+   background-color: var(--nav-bg);
+   padding: 0.5em;
+   text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus,
+.btn:hover,
+.btn:focus {
+   background-color: var(--nav-bg-hover);
+   border: var(--component-border);
+}
+
+.btn {
+   font-size: 1.2em;
+   margin-bottom: var(--component-margin-sm);
+   text-align: center;
+}
+
+/*
+   Audits
+*/
+.audit__header {
+   align-items: baseline;
+   background-color: var(--h-bg);
+   border-bottom: 2px solid #fff6;
+   display: flex;
+   justify-content: space-between;
+   margin-right: calc(-1 * var(--body-margin));
+   margin-left: calc(-1 * var(--body-margin));
+   margin-bottom: var(--component-margin-sm);
+   padding: var(--component-margin-sm) var(--body-margin) 0;
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+.audit {
+   margin-bottom: var(--component-margin-lg);
+}
+
+/*
+   Code boxes
+*/
+code {
+   background-color: var(--code-bg);
+   border: var(--code-border);
+   border-radius: 1px;
    display: inline-block;
+   font-family: monospace;
+   font-size: 1.2em;
+   padding: 0.5em;
+}
+
+.audit ul,
+.audit ol {
+   padding: 0 0 0 2em;
+}
+
+.audit ol {
+   list-style-type: decimal-leading-zero;
+}
+
+.audit li {
    margin: 0 0 2em 0;
 }
 
-/**
- * Audit: Colors
- */
+.audit ol > li::marker {
+   color: var(--ul-marker);
+}
+
+.audit ol > li:hover::marker {
+   color: var(--ul-marker-hover);
+}
+
+/*
+   Audit: Colors
+*/
 .audit--colors ul {
    display: flex;
    flex-wrap: wrap;
    list-style: none;
 }
 
-.audit--colors li {
+.audit--colors .chip {
+   border: var(--chip-border);
    height: 3em;
    line-height: 3em;
+   margin: 0.5em;
    text-align: center;
-   width: 18em;
+   flex-basis: 18em;
+   flex-grow: 1;
+   background-color: var( --chip-bg-color );
+   font-family: monospace;
+   position: relative;
 }
 
-.audit--colors .box {
-   background-color: var( --box-bg-color );
-   display: inline-block;
-   font-family: monospace;
+/*
+   Improve visibility of colour chip
+   text on low contrast backgrounds
+*/
+.audit--colors .chip:hover {
+   font-weight: bold;
+   text-shadow: 0 0 1px var(--chip-text-shadow),
+      0 0 3px var(--chip-text-shadow),
+      0 0 5px var(--chip-text-shadow),
+      0 0 7px var(--chip-text-shadow);
 }
 
 .audit--colors .count {
-   background-color: #333;
+   left: -1em;
+   min-width: 3em;
+   padding: unset;
+   position: absolute;
+   top: -0.125em;
+}
+
+/*
+   Count component on colour chips
+*/
+.count {
+   background-color: var(--count-bg);
+   border: var(--count-border);
    border-radius: 50%;
    box-sizing: border-box;
-   color: white;
-   min-width: 2em;
-   padding: 0.25em;
+   color: var(--count-fg);
+   display: inline-block;
+   height: auto;
+   min-width: 2.3em;
+   padding: 0.5em;
+   text-align: center;
+
+   /* Counteract .chip:hover */
+   font-weight: normal;
+   text-shadow: none;
 }

@@ -1,26 +1,28 @@
 {% if data|length > 0 %}
    <section class="audit audit--colors" id="colors">
-   	<h2 class="audit__title"><strong>Colors</strong> audit</h2>
+      {% include 'audit-title.twig' with { title: 'Colors' } %}
 		{% for item in data %}
 			{% if item.value is iterable %}
 				<h3>{{item.label}}</h3>
 				<ul>
                {% for value in item.value %}
+
                   {% if value.name %}
-                     <li class="box" style="--box-bg-color:{{value.name}};">
-                        {{value.name}} <span class="count">{{value.count}}</span>
+                     <li class="chip" style="--chip-bg-color:{{value.name}};">
+                        <span class="count">{{value.count}}</span>
+                        {{value.name}}
                      </li>
                   {% else %}
-                     <li class="box" style="--box-bg-color:{{value}};">
+                     <li class="chip" style="--chip-bg-color:{{value}};">
                         {{value}}
                      </li>
                   {% endif %}
+
                {% endfor %}
             </ul>
 			{% else %}
 				<h3>{{ item.label}}: {{ item.value }}</h3>
 			{% endif %}
 		{% endfor %}
-      <hr /><a class="back-to-top" href="#top">Top</a>
    </section>
 {% endif %}

@@ -7,13 +7,19 @@
 	<title>{{title}}</title>
 </head>
 <body>
-   <h1 id="top">{{title}}</h1>
-   <hr />
-   {% include 'nav.twig' with { data: idsForNav } %}
-	{% include 'audits/colors.twig' with { data: colorsData } %}
+   <header class="site__header">
+      <h1 id="top">{{title}}</h1>
+      {% include 'nav.twig' with { data: idsForNav } %}
+	</header>
+   {% include 'audits/colors.twig' with { data: colorsData } %}
 	{% include 'audits/display-none.twig' with { data: displayNoneData } %}
-	{% include 'audits/important.twig' with { data: importantData } %}
+   {% include 'audits/important.twig' with { data: importantData } %}
 	{% include 'audits/selectors.twig' with { data: selectorsData } %}
+
+   {# Uncomment this to see the reports object - useful for debugging. #}
+   {# <pre>
+      <code>{{dump(reports)}}</code>
+   </pre> #}
 
 </body>
 </html>

@@ -1,25 +1,31 @@
 {% if data|length > 0 %}
    <section class="audit audit--selectors" id="selectors">
-   	<h2 class="audit__title"><strong>Selectors</strong> audit</h2>
+   	{% include 'audit-title.twig' with { title: 'Selectors' } %}
 		{% for item in data %}
 			{% if item.value is iterable %}
 				<h3>{{item.label}}</h3>
-				<ul>
-					{% for value in item.value %}
+				<ol>
+   				{% for value in item.value %}
 
-						{% if value.name %}
-							<li>{{value.name}} - {{value.count}}</li>
-						{% endif %}
+   					{% if value.name %}
+   						<li>
+                        <span class="count">{{value.count}}</span>
+                        <em>{{value.name}}</em>
+                     </li>
+   					{% endif %}
 
-						{% if value.file %}
-							<li><code>{{value.selector}}</code><br>in {{value.file}}</li>
-						{% endif %}
-					{% endfor %}
-				</ul>
+               	{% if value.file %}
+   						<li>
+                        <code>{{value.selector}}</code>
+                        <br /><em>{{value.file}}</em>
+                     </li>
+   					{% endif %}
+
+               {% endfor %}
+				</ol>
 			{% else %}
 				<h3>{{item.label}}: {{item.value}}</h3>
 			{% endif %}
 		{% endfor %}
-      <hr /><a class="back-to-top" href="#top">Top</a>
    </section>
 {% endif %}
