@@ -18,38 +18,6 @@ const getArgsFromCLI = ( excludePrefixes ) => {
 
 const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
 
-/**
- * Get the value of a term from the configuration object.
- *
- * For each entry in configuration:
- * If is a key for the term, return its value.
- * If the term is present in the list of audits, return true.
- * If the term is in an array in the list of audits, return
- * the second item in the array, which will be the value.
- *
- * @param {object} config
- * @param {string} term
- */
-const getValueFromConfig = ( config, term ) => {
-
-	return Object.keys( config ).forEach( ( key ) => {
-
-		if ( config.hasOwnProperty( key ) ) {
-			if ( term === key ) {
-
-				return 'undefined' === typeof config[ term ]
-					? true
-					: config[ term ];
-			}
-		}
-
-		if ( 'object' === typeof config[ key ] ) {
-			const list = ( () => config[ key ] )();
-
-			return getValueFromConfigList( list, term );
-		}
-	});
-};
 
 /**
  * Get the config value for audit types that require an argument,
@@ -104,19 +72,20 @@ const getValueFromConfigList = ( list, term ) => {
  * @param {bool} cliOnly
  */
 
+// TODO: we can use cosmiconfig for this
+const configPath = () => {
+	if ( 'test' === process.env.NODE_ENV ) {
+		return path.join( __dirname, '/__tests__/fixtures/css-audit.config.js' );
+	}
+
+	return path.join( process.cwd(), 'css-audit.config.js' );
+};
 
 const getArg = ( arg, cliOnly = false ) => {
 
-	const configPath = () => {
-		if ( 'test' === process.env.NODE_ENV ) {
-			return path.join( __dirname, '/__tests__/fixtures/css-audit.config.js' );
-		}
-
-		return path.join( process.cwd(), 'css-audit.config.js' );
-	};
-
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
+
 		if ( name === arg ) {
 			return 'undefined' === typeof value ? true : value || null;
 		}
@@ -132,10 +101,38 @@ const getArg = ( arg, cliOnly = false ) => {
 			}
 		} )();
 
-		return getValueFromConfig( config, arg.substr( 2 ) );
+		const term = arg.substr( 2 );
+
+		if ( config.hasOwnProperty( term ) ) {
+			return 'undefined' === typeof config[term] ? true : config[term] || null;
+		}
+
+		let result = false;
+
+		if ( config.hasOwnProperty( 'audits' ) ) {
+
+			for (let index = 0; index < config['audits'].length; index++) {
+				const audit = config['audits'][index];
+
+				// It is an array
+				if ( 'object' === typeof audit ) {
+					const list = ( () => audit )();
+
+					result = getValueFromConfigList( list, term );
+					break;
+				}
+
+				if ( term === audit ) {
+					result = true;
+					break;
+				}
+			}
+
+		}
+
+		return result;
 	}
 
-	return false;
 };
 
 const getHelp = () => {
@@ -157,7 +154,6 @@ const getHelp = () => {
 module.exports = {
 	getArgsFromCLI,
 	getFileArgsFromCLI,
-	getValueFromConfig,
 	getValueFromConfigList,
 	getArg,
 	getHelp,
