@@ -1,5 +1,3 @@
-const { truncateSync } = require( 'fs-extra' );
-
 module.exports = {
 	format: 'html',
 	filename: 'wp-admin',
