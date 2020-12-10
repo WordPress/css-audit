@@ -52,20 +52,6 @@ describe( 'Run Audits from Config', () => {
 		process.argv = [ '', '', '' ];
 	});
 
-	it.skip( 'should get args from config', () => {
-		const config = {
-			format: 'json',
-			audits: [
-				'media-queries',
-				'important',
-				['property-values', 'font-size,font-family']
-				['property-values', 'margin,padding']
-			]
-		};
-
-		// const expectedArgs =
-	});
-
 	it( 'should return the value for config keys', () => {
 		expect( getArg( '--format' ) ).toBe( 'json' );
 	});

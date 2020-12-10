@@ -24,11 +24,24 @@ const runAudits = ( cssFiles ) => {
 	if ( runAll || runRecommended || getArg( '--media-queries' ) ) {
 		audits.push( require( './audits/media-queries' )( cssFiles ) );
 	}
-	if ( !! getArg( '--property-values' ) ) {
+
+	const propertyValues = getArg( '--property-values' );
+
+	// Multiple property value arguments are only supported in config.
+	if ( Array.isArray( propertyValues ) && propertyValues.length ) {
+		propertyValues.forEach( ( values ) => {
+			audits.push(
+				require( './audits/property-values' )(
+					cssFiles,
+					values.split( ',' )
+				)
+			);
+		})
+	} else {
 		audits.push(
 			require( './audits/property-values' )(
 				cssFiles,
-				getArg( '--property-values' ).split( ',' )
+				propertyValues.split( ',' )
 			)
 		);
 	}
@@ -36,6 +49,11 @@ const runAudits = ( cssFiles ) => {
 	const reports = audits.flat().filter( Boolean );
 
 	const format = getArg( '--format' );
+
+	if ( 'html' === format && ! getArg( '--filename' ) ) {
+		console.error( 'Could not run audits. \nAn argument for filename must be provided for the HTML format.' );
+		return;
+	}
 
 	return formatReport( reports, format );
 };
