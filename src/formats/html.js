@@ -43,20 +43,25 @@ module.exports = function ( reports ) {
 	const displayNoneData = reports.filter(
 		( { audit } ) => 'display-none' === audit
 	);
+	const propertyValuesData = reports.filter(
+		( { audit } ) => 'property-values' === audit
+	);
 
-   // Create array of audit IDs for jump menu
-   const idsForNav = [];
-   if( colorsData.length ) idsForNav.push( "colors" );
-   if( selectorsData.length ) idsForNav.push( "selectors" );
-   if( importantData.length ) idsForNav.push( "important" );
-   if( displayNoneData.length ) idsForNav.push( "display-none" );
+	// Create array of audit IDs for jump menu
+	const idsForNav = [];
+	if( colorsData.length ) idsForNav.push( "colors" );
+	if( selectorsData.length ) idsForNav.push( "selectors" );
+	if( importantData.length ) idsForNav.push( "important" );
+	if( displayNoneData.length ) idsForNav.push( "display-none" );
+	if( propertyValuesData.length ) idsForNav.push( "property-values" );
 
 	const context = {
-      idsForNav,
+		idsForNav,
 		colorsData,
 		displayNoneData,
 		importantData,
 		selectorsData,
+		propertyValuesData,
 		title: `CSS Audit for ${ reportName }`,
 	};
 
