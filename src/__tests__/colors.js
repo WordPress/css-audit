@@ -13,7 +13,7 @@ describe( 'Audit: Colors', () => {
 		expect( value ).toBe( 0 );
 	} );
 
-	it.skip( 'should ignore colors in non-color properties', () => {
+	it( 'should ignore colors in non-color properties', () => {
 		const files = [
 			{
 				name: 'a.css',
