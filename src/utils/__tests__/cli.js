@@ -1,6 +1,5 @@
 const {
 	getArg,
-	getValueFromConfigList,
 	getArgsFromCLI,
 } = require( '../cli' );
 const path = require( 'path' );
@@ -13,12 +12,14 @@ describe( 'Run Audits from CLI', () => {
 			'',
 			'--format=html',
 			'--property-values=padding,padding-top',
+			'--property-values=font-size,font-weight',
 			'--media-queries',
 		];
 
 		expect( getArgsFromCLI() ).toEqual( [
 			'--format=html',
 			'--property-values=padding,padding-top',
+			'--property-values=font-size,font-weight',
 			'--media-queries',
 		] );
 	} );
@@ -51,12 +52,19 @@ describe( 'Run Audits from Config', () => {
 		process.argv = [ '', '', '' ];
 	});
 
-	it( 'should recursively get required values from an array values in the config', () => {
-		const testList = [ 'key1', 'key2', [ 'key3', 'value' ] ];
+	it.skip( 'should get args from config', () => {
+		const config = {
+			format: 'json',
+			audits: [
+				'media-queries',
+				'important',
+				['property-values', 'font-size,font-family']
+				['property-values', 'margin,padding']
+			]
+		};
 
-		expect( getValueFromConfigList( testList, 'key2' ) ).toBe( true );
-		expect( getValueFromConfigList( testList, 'key3' ) ).toBe( 'value' );
-	} );
+		// const expectedArgs =
+	});
 
 	it( 'should return the value for config keys', () => {
 		expect( getArg( '--format' ) ).toBe( 'json' );
@@ -66,8 +74,8 @@ describe( 'Run Audits from Config', () => {
 		expect( getArg( '--important' ) ).toBe( true );
 	} );
 
-	it( 'should return the value for property-values in an array nested in the config audits array', () => {
-		expect( getArg( '--property-values' ) ).toBe( 'font-size' );
+	it( 'should return an array of values for each property-value audits', () => {
+		expect( getArg( '--property-values' ) ).toStrictEqual( ['font-size', 'padding-top,padding-bottom'] );
 	} );
 
 	it( 'should return false if arg is CLI only', () => {

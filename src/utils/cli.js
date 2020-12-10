@@ -18,50 +18,6 @@ const getArgsFromCLI = ( excludePrefixes ) => {
 
 const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
 
-
-/**
- * Get the config value for audit types that require an argument,
- * e.g. property-values.
- *
- * Given an array and a term, return true if the term is in
- * the array, and if the term is not in the array and there is
- * a nested array, return the second item of the array who's
- * first item is the term.
- *
- * getValueFromConfigList(
- * 	[ 'term', [ 'term-2', 'value' ] ],
- * 	'term'
- * ) - returns true
- *
- * getValueFromConfigList(
- * 	[ 'term', [ 'term-2', 'value' ] ],
- * 	'term-2'
- * ) - returns 'value'
- *
- * @param {array} list
- * @param {string} term
- */
-const getValueFromConfigList = ( list, term ) => {
-	if ( 0 === list.length ) {
-		return false;
-	}
-
-	const currItem = list[ 0 ];
-	const listCopy = ( () => list )();
-
-	if ( term === currItem ) {
-		return true;
-	}
-
-	if ( term === currItem[ 0 ] ) {
-		return currItem[ 1 ];
-	}
-
-	listCopy.shift();
-
-	return getValueFromConfigList( listCopy, term );
-};
-
 /**
  * Get the argument required for running the audit,
  *
@@ -91,48 +47,53 @@ const getArg = ( arg, cliOnly = false ) => {
 		}
 	}
 
-	if ( ! cliOnly ) {
-
-		const config = ( () => {
-			try {
-				return require( configPath() ) ;
-			} catch {
-				console.error( 'Can\'t find config file. \nMake sure there is css-audit.config.js in the directory where you run this command.' );
-			}
-		} )();
-
-		const term = arg.substr( 2 );
-
-		if ( config.hasOwnProperty( term ) ) {
-			return 'undefined' === typeof config[term] ? true : config[term] || null;
-		}
-
-		let result = false;
-
-		if ( config.hasOwnProperty( 'audits' ) ) {
-
-			for (let index = 0; index < config['audits'].length; index++) {
-				const audit = config['audits'][index];
-
-				// It is an array
-				if ( 'object' === typeof audit ) {
-					const list = ( () => audit )();
-
-					result = getValueFromConfigList( list, term );
-					break;
-				}
-
-				if ( term === audit ) {
-					result = true;
-					break;
-				}
-			}
-
-		}
-
-		return result;
+	if ( true === cliOnly ) {
+		return false;
 	}
 
+	// TODO: replace with cosmiconfig.
+	const config = ( () => {
+		try {
+			return require( configPath() ) ;
+		} catch {
+			console.error( 'Can\'t find config file. \nMake sure there is css-audit.config.js in the directory where you run this command.' );
+		}
+	} )();
+
+	const term = arg.substr( 2 );
+
+	// This is a simple property: value arg e.g. format: json
+	const argIsNotAnAudit = config.hasOwnProperty( term );
+
+	if ( argIsNotAnAudit ) {
+		return 'undefined' === typeof config[term] ? true : config[term] || null;
+	}
+
+	if ( config.hasOwnProperty( 'audits' ) ) {
+
+		// Separate the basic audits from property-values.
+		const basicAudits = config['audits'].filter( ( audit ) => term === audit && 'string' === typeof audit );
+
+		// Create an array of values of the property-value audits.
+		const propertyValueAudits = config['audits'].filter( ( audit ) => 'object' === typeof audit && term === audit[0]);
+		const propertyValueValues = ( () => {
+			if ( propertyValueAudits.length > 0 ) {
+				return propertyValueAudits.flat().filter( item => 'property-values' !== item );
+			}
+			return [];
+		})();
+
+		if ( 'undefined' !== basicAudits[0] && term === basicAudits[0] ) {
+			return true;
+		}
+
+		if ( propertyValueValues.length > 0 ) {
+			return propertyValueValues;
+		}
+	}
+
+	// The argument cannot be retrieved from CLI or config.
+	return false;
 };
 
 const getHelp = () => {
@@ -154,7 +115,6 @@ const getHelp = () => {
 module.exports = {
 	getArgsFromCLI,
 	getFileArgsFromCLI,
-	getValueFromConfigList,
 	getArg,
 	getHelp,
 };
