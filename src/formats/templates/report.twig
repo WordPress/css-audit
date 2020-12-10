@@ -5,6 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
 	<title>{{title}}</title>
+   <script>
+      document.addEventListener( 'DOMContentLoaded', () => {
+
+         // Set darkmode class if user specified
+         if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all'){
+            document.body.classList.add('darkmode');
+         }
+
+         // Add darkmode switcher
+         const a = document.createElement('a'),
+            li = document.createElement('li');
+
+         li.classList.add('darkmode-switch');
+         a.innerText = 'Darkmode';
+         a.addEventListener( 'click', () => document.body.classList.toggle('darkmode'));
+         li.appendChild(a);
+         document.querySelector('.nav ul').appendChild(li);
+      });
+   </script>
 </head>
 <body>
    <header class="site__header">
