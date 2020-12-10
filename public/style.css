@@ -48,6 +48,14 @@
    box-sizing: border-box;
 }
 
+html {
+   scroll-behavior: smooth;
+
+   @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+   }
+}
+
 body {
    background-color: var(--body-bg);
    color: var(--body-fg);
