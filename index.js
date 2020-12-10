@@ -8,11 +8,7 @@ const path = require( 'path' );
  * Internal dependencies
  */
 const { runAudits } = require( './src/run' );
-const {
-	getArg,
-	getFileArgsFromCLI,
-	getHelp,
-} = require( './src/utils/cli' );
+const { getArg, getFileArgsFromCLI, getHelp } = require( './src/utils/cli' );
 
 const input = getFileArgsFromCLI();
 

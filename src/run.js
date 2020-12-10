@@ -36,7 +36,7 @@ const runAudits = ( cssFiles ) => {
 					values.split( ',' )
 				)
 			);
-		})
+		} );
 	} else {
 		audits.push(
 			require( './audits/property-values' )(
@@ -51,7 +51,9 @@ const runAudits = ( cssFiles ) => {
 	const format = getArg( '--format' );
 
 	if ( 'html' === format && ! getArg( '--filename' ) ) {
-		console.error( 'Could not run audits. \nAn argument for filename must be provided for the HTML format.' );
+		console.error(
+			'Could not run audits. \nAn argument for filename must be provided for the HTML format.'
+		);
 		return;
 	}
 

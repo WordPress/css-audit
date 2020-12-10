@@ -31,14 +31,16 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
 // TODO: we can use cosmiconfig for this
 const configPath = () => {
 	if ( 'test' === process.env.NODE_ENV ) {
-		return path.join( __dirname, '/__tests__/fixtures/css-audit.config.js' );
+		return path.join(
+			__dirname,
+			'/__tests__/fixtures/css-audit.config.js'
+		);
 	}
 
 	return path.join( process.cwd(), 'css-audit.config.js' );
 };
 
 const getArg = ( arg, cliOnly = false ) => {
-
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
 
@@ -54,9 +56,11 @@ const getArg = ( arg, cliOnly = false ) => {
 	// TODO: replace with cosmiconfig.
 	const config = ( () => {
 		try {
-			return require( configPath() ) ;
+			return require( configPath() );
 		} catch {
-			console.error( 'Can\'t find config file. \nMake sure there is css-audit.config.js in the directory where you run this command.' );
+			console.error(
+				"Can't find config file. \nMake sure there is css-audit.config.js in the directory where you run this command."
+			);
 		}
 	} )();
 
@@ -66,24 +70,31 @@ const getArg = ( arg, cliOnly = false ) => {
 	const argIsNotAnAudit = config.hasOwnProperty( term );
 
 	if ( argIsNotAnAudit ) {
-		return 'undefined' === typeof config[term] ? true : config[term] || null;
+		return 'undefined' === typeof config[ term ]
+			? true
+			: config[ term ] || null;
 	}
 
 	if ( config.hasOwnProperty( 'audits' ) ) {
-
 		// Separate the basic audits from property-values.
-		const basicAudits = config['audits'].filter( ( audit ) => term === audit && 'string' === typeof audit );
+		const basicAudits = config[ 'audits' ].filter(
+			( audit ) => term === audit && 'string' === typeof audit
+		);
 
 		// Create an array of values of the property-value audits.
-		const propertyValueAudits = config['audits'].filter( ( audit ) => 'object' === typeof audit && term === audit[0]);
+		const propertyValueAudits = config[ 'audits' ].filter(
+			( audit ) => 'object' === typeof audit && term === audit[ 0 ]
+		);
 		const propertyValueValues = ( () => {
 			if ( propertyValueAudits.length > 0 ) {
-				return propertyValueAudits.flat().filter( item => 'property-values' !== item );
+				return propertyValueAudits
+					.flat()
+					.filter( ( item ) => 'property-values' !== item );
 			}
 			return [];
-		})();
+		} )();
 
-		if ( 'undefined' !== basicAudits[0] && term === basicAudits[0] ) {
+		if ( 'undefined' !== basicAudits[ 0 ] && term === basicAudits[ 0 ] ) {
 			return true;
 		}
 

@@ -1,4 +1,4 @@
-const { truncateSync } = require("fs-extra");
+const { truncateSync } = require( 'fs-extra' );
 
 module.exports = {
 	format: 'html',
@@ -6,6 +6,9 @@ module.exports = {
 	all: true,
 	audits: [
 		[ 'property-values', 'font-size,font-family,font-weight' ],
-		[ 'property-values', 'padding-top,padding-bottom,padding-left,padding-right' ],
+		[
+			'property-values',
+			'padding-top,padding-bottom,padding-left,padding-right',
+		],
 	],
 };

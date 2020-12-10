@@ -49,11 +49,11 @@ module.exports = function ( reports ) {
 
 	// Create array of audit IDs for jump menu
 	const idsForNav = [];
-	if( colorsData.length ) idsForNav.push( "colors" );
-	if( selectorsData.length ) idsForNav.push( "selectors" );
-	if( importantData.length ) idsForNav.push( "important" );
-	if( displayNoneData.length ) idsForNav.push( "display-none" );
-	if( propertyValuesData.length ) idsForNav.push( "property-values" );
+	if ( colorsData.length ) idsForNav.push( 'colors' );
+	if ( selectorsData.length ) idsForNav.push( 'selectors' );
+	if ( importantData.length ) idsForNav.push( 'important' );
+	if ( displayNoneData.length ) idsForNav.push( 'display-none' );
+	if ( propertyValuesData.length ) idsForNav.push( 'property-values' );
 
 	const context = {
 		idsForNav,
