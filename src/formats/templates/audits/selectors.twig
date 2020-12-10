@@ -1,6 +1,6 @@
-<section>
-	{% if data is iterable %}
-		<h2>{{data[0].audit|capitalize}}</h2>
+{% if data|length > 0 %}
+   <section class="audit audit--selectors" id="selectors">
+   	<h2 class="audit__title"><strong>Selectors</strong> audit</h2>
 		{% for item in data %}
 			{% if item.value is iterable %}
 				<h3>{{item.label}}</h3>
@@ -20,5 +20,6 @@
 				<h3>{{item.label}}: {{item.value}}</h3>
 			{% endif %}
 		{% endfor %}
-	{% endif %}
-</section>
+      <hr /><a class="back-to-top" href="#top">Top</a>
+   </section>
+{% endif %}

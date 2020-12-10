@@ -51,11 +51,11 @@ You can download the source files of CSS (not minified or RTL'd) from the svn re
 
 ```
 mkdir v5.5
-svn export https://develop.svn.wordpress.org/tags/5.5/src/wp-admin/css --depth files v5.5/admin
-svn export https://develop.svn.wordpress.org/tags/5.5/src/wp-admin/css --depth files v5.5/includes
+svn export https://develop.svn.wordpress.org/branches/5.5/src/wp-admin/css --depth files v5.5/admin
+svn export https://develop.svn.wordpress.org/branches/5.5/src/wp-admin/css --depth files v5.5/includes
 ```
 
-If you want to run this on trunk (code currently in development), you can swap out `tags/5.5` for `trunk`. You could also swap the `5.5` for `5.4`, etc. Example:
+If you want to run this on trunk (code currently in development), you can swap out `branches/5.5` for `trunk`. You could also swap the `5.5` for `5.4`, etc. Example:
 
 ```
 mkdir trunk
@@ -105,7 +105,7 @@ Use this command to get just the css files from SVN:
 
 	svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files
 
-For other version comparisons, `/trunk/` could be replaced with `/tags/5.3/`.
+For other version comparisons, `/trunk/` could be replaced with `/branches/5.3/`.
 
 **Other notes…**
 

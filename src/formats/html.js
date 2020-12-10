@@ -44,11 +44,19 @@ module.exports = function ( reports ) {
 		( { audit } ) => 'display-none' === audit
 	);
 
+   // Create array of audit IDs for jump menu
+   const idsForNav = [];
+   if( colorsData.length ) idsForNav.push( "colors" );
+   if( selectorsData.length ) idsForNav.push( "selectors" );
+   if( importantData.length ) idsForNav.push( "important" );
+   if( displayNoneData.length ) idsForNav.push( "display-none" );
+
 	const context = {
+      idsForNav,
 		colorsData,
-		selectorsData,
 		displayNoneData,
 		importantData,
+		selectorsData,
 		title: `CSS Audit for ${ reportName }`,
 	};
 
