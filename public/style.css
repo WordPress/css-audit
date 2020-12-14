@@ -307,7 +307,7 @@ code {
 }
 .darkmode-switch a::before {
    bottom: 0;
-   content: "🌛";
+   content: "🌞";
    font-size: 1.8rem;
    left: 0;
    position: absolute;
@@ -317,5 +317,5 @@ code {
 }
 
 body.darkmode .darkmode-switch a::before {
-   content: "🌞";
+   content: "🌛";
 }
