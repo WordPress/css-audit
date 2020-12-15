@@ -1,24 +1,25 @@
-{% if data|length > 0 %}
-   <section class="audit audit--important" id="important">
-      <h2 class="audit__title"><strong>!important</strong> audit</h2>
-      {% for item in data %}
-         {% if item.value is iterable %}
-            <h3>{{item.label}}</h3>
-            <ul>
-            {% for value in item.value %}
-               {% if value.name %}
-                  <li>{{value.name}} - {{value.count}}</li>
-               {% endif %}
+<section class="audit audit--{{data.template}}" id="{{data.audit}}">
+	<h2 class="audit__title">{{data.name}}</h2>
 
-               {% if value.file %}
-                  <li>{{value.file}} - {{value.selector}}</li>
-               {% endif %}
-            {% endfor %}
-            </ul>
-         {% else %}
-            <h3>{{item.label}}: {{item.value}}</h3>
-         {% endif %}
-      {% endfor %}
-      <hr /><a class="back-to-top" href="#top">Top</a>
-   </section>
-{% endif %}
+	{% for item in data %}
+		{% if item.value is iterable %}
+			<h3>{{item.label}}</h3>
+			<ul>
+			{% for value in item.value %}
+				{% if value.name %}
+					<li>{{value.name}} - {{value.count}}</li>
+				{% endif %}
+
+				{% if value.file %}
+					<li>{{value.file}} - {{value.selector}}</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		{% else %}
+			<h3>{{item.label}}: {{item.value}}</h3>
+		{% endif %}
+	{% endfor %}
+
+	<hr />
+	<a class="back-to-top" href="#top">Top</a>
+</section>

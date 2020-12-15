@@ -5,5 +5,5 @@
  * @return {string} reports as a JSON string.
  */
 module.exports = function ( reports ) {
-	return JSON.stringify( reports );
+	return JSON.stringify( reports.map( ( { results } ) => results ) );
 };

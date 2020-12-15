@@ -8,7 +8,7 @@ describe( 'Audit: Property Values', () => {
 				content: `body { font-size: 1em; line-height: 1.6; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		expect( results ).toHaveLength( 0 );
 	} );
 
@@ -19,7 +19,7 @@ describe( 'Audit: Property Values', () => {
 				content: `body { font-size: 1em; line-height: 1.6; }`,
 			},
 		];
-		const results = audit( files, [ 'padding' ] );
+		const { results } = audit( files, [ 'padding' ] );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 0 );
 	} );
@@ -37,7 +37,7 @@ describe( 'Audit: Property Values', () => {
 				.spacy-box-small { padding: 10px; }`,
 			},
 		];
-		const results = audit( files, [ 'padding' ] );
+		const { results } = audit( files, [ 'padding' ] );
 		const { value: count } = results.find( ( { id } ) => 'count' === id );
 		expect( count ).toBe( 4 );
 
