@@ -7,16 +7,22 @@
 			<ul>
 			{% for value in item.value %}
 				{% if value.name %}
-					<li>{{value.name}} - {{value.count}}</li>
+					<li>
+						<span class="count">{{value.count}}</span>
+						<em>{{value.name}}</em>
+					</li>
 				{% endif %}
 
 				{% if value.file %}
-					<li>{{value.file}} - {{value.selector}}</li>
+					<li>
+						<code>{{value.selector}}</code><br />
+						<em>{{value.file}}</em>
+					</li>
 				{% endif %}
 			{% endfor %}
 			</ul>
 		{% else %}
-			<h3>{{item.label}}: {{item.value}}</h3>
+			<h3>{{item.label}}: <span class="count">{{item.value}}</span></h3>
 		{% endif %}
 	{% endfor %}
 </section>
