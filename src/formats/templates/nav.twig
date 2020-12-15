@@ -1,13 +1,16 @@
 {% if reports|length > 1 %}
-   <nav class="nav">
-      <ul>
-         {% for report in reports %}
-            <li>
-               <a href="#{{item}}">
-                  <strong>{{report.name}}</strong> audit
-               </a>
-            </li>
-         {% endfor %}
-      </ul>
-   </nav>
+	<nav class="nav">
+		<ul>
+		{% for report in reports %}
+			<li>
+				<a href="#{{report.audit}}">
+					<strong>{{report.name}}</strong> audit
+				</a>
+			</li>
+		{% endfor %}
+			<li>
+				<button class="button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
+			</li>
+		</ul>
+	</nav>
 {% endif %}
