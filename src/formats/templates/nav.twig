@@ -2,8 +2,15 @@
 	<nav class="nav">
 		<ul>
 		{% for report in reports %}
-			<li><a href="#{{report.audit}}">{{report.name}}</a></li>
-		 {% endfor %}
+			<li>
+				<a href="#{{report.audit}}">
+					<strong>{{report.name}}</strong> audit
+				</a>
+			</li>
+		{% endfor %}
+			<li>
+				<button class="button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
+			</li>
 		</ul>
 	</nav>
 {% endif %}
