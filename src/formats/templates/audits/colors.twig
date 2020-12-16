@@ -6,7 +6,6 @@
 			<h3>{{item.label}}</h3>
 			<ul>
 			{% for value in item.value %}
-
 				{% if value.name %}
 					<li class="chip" style="--chip-bg-color:{{value.name}};">
 						<span class="count">{{value.count}}</span>
@@ -17,7 +16,6 @@
 						{{value}}
 					</li>
 				{% endif %}
-
 			{% endfor %}
 			</ul>
 		{% else %}

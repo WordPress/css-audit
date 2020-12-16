@@ -171,6 +171,11 @@ hr {
 	background-color: var(--nav-bg-hover);
 }
 
+.nav a:focus,
+.btn:focus {
+	outline: 4px dashed var(--nav-fg);
+}
+
 .btn {
 	font-size: 1.2em;
 	margin-bottom: var(--component-margin-sm);
@@ -211,10 +216,41 @@ code {
 	padding: 0.5em;
 }
 
+/*
+ * Audit lists
+ */
 .audit ul,
 .audit ol {
-.audit--colors ul {
+	padding: 0 0 0 2em;
 }
+
+.audit ol {
+	list-style-type: decimal-leading-zero;
+}
+
+.audit li {
+	margin: 0 0 2em 0;
+}
+
+.audit ol > li::marker {
+	color: var(--ul-marker);
+}
+
+.audit ol > li:hover::marker {
+	color: var(--ul-marker-hover);
+}
+
+/*
+	Audit: Colors
+*/
+.audit--colors ul {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: monospace;
+	font-size: 1.2em;
+	list-style: none;
+	padding: 0;
+ }
 
 .audit--colors .chip {
 	border: var(--chip-border);
@@ -275,11 +311,13 @@ code {
 .button__theme-toggle {
 	background: transparent;
 	border: none;
+	cursor: pointer;
+	margin-bottom: 0;
 }
 
 .button__theme-toggle::before {
 	content: "🌛";
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 }
 
 body.is-dark-mode .button__theme-toggle::before {
