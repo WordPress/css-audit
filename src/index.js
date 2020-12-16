@@ -61,6 +61,6 @@ if ( !! getArgFromCLI( '--property-values' ) ) {
 	);
 }
 
-const reports = audits.flat().filter( Boolean );
+const reports = audits.filter( Boolean );
 
 console.log( formatReport( reports, getArgFromCLI( '--format' ) ) );

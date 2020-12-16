@@ -61,7 +61,7 @@ function formatReport( { label, value } ) {
 		valueString = table.toString();
 	}
 
-	return `${ colors.green.bold( label ) }:\n\n${ valueString }\n\n`;
+	return `${ colors.green.bold( label ) }:\n${ valueString }\n\n`;
 }
 
 /**
@@ -71,5 +71,11 @@ function formatReport( { label, value } ) {
  * @return {string} reports as a JSON string.
  */
 module.exports = function ( reports ) {
-	return reports.map( formatReport );
+	reports.map( ( { results } ) => results );
+	return reports.map( ( { name, results } ) => {
+		return (
+			`${ colors.magenta.bold( name ) }\n\n` +
+			results.map( formatReport ).join( '' )
+		);
+	} );
 };

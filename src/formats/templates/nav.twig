@@ -1,10 +1,10 @@
-{% if data|length > 1 %}
+{% if reports|length > 1 %}
    <nav class="nav">
       <ul>
-         {% for item in data %}
+         {% for report in reports %}
             <li>
                <a href="#{{item}}">
-                  <strong>{{item|capitalize}}</strong> audit
+                  <strong>{{report.name}}</strong> audit
                </a>
             </li>
          {% endfor %}

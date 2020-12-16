@@ -5,43 +5,45 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
 	<title>{{title}}</title>
-   <script>
-      document.addEventListener( 'DOMContentLoaded', () => {
+	<script>
+		document.addEventListener( 'DOMContentLoaded', () => {
 
-         // Set darkmode class if user specified
-         if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all'){
-            document.body.classList.add('darkmode');
-         }
+			// Set darkmode class if user specified
+			if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all'){
+				document.body.classList.add('darkmode');
+			}
 
-         // Add darkmode switcher
-         const a = document.createElement('a'),
-            li = document.createElement('li');
+			// Add darkmode switcher
+			const a = document.createElement('a'),
+				li = document.createElement('li');
 
-         li.classList.add('darkmode-switch');
-         a.innerText = 'Darkmode';
-         a.addEventListener( 'click', () => document.body.classList.toggle('darkmode'));
-         li.appendChild(a);
-         document.querySelector('.nav ul').appendChild(li);
-      });
-   </script>
+			li.classList.add('darkmode-switch');
+			a.innerText = 'Darkmode';
+			a.addEventListener( 'click', () => document.body.classList.toggle('darkmode'));
+			li.appendChild(a);
+			document.querySelector('.nav ul').appendChild(li);
+		} );
+	</script>
 </head>
 <body>
-   <header class="site__header">
-      <h1 id="top">{{title}}</h1>
-      {% include 'nav.twig' with { data: idsForNav } %}
+	<header class="site__header">
+		<h1 id="top">{{title}}</h1>
+		{% include 'nav.twig' %}
 	</header>
-   {% include 'audits/colors.twig' with { data: colorsData } %}
-	{% include 'audits/display-none.twig' with { data: displayNoneData } %}
-   {% include 'audits/important.twig' with { data: importantData } %}
-	{% include 'audits/selectors.twig' with { data: selectorsData } %}
 
-   {# Uncomment this to see the reports object - useful for debugging. #}
-{#    <pre>
-      <code>{{dump(colorsData)}}</code>
-      <code>{{dump(displayNoneData)}}</code>
-      <code>{{dump(importantData)}}</code>
-      <code>{{dump(selectorsData)}}</code>
-   </pre> #}
+	{% for report in reports %}
+		{% if report.template %}
+			{% include 'audits/' ~ report.template ~ '.twig' with { data: report } %}
+		{% else %}
+			{% include 'audits/default.twig' with { data: report } %}
+		{% endif %}
+	{% endfor %}
 
+	{# Uncomment this to see the reports object - useful for debugging. #}
+	{#
+	<pre>
+		<code>{{dump(reports)}}</code>
+	</pre>
+	#}
 </body>
 </html>

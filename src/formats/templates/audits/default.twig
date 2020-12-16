@@ -1,24 +1,22 @@
-{# Not currently used #}
-{% if data is iterable %}
-   <section>
-		<h2>{{data[0].audit|capitalize}}</h2>
-		{% for item in data %}
-			{% if item.value is iterable %}
-				<h3>{{item.label}}</h3>
-				<ul>
-				{% for value in item.value %}
-					{% if value.name %}
-						<li>{{value.name}} - {{value.count}}</li>
-					{% endif %}
+<section class="audit audit--{{data.template}}" id="{{data.audit}}">
+	{% include 'audit-title.twig' with { title: data.name } %}
 
-					{% if value.file %}
-						<li>{{value.file}} - {{value.selector}}</li>
-					{% endif %}
-				{% endfor %}
-				</ul>
-			{% else %}
-				<h3>{{item.label}}: {{item.value}}</h3>
-			{% endif %}
-		{% endfor %}
-   </section>
-{% endif %}
+	{% for item in data.results %}
+		{% if item.value is iterable %}
+			<h3>{{item.label}}</h3>
+			<ul>
+			{% for value in item.value %}
+				{% if value.name %}
+					<li>{{value.name}} - {{value.count}}</li>
+				{% endif %}
+
+				{% if value.file %}
+					<li>{{value.file}} - {{value.selector}}</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		{% else %}
+			<h3>{{item.label}}: {{item.value}}</h3>
+		{% endif %}
+	{% endfor %}
+</section>
