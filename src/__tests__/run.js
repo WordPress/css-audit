@@ -1,14 +1,23 @@
-const path = require( 'path' );
+const { cosmiconfigSync } = require( 'cosmiconfig' );
 const { runAudits } = require( '../run' );
 
 describe( 'Run the audits', () => {
-	it( 'Run: Outputs JSON format from a configuration object', () => {
-		// TODO: replace with cosmiconfig?
-		const config = require( path.join(
-			__dirname,
-			'../utils/__tests__/fixtures/css-audit.config.js'
-		) );
+	it( 'should output the JSON format from a configuration object', () => {
+		const config = ( () => {
 
+			const moduleName = 'test' === process.env ? 'test' : 'css-audit';
+
+			try {
+				const explorerSync = cosmiconfigSync( moduleName );
+				const { config } = explorerSync.search();
+
+				return config;
+			} catch {
+				console.error(
+					"Can't find config file."
+				);
+			}
+		} )();
 		const result = runAudits( [
 			{
 				name: 'a.css',

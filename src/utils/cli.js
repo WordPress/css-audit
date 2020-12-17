@@ -1,8 +1,8 @@
 /**
  * External dependencies
  */
-const path = require( 'path' );
 const minimist = require( 'minimist' );
+const { cosmiconfigSync } = require( 'cosmiconfig' );
 
 const getArgsFromCLI = ( excludePrefixes ) => {
 	const args = process.argv.slice( 2 );
@@ -28,18 +28,6 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * @param {bool} cliOnly
  */
 
-// TODO: we can use cosmiconfig for this
-const configPath = () => {
-	if ( 'test' === process.env.NODE_ENV ) {
-		return path.join(
-			__dirname,
-			'/__tests__/fixtures/css-audit.config.js'
-		);
-	}
-
-	return path.join( process.cwd(), 'css-audit.config.js' );
-};
-
 const getArg = ( arg, cliOnly = false ) => {
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
@@ -53,13 +41,18 @@ const getArg = ( arg, cliOnly = false ) => {
 		return false;
 	}
 
-	// TODO: replace with cosmiconfig.
 	const config = ( () => {
+
+		const moduleName = 'test' === process.env.NODE_ENV ? 'test' : 'css-audit';
+
 		try {
-			return require( configPath() );
+			const explorerSync = cosmiconfigSync( moduleName );
+			const { config } = explorerSync.search();
+
+			return config;
 		} catch {
 			console.error(
-				"Can't find config file. \nMake sure there is css-audit.config.js in the directory where you run this command."
+				"Can't find config file."
 			);
 		}
 	} )();
