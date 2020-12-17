@@ -11,7 +11,7 @@ describe( 'Audit: Selectors', () => {
 				.class { color: white; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 4 );
 	} );
@@ -26,7 +26,7 @@ describe( 'Audit: Selectors', () => {
 				.class { color: white; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count-with-ids' === id );
 		expect( value ).toBe( 1 );
 	} );
@@ -41,7 +41,7 @@ describe( 'Audit: Selectors', () => {
 				.class { color: white; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find(
 			( { id } ) => 'top-10-selectors' === id
 		);
