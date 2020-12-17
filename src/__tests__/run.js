@@ -2,7 +2,7 @@ const path = require( 'path' );
 const { runAudits } = require( '../run' );
 
 describe( 'Run the audits', () => {
-	it( 'runs with a configuration object', () => {
+	it( 'Run: Outputs JSON format from a configuration object', () => {
 		// TODO: replace with cosmiconfig?
 		const config = require( path.join(
 			__dirname,
