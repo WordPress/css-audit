@@ -1,9 +1,9 @@
 name: Build Report
 on:
   push:
-    # branches:
+    branches:
       # Run only on pushes to master
-      # - master
+      - master
 
   schedule:
     # Run every day at 9am UTC.
