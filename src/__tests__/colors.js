@@ -25,6 +25,18 @@ describe( 'Audit: Colors', () => {
 		expect( value ).toBe( 0 );
 	} );
 
+	it( 'should handle filter values', () => {
+		const files = [
+			{
+				name: 'a.css',
+				content: `img { filter: alpha(opacity=60); }`,
+			},
+		];
+		const { results } = audit( files );
+		const { value } = results.find( ( { id } ) => 'unique' === id );
+		expect( value ).toBe( 0 );
+	} );
+
 	it( 'should count colors in shorthand properties', () => {
 		const files = [
 			{

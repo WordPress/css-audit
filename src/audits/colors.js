@@ -16,7 +16,7 @@ module.exports = function ( files = [] ) {
 	files.forEach( ( { content, name } ) => {
 		const root = parse( content, { from: name } );
 		root.walkDecls( function ( { value } ) {
-			const valueRoot = parseValue( value );
+			const valueRoot = parseValue( value, { ignoreUnknownWords: true } );
 
 			valueRoot.walkWords( ( node ) => {
 				if ( node.isColor ) {
