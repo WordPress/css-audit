@@ -16,19 +16,23 @@ module.exports = function ( files = [] ) {
 	files.forEach( ( { content, name } ) => {
 		const root = parse( content, { from: name } );
 		root.walkDecls( function ( { value } ) {
-			const valueRoot = parseValue( value, { ignoreUnknownWords: true } );
+			try {
+				const valueRoot = parseValue( value, {
+					ignoreUnknownWords: true,
+				} );
 
-			valueRoot.walkWords( ( node ) => {
-				if ( node.isColor ) {
-					colors.push( node.value );
-				}
-			} );
+				valueRoot.walkWords( ( node ) => {
+					if ( node.isColor ) {
+						colors.push( node.value );
+					}
+				} );
 
-			valueRoot.walkFuncs( ( node ) => {
-				if ( node.isColor ) {
-					colors.push( node.toString() );
-				}
-			} );
+				valueRoot.walkFuncs( ( node ) => {
+					if ( node.isColor ) {
+						colors.push( node.toString() );
+					}
+				} );
+			} catch ( error ) {}
 		} );
 	} );
 
