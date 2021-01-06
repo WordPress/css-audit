@@ -8,14 +8,14 @@ To run this yourself, download or clone this repo, then install the dependencies
 $ git clone git@github.com:ryelle/css-audit.git
 $ cd css-audit
 $ npm install
-$ npm run css-audit
-```
+$ npm run css-audit -- <files...>
+``
 
 If you want to work on the audits yourself, [fork this repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) to your account first. You can submit issues or PRs.
 
 ## Running Audits
 
-To run the audits, you need a list of CSS files, and to indicate which audits you want to run. `yarn` and `npm` both automatically expand globs (`folder/*`), so you can use that, or pass in a list of CSS files. The audits are described below.
+To run the audits, you need a list of CSS files, and to indicate which audits you want to run. `yarn` and `npm` both automatically expand globs (`folder/*`), so you can use that, or pass in a list of CSS files. The audits are described below, and can be run via the following CLI args, or via configuration file (described in the next section).
 
 ```
 $ npm run css-audit -- <files ...> [options]
@@ -35,6 +35,26 @@ Usage: css-audit -- <files...> [options]
 --help            Show this message.
 ```
 
+
+### Configuration File
+
+The program will prioritize configuration from CLI arguments, and will fallback to configuration stored in a file called `css-audit.config.js`.
+
+```
+module.exports = {
+	format: 'json',
+	audits: [
+		'colors',
+		'important',
+		'display-none',
+		'selectors',
+		'media-queries',
+		[ 'property-values', 'font-size' ],
+		[ 'property-values', 'padding-top,padding-bottom' ],
+	],
+};
+```
+
 ## Generating HTML Reports
 
 To generate an HTML report, use the `--format=html` option and specify a name for the file with the `--filename=name` option. This will output a `{name}.html` file in public/ that is viewable on Github Pages.
@@ -44,6 +64,8 @@ For example, generating a report for wp-admin using the below strategy for pulli
 ```
 npm run css-audit -- v5.5/**/* --format=html --all --filename=wp-admin
 ```
+
+In the configuration file, the argument `filename` can be added as a simple property: value combination, the same as `format` in the example.
 
 ## Getting core CSS files
 
