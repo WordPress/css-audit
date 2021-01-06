@@ -8,7 +8,7 @@ describe( 'Audit: Media Queries', () => {
 				content: `body { font-size: 1em; line-height: 1.6; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 0 );
 	} );
@@ -21,7 +21,7 @@ describe( 'Audit: Media Queries', () => {
 				@media (max-width:30rem) { body { font-size: 2em; } }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 1 );
 	} );
@@ -42,7 +42,7 @@ describe( 'Audit: Media Queries', () => {
 				@media (max-width: 20rem) { body { font-size: 1.5em; } }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value: count } = results.find( ( { id } ) => 'count' === id );
 		expect( count ).toBe( 5 );
 

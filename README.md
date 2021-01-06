@@ -52,7 +52,7 @@ You can download the source files of CSS (not minified or RTL'd) from the svn re
 ```
 mkdir v5.5
 svn export https://develop.svn.wordpress.org/branches/5.5/src/wp-admin/css --depth files v5.5/admin
-svn export https://develop.svn.wordpress.org/branches/5.5/src/wp-admin/css --depth files v5.5/includes
+svn export https://develop.svn.wordpress.org/branches/5.5/src/wp-includes/css --depth files v5.5/includes
 ```
 
 If you want to run this on trunk (code currently in development), you can swap out `branches/5.5` for `trunk`. You could also swap the `5.5` for `5.4`, etc. Example:
@@ -60,7 +60,7 @@ If you want to run this on trunk (code currently in development), you can swap o
 ```
 mkdir trunk
 svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files trunk/admin
-svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files trunk/includes
+svn export https://develop.svn.wordpress.org/trunk/src/wp-includes/css --depth files trunk/includes
 ```
 
 Now you can run the audits:

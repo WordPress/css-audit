@@ -8,7 +8,7 @@ describe( 'Audit: Important', () => {
 				content: `body { font-size: 1em; line-height: 1.6; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 0 );
 	} );
@@ -20,7 +20,7 @@ describe( 'Audit: Important', () => {
 				content: `body { background-image: url('important-logo.png'); }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 0 );
 	} );
@@ -32,7 +32,7 @@ describe( 'Audit: Important', () => {
 				content: `body { color: #0ff !important; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 1 );
 	} );
@@ -48,7 +48,7 @@ describe( 'Audit: Important', () => {
 				content: `body { color: red !important; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value: count } = results.find( ( { id } ) => 'count' === id );
 		expect( count ).toBe( 2 );
 
@@ -79,7 +79,7 @@ describe( 'Audit: Important', () => {
 				}`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find(
 			( { id } ) => 'top-10-properties' === id
 		);

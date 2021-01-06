@@ -8,7 +8,7 @@ describe( 'Audit: Display None', () => {
 				content: `body { font-size: 1em; line-height: 1.6; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 0 );
 	} );
@@ -20,7 +20,7 @@ describe( 'Audit: Display None', () => {
 				content: `body { display: none; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 1 );
 	} );
@@ -36,7 +36,7 @@ describe( 'Audit: Display None', () => {
 				content: `body.hidden { display: none; }`,
 			},
 		];
-		const results = audit( files );
+		const { results } = audit( files );
 		const { value: count } = results.find( ( { id } ) => 'count' === id );
 		expect( count ).toBe( 2 );
 
