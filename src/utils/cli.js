@@ -25,12 +25,9 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * @param {string} env
  */
 const getConfig = ( env ) => {
-	const moduleName =
-		'test' === env ? 'example-config' : 'css-audit';
+	const moduleName = 'test' === env ? 'example-config' : 'css-audit';
 	const searchFrom =
-		'test' === env
-			? path.join( __dirname, '__tests__' )
-			: process.cwd();
+		'test' === env ? path.join( __dirname, '__tests__' ) : process.cwd();
 
 	const explorerSync = cosmiconfigSync( moduleName );
 	const { config } = explorerSync.search( searchFrom );

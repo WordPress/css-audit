@@ -63,9 +63,8 @@ describe( 'Run Audits from Config', () => {
 	} );
 } );
 
-
 describe( 'Configuration', () => {
 	it( 'should get configuration from a file', () => {
 		expect( typeof getConfig() ).toBe( 'object' );
-	})
-})
+	} );
+} );
