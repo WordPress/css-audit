@@ -44,7 +44,7 @@ const getArg = ( arg, cliOnly = false ) => {
 
 	const config = ( () => {
 		const moduleName =
-			'test' === process.env.NODE_ENV ? 'test-config' : 'css-audit';
+			'test' === process.env.NODE_ENV ? 'example-config' : 'css-audit';
 		const searchFrom =
 			'test' === process.env.NODE_ENV
 				? path.join( __dirname, '__tests__' )
