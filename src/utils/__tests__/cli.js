@@ -1,5 +1,4 @@
 const { getArg, getArgsFromCLI } = require( '../cli' );
-const path = require( 'path' );
 
 describe( 'Run Audits from CLI', () => {
 	it( 'should get args from the CLI', () => {

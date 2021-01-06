@@ -4,7 +4,6 @@
 const minimist = require( 'minimist' );
 const path = require( 'path' );
 const { cosmiconfigSync } = require( 'cosmiconfig' );
-const { pathExists } = require('fs-extra');
 
 const getArgsFromCLI = ( excludePrefixes ) => {
 	const args = process.argv.slice( 2 );
@@ -27,7 +26,7 @@ const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
  * config if its not present.
  *
  * @param {string} arg
- * @param {bool} cliOnly
+ * @param {boolean} cliOnly
  */
 
 const getArg = ( arg, cliOnly = false ) => {
@@ -44,20 +43,20 @@ const getArg = ( arg, cliOnly = false ) => {
 	}
 
 	const config = ( () => {
-
-		const moduleName = 'test' === process.env.NODE_ENV ? 'test-config' : 'css-audit';
-		const searchFrom = 'test' === process.env.NODE_ENV ? path.join( __dirname, '__tests__' ) : process.cwd();
+		const moduleName =
+			'test' === process.env.NODE_ENV ? 'test-config' : 'css-audit';
+		const searchFrom =
+			'test' === process.env.NODE_ENV
+				? path.join( __dirname, '__tests__' )
+				: process.cwd();
 
 		const explorerSync = cosmiconfigSync( moduleName );
-		const { config } = explorerSync.search( searchFrom );
+		const { configSrc } = explorerSync.search( searchFrom );
 
 		try {
-			return config;
-		} catch( e ) {
-			console.error(
-				e,
-				"Error retrieving config file."
-			);
+			return configSrc;
+		} catch ( e ) {
+			console.error( e, 'Error retrieving config file.' );
 		}
 	} )();
 
@@ -74,12 +73,12 @@ const getArg = ( arg, cliOnly = false ) => {
 
 	if ( config.hasOwnProperty( 'audits' ) ) {
 		// Separate the basic audits from property-values.
-		const basicAudits = config[ 'audits' ].filter(
+		const basicAudits = config.audits.filter(
 			( audit ) => term === audit && 'string' === typeof audit
 		);
 
 		// Create an array of values of the property-value audits.
-		const propertyValueAudits = config[ 'audits' ].filter(
+		const propertyValueAudits = config.audits.filter(
 			( audit ) => 'object' === typeof audit && term === audit[ 0 ]
 		);
 

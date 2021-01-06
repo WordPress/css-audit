@@ -3,21 +3,18 @@ const { runAudits } = require( '../run' );
 
 describe( 'Run the audits', () => {
 	it( 'should output the JSON format from a configuration object', () => {
-		const config = ( () => {
-
-			const moduleName = 'test' === process.env ? 'test' : 'css-audit';
+		const configSrc = ( () => {
+			const moduleName = 'test';
+			const explorerSync = cosmiconfigSync( moduleName );
+			const { config } = explorerSync.search();
 
 			try {
-				const explorerSync = cosmiconfigSync( moduleName );
-				const { config } = explorerSync.search();
-
 				return config;
-			} catch {
-				console.error(
-					"Can't find config file."
-				);
+			} catch ( e ) {
+				console.error( e, "Can't find config file." );
 			}
 		} )();
+
 		const result = runAudits( [
 			{
 				name: 'a.css',
@@ -25,7 +22,7 @@ describe( 'Run the audits', () => {
 			},
 		] );
 
-		config.audits.forEach( ( audit ) => {
+		configSrc.audits.forEach( ( audit ) => {
 			if ( Array.isArray( audit ) ) {
 				audit[ 1 ].split( ',' ).forEach( ( property ) => {
 					expect( result ).toContain( property );
