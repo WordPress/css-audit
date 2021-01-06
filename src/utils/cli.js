@@ -46,10 +46,10 @@ const getConfig = ( env ) => {
  * config if its not present.
  *
  * @param {string} arg
- * @param {boolean} cliOnly
+ * @param {boolean} cliArgOnly
  */
 
-const getArg = ( arg, cliOnly = false ) => {
+const getArg = ( arg, cliArgOnly = false ) => {
 	for ( const cliArg of getArgsFromCLI() ) {
 		const [ name, value ] = cliArg.split( '=' );
 
@@ -58,7 +58,7 @@ const getArg = ( arg, cliOnly = false ) => {
 		}
 	}
 
-	if ( true === cliOnly ) {
+	if ( true === cliArgOnly ) {
 		return false;
 	}
 
