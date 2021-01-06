@@ -2,7 +2,9 @@
  * External dependencies
  */
 const minimist = require( 'minimist' );
+const path = require( 'path' );
 const { cosmiconfigSync } = require( 'cosmiconfig' );
+const { pathExists } = require('fs-extra');
 
 const getArgsFromCLI = ( excludePrefixes ) => {
 	const args = process.argv.slice( 2 );
@@ -43,16 +45,18 @@ const getArg = ( arg, cliOnly = false ) => {
 
 	const config = ( () => {
 
-		const moduleName = 'test' === process.env.NODE_ENV ? 'test' : 'css-audit';
+		const moduleName = 'test' === process.env.NODE_ENV ? 'test-config' : 'css-audit';
+		const searchFrom = 'test' === process.env.NODE_ENV ? path.join( __dirname, '__tests__' ) : process.cwd();
+
+		const explorerSync = cosmiconfigSync( moduleName );
+		const { config } = explorerSync.search( searchFrom );
 
 		try {
-			const explorerSync = cosmiconfigSync( moduleName );
-			const { config } = explorerSync.search();
-
 			return config;
-		} catch {
+		} catch( e ) {
 			console.error(
-				"Can't find config file."
+				e,
+				"Error retrieving config file."
 			);
 		}
 	} )();
@@ -60,9 +64,9 @@ const getArg = ( arg, cliOnly = false ) => {
 	const term = arg.substr( 2 );
 
 	// This is a simple property: value arg e.g. format: json
-	const argIsNotAnAudit = config.hasOwnProperty( term );
+	const isSimplePropertyValueArg = config.hasOwnProperty( term );
 
-	if ( argIsNotAnAudit ) {
+	if ( isSimplePropertyValueArg ) {
 		return 'undefined' === typeof config[ term ]
 			? true
 			: config[ term ] || null;
@@ -78,6 +82,7 @@ const getArg = ( arg, cliOnly = false ) => {
 		const propertyValueAudits = config[ 'audits' ].filter(
 			( audit ) => 'object' === typeof audit && term === audit[ 0 ]
 		);
+
 		const propertyValueValues = ( () => {
 			if ( propertyValueAudits.length > 0 ) {
 				return propertyValueAudits
