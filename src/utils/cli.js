@@ -20,6 +20,29 @@ const getArgsFromCLI = ( excludePrefixes ) => {
 const getFileArgsFromCLI = () => minimist( getArgsFromCLI() )._;
 
 /**
+ * Get configuration using cosmiconfig.
+ *
+ * @param {string} env
+ */
+const getConfig = ( env ) => {
+	const moduleName =
+		'test' === env ? 'example-config' : 'css-audit';
+	const searchFrom =
+		'test' === env
+			? path.join( __dirname, '__tests__' )
+			: process.cwd();
+
+	const explorerSync = cosmiconfigSync( moduleName );
+	const { config } = explorerSync.search( searchFrom );
+
+	try {
+		return config;
+	} catch ( e ) {
+		console.error( e, 'Error retrieving config file.' );
+	}
+};
+
+/**
  * Get the argument required for running the audit,
  *
  * First get the argument from CLI, and fallback to the
@@ -42,23 +65,7 @@ const getArg = ( arg, cliOnly = false ) => {
 		return false;
 	}
 
-	const config = ( () => {
-		const moduleName =
-			'test' === process.env.NODE_ENV ? 'example-config' : 'css-audit';
-		const searchFrom =
-			'test' === process.env.NODE_ENV
-				? path.join( __dirname, '__tests__' )
-				: process.cwd();
-
-		const explorerSync = cosmiconfigSync( moduleName );
-		const { configSrc } = explorerSync.search( searchFrom );
-
-		try {
-			return configSrc;
-		} catch ( e ) {
-			console.error( e, 'Error retrieving config file.' );
-		}
-	} )();
+	const config = getConfig( process.env.NODE_ENV );
 
 	const term = arg.substr( 2 );
 
@@ -124,5 +131,6 @@ module.exports = {
 	getArgsFromCLI,
 	getFileArgsFromCLI,
 	getArg,
+	getConfig,
 	getHelp,
 };

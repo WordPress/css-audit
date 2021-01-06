@@ -42,7 +42,8 @@
   },
   "jest": {
     "modulePathIgnorePatterns": [
-      "fixtures"
+      "fixtures",
+      ".config.js"
     ]
   },
   "prettier": "@wordpress/prettier-config",

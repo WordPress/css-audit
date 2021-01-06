@@ -1,4 +1,4 @@
-const { getArg, getArgsFromCLI } = require( '../cli' );
+const { getArg, getArgsFromCLI, getConfig } = require( '../cli' );
 
 describe( 'Run Audits from CLI', () => {
 	it( 'should get args from the CLI', () => {
@@ -62,3 +62,10 @@ describe( 'Run Audits from Config', () => {
 		expect( getArg( '--nonexistant' ) ).toBe( false );
 	} );
 } );
+
+
+describe( 'Configuration', () => {
+	it( 'should get configuration from a file', () => {
+		expect( typeof getConfig() ).toBe( 'object' );
+	})
+})
