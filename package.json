@@ -9,7 +9,7 @@
     "format:js": "prettier {src,.}/**/*.js --write",
     "test": "jest"
   },
-  "author": "Kelly Dwan",
+  "author": "WordPress CSS Contributors",
   "license": "GPL-2.0-or-later",
   "dependencies": {
     "@wordpress/eslint-plugin": "7.3.0",
