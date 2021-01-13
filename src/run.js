@@ -38,7 +38,6 @@ const runAudits = ( cssFiles ) => {
 			);
 		} );
 	} else {
-
 		// Single property-value audit handling for CLI
 		if ( !! propertyValues ) {
 			audits.push(
