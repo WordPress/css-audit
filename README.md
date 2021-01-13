@@ -9,7 +9,7 @@ $ git clone git@github.com:ryelle/css-audit.git
 $ cd css-audit
 $ npm install
 $ npm run css-audit -- <files...>
-``
+```
 
 If you want to work on the audits yourself, [fork this repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) to your account first. You can submit issues or PRs.
 

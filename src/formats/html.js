@@ -41,10 +41,10 @@ module.exports = function ( reports ) {
 	twing
 		.render( reportTemplate, context )
 		.then( ( output ) => {
-			console.log( `Generated template for ${ reportName }.` ); // eslint-disable-line no-console
+			console.log( `Generated template for ${ reportName }.` );
 			fs.writeFileSync( reportDest, output );
 		} )
 		.catch( ( e ) => {
-			console.error( e ); // eslint-disable-line no-console
+			console.error( e );
 		} );
 };

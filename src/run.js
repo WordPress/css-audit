@@ -38,12 +38,16 @@ const runAudits = ( cssFiles ) => {
 			);
 		} );
 	} else {
-		audits.push(
-			require( './audits/property-values' )(
-				cssFiles,
-				propertyValues.split( ',' )
-			)
-		);
+
+		// Single property-value audit handling for CLI
+		if ( !! propertyValues ) {
+			audits.push(
+				require( './audits/property-values' )(
+					cssFiles,
+					propertyValues.split( ',' )
+				)
+			);
+		}
 	}
 
 	const reports = audits.flat().filter( Boolean );

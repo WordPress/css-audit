@@ -13,7 +13,7 @@ const { getArg, getFileArgsFromCLI, getHelp } = require( './src/utils/cli' );
 const input = getFileArgsFromCLI();
 
 if ( getArg( '--help', true ) || ! input.length ) {
-	console.log( getHelp() ); // eslint-disable-line no-console
+	console.log( getHelp() );
 	process.exit( 0 );
 }
 
