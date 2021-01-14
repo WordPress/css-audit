@@ -7,7 +7,7 @@ const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
  */
 const { getArgFromCLI } = require( '../utils/cli' );
 
-const templatePath = path.join( __dirname, './html/templates' );
+const templatePath = path.join( __dirname, './html' );
 
 /**
  * Get the template file, falling back to index.twig if a custom file is not found.
@@ -28,15 +28,17 @@ module.exports = function ( reports ) {
 
 	const reportName = getArgFromCLI( '--filename' );
 	const reportTemplate = getTemplateFile( reportName );
-	const reportDest = path.join(
-		__dirname,
-		`../../public/${ reportName }.html`
-	);
-
+	const reportDestDir = path.join( __dirname, '..', '..', 'public' );
+	const reportDest = path.join( reportDestDir, `${ reportName }.html` );
 	const context = {
 		title: `CSS Audit for ${ reportName }`,
 		reports,
 	};
+
+	// Copy CSS src to /public
+	const cssSrc = path.join( __dirname, 'html', 'style.css' );
+	const cssDest = path.join( reportDestDir, 'style.css' );
+	fs.copyFile( cssSrc, cssDest );
 
 	twing
 		.render( reportTemplate, context )

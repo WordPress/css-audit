@@ -32,20 +32,20 @@
 
 	{% for report in reports %}
 		{# Start audit section #}
-		<section class="audit audit--{{data.template}}" id="{{data.audit}}">
+		<section class="audit audit--{{report.template}}" id="{{report.audit}}">
 
 			<header class="audit__header">
 				<h2 class="audit__title">
-					<strong>{{ data.name }}</strong> <em>audit</em>
+					<strong>{{ report.name }}</strong> <em>audit</em>
 				</h2>
 				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
 			</header>
 
 			{# Use specified template, or default template #}
 			{% if report.template %}
-				{% include 'audits/' ~ report.template ~ '.twig' with { data: report } %}
+				{% include '_audit-' ~ report.template ~ '.twig' with { data: report } %}
 			{% else %}
-				{% include 'audits/default.twig' with { data: report } %}
+				{% include '_audit-default.twig' with { data: report } %}
 			{% endif %}
 
 		</section>
