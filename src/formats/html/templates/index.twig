@@ -10,32 +10,45 @@
 	<header class="site__header">
 		<h1 id="top">{{title}}</h1>
 
-      {# Create nav if required #}
-      {% if reports|length > 1 %}
-         <nav class="nav">
-            <ul>
-            {% for report in reports %}
-               <li>
-                  <a href="#{{report.audit}}">
-                     <strong>{{report.name}}</strong> audit
-                  </a>
-               </li>
-            {% endfor %}
-               <li>
-                  <button class="btn button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
-               </li>
-            </ul>
-         </nav>
-      {% endif %}
+		{# Create nav if required #}
+		{% if reports|length > 1 %}
+			<nav class="nav">
+				<ul>
+				{% for report in reports %}
+					<li>
+						<a href="#{{report.audit}}">
+							<strong>{{report.name}}</strong> audit
+						</a>
+					</li>
+				{% endfor %}
+					<li>
+						<button class="btn button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
+					</li>
+				</ul>
+			</nav>
+		{% endif %}
 
 	</header>
 
 	{% for report in reports %}
-		{% if report.template %}
-			{% include 'audits/' ~ report.template ~ '.twig' with { data: report } %}
-		{% else %}
-			{% include 'audits/default.twig' with { data: report } %}
-		{% endif %}
+		{# Start audit section #}
+		<section class="audit audit--{{data.template}}" id="{{data.audit}}">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>{{ data.name }}</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+			{# Use specified template, or default template #}
+			{% if report.template %}
+				{% include 'audits/' ~ report.template ~ '.twig' with { data: report } %}
+			{% else %}
+				{% include 'audits/default.twig' with { data: report } %}
+			{% endif %}
+
+		</section>
 	{% endfor %}
 
 	{# Uncomment this to see the reports object - useful for debugging. #}
