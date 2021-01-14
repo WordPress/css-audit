@@ -9,7 +9,25 @@
 <body>
 	<header class="site__header">
 		<h1 id="top">{{title}}</h1>
-		{% include 'nav.twig' %}
+
+      {# Create nav if required #}
+      {% if reports|length > 1 %}
+         <nav class="nav">
+            <ul>
+            {% for report in reports %}
+               <li>
+                  <a href="#{{report.audit}}">
+                     <strong>{{report.name}}</strong> audit
+                  </a>
+               </li>
+            {% endfor %}
+               <li>
+                  <button class="btn button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
+               </li>
+            </ul>
+         </nav>
+      {% endif %}
+
 	</header>
 
 	{% for report in reports %}

@@ -7,10 +7,10 @@ const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
  */
 const { getArgFromCLI } = require( '../utils/cli' );
 
-const templatePath = path.join( __dirname, './templates' );
+const templatePath = path.join( __dirname, './html/templates' );
 
 /**
- * Get the template file, falling back to report.twig if a custom file is not found.
+ * Get the template file, falling back to index.twig if a custom file is not found.
  *
  * @param {string} name Name of the current report.
  * @return {string} File name.
@@ -19,7 +19,7 @@ function getTemplateFile( name ) {
 	if ( fs.existsSync( `${ templatePath }/${ name }.twig` ) ) {
 		return `${ name }.twig`;
 	}
-	return 'report.twig';
+	return 'index.twig';
 }
 
 module.exports = function ( reports ) {
