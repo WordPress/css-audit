@@ -9,3126 +9,3143 @@
 <body>
 	<header class="site__header">
 		<h1 id="top">CSS Audit for wp-admin</h1>
-			<nav class="nav">
-		<ul>
-					<li>
-				<a href="#colors">
-					<strong>Colors</strong> audit
-				</a>
-			</li>
-					<li>
-				<a href="#important">
-					<strong>Important Overrides</strong> audit
-				</a>
-			</li>
-					<li>
-				<a href="#display-none">
-					<strong>Display: None</strong> audit
-				</a>
-			</li>
-					<li>
-				<a href="#selectors">
-					<strong>Selectors</strong> audit
-				</a>
-			</li>
-					<li>
-				<a href="#media-queries">
-					<strong>Media Queries</strong> audit
-				</a>
-			</li>
-					<li>
-				<button class="btn button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
-			</li>
-		</ul>
-	</nav>
+
+							<nav class="nav">
+				<ul>
+									<li>
+						<a href="#colors">
+							<strong>Colors</strong> audit
+						</a>
+					</li>
+									<li>
+						<a href="#important">
+							<strong>Important Overrides</strong> audit
+						</a>
+					</li>
+									<li>
+						<a href="#display-none">
+							<strong>Display: None</strong> audit
+						</a>
+					</li>
+									<li>
+						<a href="#selectors">
+							<strong>Selectors</strong> audit
+						</a>
+					</li>
+									<li>
+						<a href="#media-queries">
+							<strong>Media Queries</strong> audit
+						</a>
+					</li>
+									<li>
+						<button class="btn button__theme-toggle" onClick="cssAudit.toggleDarkMode()" aria-label="Dark Mode"></button>
+					</li>
+				</ul>
+			</nav>
+		
 	</header>
 
-						<section class="audit audit--colors" id="colors">
-	<header class="audit__header">
-   <h2 class="audit__title">
-      <strong>Colors</strong> <em>audit</em>
-   </h2>
-   <a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
-</header>
-						<h3>Number of unique colors: 199</h3>
-								<h3>Number of unique colors (ignoring opacity): 154</h3>
-								<h3>List of all colors</h3>
-			<ul>
-			
-									<li class="chip" style="--chip-bg-color:#fff;">
-						#fff
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:white;">
-						white
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d1e4dd;">
-						#d1e4dd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#000;">
-						#000
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eeeadd;">
-						#eeeadd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#767676;">
-						#767676
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.1);">
-						rgba(0,0,0,0.1)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#0073aa;">
-						#0073aa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.2);">
-						rgba(0,0,0,0.2)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#32373c;">
-						#32373c
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#23282d;">
-						#23282d
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#555d66;">
-						#555d66
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ddd;">
-						#ddd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#82878c;">
-						#82878c
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:gray;">
-						gray
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eee;">
-						#eee
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#b4b9be;">
-						#b4b9be
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(240,245,250,0.7);">
-						rgba(240,245,250,0.7)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#00b9eb;">
-						#00b9eb
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#191e23;">
-						#191e23
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#a0a5aa;">
-						#a0a5aa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(240,245,250,0.6);">
-						rgba(240,245,250,0.6)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f1f1f1;">
-						#f1f1f1
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ca4a1f;">
-						#ca4a1f
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#aaa;">
-						#aaa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fff8e5;">
-						#fff8e5
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffb900;">
-						#ffb900
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f6a306;">
-						#f6a306
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fbeaea;">
-						#fbeaea
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#dc3232;">
-						#dc3232
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,150,0,0.3);">
-						rgba(255,150,0,0.3)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#666;">
-						#666
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f7f7f7;">
-						#f7f7f7
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ccc;">
-						#ccc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#555;">
-						#555
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fafafa;">
-						#fafafa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#999;">
-						#999
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#5b9dd9;">
-						#5b9dd9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,115,170,0.8);">
-						rgba(0,115,170,0.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#72777c;">
-						#72777c
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffebe8;">
-						#ffebe8
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#c00;">
-						#c00
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#007cba;">
-						#007cba
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.6);">
-						rgba(0,0,0,0.6)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ccd0d4;">
-						#ccd0d4
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.04);">
-						rgba(0,0,0,0.04)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#444;">
-						#444
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#006799;">
-						#006799
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#124964;">
-						#124964
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(30,140,190,0.8);">
-						rgba(30,140,190,0.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eaeaea;">
-						#eaeaea
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.07);">
-						rgba(0,0,0,0.07)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#0071a1;">
-						#0071a1
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f3f5f6;">
-						#f3f5f6
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#016087;">
-						#016087
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ccf3fa;">
-						#ccf3fa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f9f9f9;">
-						#f9f9f9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e8e8e8;">
-						#e8e8e8
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#99d;">
-						#99d
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e4f2fd;">
-						#e4f2fd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#1e8cbe;">
-						#1e8cbe
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d54e21;">
-						#d54e21
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#a00;">
-						#a00
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f5f5f5;">
-						#f5f5f5
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(46,162,204);">
-						rgb(46,162,204)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e5e5e5;">
-						#e5e5e5
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,.04);">
-						rgba(0,0,0,.04)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#46b450;">
-						#46b450
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ecf7ed;">
-						#ecf7ed
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#00a0d2;">
-						#00a0d2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e5f5fa;">
-						#e5f5fa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f56e28;">
-						#f56e28
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#79ba49;">
-						#79ba49
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#66c6e4;">
-						#66c6e4
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f6fbfd;">
-						#f6fbfd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.02);">
-						rgba(0,0,0,0.02)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#222;">
-						#222
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(30,30,30,0.9);">
-						rgba(30,30,30,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.4);">
-						rgba(0,0,0,0.4)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.1);">
-						rgba(255,255,255,0.1)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f3f3f3;">
-						#f3f3f3
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffc733;">
-						#ffc733
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.3);">
-						rgba(0,0,0,0.3)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fcfcfc;">
-						#fcfcfc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0);">
-						rgba(0,0,0,0)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.7);">
-						rgba(0,0,0,0.7)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#33b3db;">
-						#33b3db
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffffff;">
-						#ffffff
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:black;">
-						black
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f3f3f5;">
-						#f3f3f5
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.15);">
-						rgba(0,0,0,0.15)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.25);">
-						rgba(0,0,0,0.25)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#edeff0;">
-						#edeff0
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fbfbfc;">
-						#fbfbfc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.5);">
-						rgba(0,0,0,0.5)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(238,238,238,0.75);">
-						rgba(238,238,238,0.75)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d5d5d5;">
-						#d5d5d5
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#929793;">
-						#929793
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#727773;">
-						#727773
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(229,229,229);">
-						rgb(229,229,229)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(227,227,227);">
-						rgb(227,227,227)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#606a73;">
-						#606a73
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eeeeee;">
-						#eeeeee
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fef7f1;">
-						#fef7f1
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.06);">
-						rgba(0,0,0,0.06)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ac1b1b;">
-						#ac1b1b
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e29808;">
-						#e29808
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#edc048;">
-						#edc048
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#cd5a5a;">
-						#cd5a5a
-					</li>
-				
+					<section class="audit audit--colors" id="colors">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>Colors</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+													<h3>Number of unique colors: 199</h3>
+				<h3>Number of unique colors (ignoring opacity): 154</h3>
+				<h3>List of all colors</h3>
+		<ul>
+		
+							<li class="chip" style="--chip-bg-color:#fff;">
+					#fff
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:white;">
+					white
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d1e4dd;">
+					#d1e4dd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#000;">
+					#000
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eeeadd;">
+					#eeeadd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#767676;">
+					#767676
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.1);">
+					rgba(0,0,0,0.1)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#0073aa;">
+					#0073aa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.2);">
+					rgba(0,0,0,0.2)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#32373c;">
+					#32373c
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#23282d;">
+					#23282d
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#555d66;">
+					#555d66
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ddd;">
+					#ddd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#82878c;">
+					#82878c
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:gray;">
+					gray
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eee;">
+					#eee
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#b4b9be;">
+					#b4b9be
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(240,245,250,0.7);">
+					rgba(240,245,250,0.7)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#00b9eb;">
+					#00b9eb
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#191e23;">
+					#191e23
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#a0a5aa;">
+					#a0a5aa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(240,245,250,0.6);">
+					rgba(240,245,250,0.6)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f1f1f1;">
+					#f1f1f1
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ca4a1f;">
+					#ca4a1f
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#aaa;">
+					#aaa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fff8e5;">
+					#fff8e5
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffb900;">
+					#ffb900
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f6a306;">
+					#f6a306
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fbeaea;">
+					#fbeaea
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#dc3232;">
+					#dc3232
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,150,0,0.3);">
+					rgba(255,150,0,0.3)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#666;">
+					#666
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f7f7f7;">
+					#f7f7f7
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ccc;">
+					#ccc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#555;">
+					#555
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fafafa;">
+					#fafafa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#999;">
+					#999
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#5b9dd9;">
+					#5b9dd9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,115,170,0.8);">
+					rgba(0,115,170,0.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#72777c;">
+					#72777c
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffebe8;">
+					#ffebe8
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#c00;">
+					#c00
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#007cba;">
+					#007cba
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.6);">
+					rgba(0,0,0,0.6)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ccd0d4;">
+					#ccd0d4
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.04);">
+					rgba(0,0,0,0.04)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#444;">
+					#444
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#006799;">
+					#006799
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#124964;">
+					#124964
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(30,140,190,0.8);">
+					rgba(30,140,190,0.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eaeaea;">
+					#eaeaea
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.07);">
+					rgba(0,0,0,0.07)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#0071a1;">
+					#0071a1
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f3f5f6;">
+					#f3f5f6
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#016087;">
+					#016087
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ccf3fa;">
+					#ccf3fa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f9f9f9;">
+					#f9f9f9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e8e8e8;">
+					#e8e8e8
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#99d;">
+					#99d
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e4f2fd;">
+					#e4f2fd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#1e8cbe;">
+					#1e8cbe
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d54e21;">
+					#d54e21
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#a00;">
+					#a00
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f5f5f5;">
+					#f5f5f5
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(46,162,204);">
+					rgb(46,162,204)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e5e5e5;">
+					#e5e5e5
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,.04);">
+					rgba(0,0,0,.04)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#46b450;">
+					#46b450
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ecf7ed;">
+					#ecf7ed
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#00a0d2;">
+					#00a0d2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e5f5fa;">
+					#e5f5fa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f56e28;">
+					#f56e28
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#79ba49;">
+					#79ba49
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#66c6e4;">
+					#66c6e4
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f6fbfd;">
+					#f6fbfd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.02);">
+					rgba(0,0,0,0.02)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#222;">
+					#222
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(30,30,30,0.9);">
+					rgba(30,30,30,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.4);">
+					rgba(0,0,0,0.4)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.1);">
+					rgba(255,255,255,0.1)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f3f3f3;">
+					#f3f3f3
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffc733;">
+					#ffc733
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.3);">
+					rgba(0,0,0,0.3)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fcfcfc;">
+					#fcfcfc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0);">
+					rgba(0,0,0,0)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.7);">
+					rgba(0,0,0,0.7)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#33b3db;">
+					#33b3db
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffffff;">
+					#ffffff
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:black;">
+					black
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f3f3f5;">
+					#f3f3f5
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.15);">
+					rgba(0,0,0,0.15)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.25);">
+					rgba(0,0,0,0.25)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#edeff0;">
+					#edeff0
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fbfbfc;">
+					#fbfbfc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.5);">
+					rgba(0,0,0,0.5)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(238,238,238,0.75);">
+					rgba(238,238,238,0.75)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d5d5d5;">
+					#d5d5d5
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#929793;">
+					#929793
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#727773;">
+					#727773
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(229,229,229);">
+					rgb(229,229,229)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(227,227,227);">
+					rgb(227,227,227)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#606a73;">
+					#606a73
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eeeeee;">
+					#eeeeee
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fef7f1;">
+					#fef7f1
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.06);">
+					rgba(0,0,0,0.06)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ac1b1b;">
+					#ac1b1b
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e29808;">
+					#e29808
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#edc048;">
+					#edc048
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#cd5a5a;">
+					#cd5a5a
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f6e2ac;">
+					#f6e2ac
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#df3232;">
+					#df3232
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#5a5a5a;">
+					#5a5a5a
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fdfdfd;">
+					#fdfdfd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#c4c4c4;">
+					#c4c4c4
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e3e3e3;">
+					#e3e3e3
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#39424a;">
+					#39424a
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#40860a;">
+					#40860a
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#7e8993;">
+					#7e8993
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(204,0,0,0.8);">
+					rgba(204,0,0,0.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.5);">
+					rgba(255,255,255,0.5)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(222,222,222,0.75);">
+					rgba(222,222,222,0.75)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(51,51,51,0.5);">
+					rgba(51,51,51,0.5)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f1adad;">
+					#f1adad
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e35b5b;">
+					#e35b5b
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fbc5a9;">
+					#fbc5a9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f78b53;">
+					#f78b53
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffe399;">
+					#ffe399
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#c1e1b9;">
+					#c1e1b9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#83c373;">
+					#83c373
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#888;">
+					#888
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f7fcfe;">
+					#f7fcfe
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d64d21;">
+					#d64d21
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#6c7781;">
+					#6c7781
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#aa0000;">
+					#aa0000
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:blue;">
+					blue
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#006505;">
+					#006505
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d98500;">
+					#d98500
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.03);">
+					rgba(0,0,0,0.03)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#727272;">
+					#727272
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e1e1e1;">
+					#e1e1e1
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(160,165,170,0.15);">
+					rgba(160,165,170,0.15)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#c62d2d;">
+					#c62d2d
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#31843f;">
+					#31843f
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ff8573;">
+					#ff8573
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#faafaa;">
+					#faafaa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fecac2;">
+					#fecac2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#bb2a2a;">
+					#bb2a2a
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(241,241,241);">
+					rgb(241,241,241)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(95,95,95);">
+					rgb(95,95,95)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#fbfbfb;">
+					#fbfbfb
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#83b4d8;">
+					#83b4d8
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#dd3d36;">
+					#dd3d36
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#0074a2;">
+					#0074a2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f6c9cc;">
+					#f6c9cc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f1acb1;">
+					#f1acb1
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f66;">
+					#f66
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ffe9e9;">
+					#ffe9e9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#faa;">
+					#faa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e9ffe9;">
+					#e9ffe9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#afa;">
+					#afa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#cccccc;">
+					#cccccc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#e2e4e7;">
+					#e2e4e7
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#adc5d2;">
+					#adc5d2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#f8f9f9;">
+					#f8f9f9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#bfe7f3;">
+					#bfe7f3
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#826eb4;">
+					#826eb4
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.65);">
+					rgba(255,255,255,0.65)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(244,244,244,0.7);">
+					rgba(244,244,244,0.7)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.05);">
+					rgba(0,0,0,0.05)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(49,49,49,0.7);">
+					rgba(49,49,49,0.7)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#d5d2ca;">
+					#d5d2ca
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(153,153,153,0.1);">
+					rgba(153,153,153,0.1)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgb(153,153,153);">
+					rgb(153,153,153)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(238,238,238,0.9);">
+					rgba(238,238,238,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#656a6f;">
+					#656a6f
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,115,170,.8);">
+					rgba(0,115,170,.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#464b50;">
+					#464b50
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#c0461e;">
+					#c0461e
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0);">
+					rgba(255,255,255,0)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.9);">
+					rgba(255,255,255,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#00669b;">
+					#00669b
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#0085ba;">
+					#0085ba
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(46,68,83,0.15);">
+					rgba(46,68,83,0.15)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#008ec2;">
+					#008ec2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:red;">
+					red
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.08);">
+					rgba(0,0,0,0.08)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ebebeb;">
+					#ebebeb
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#007cb2;">
+					#007cb2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#dfdfdf;">
+					#dfdfdf
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eaf2fa;">
+					#eaf2fa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#151515;">
+					#151515
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.8);">
+					rgba(255,255,255,0.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(150,150,150,0.9);">
+					rgba(150,150,150,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,86,132,0.9);">
+					rgba(0,86,132,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#bc0b0b;">
+					#bc0b0b
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,1);">
+					rgba(255,255,255,1)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(10,10,10,0.9);">
+					rgba(10,10,10,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.075);">
+					rgba(0,0,0,0.075)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#3592b6;">
+					#3592b6
+				</li>
+			
+				</ul>
+				<h3>Top 10 most-used colors</h3>
+		<ul>
+		
+							<li class="chip" style="--chip-bg-color:#fff;">
+					<span class="count">214</span>
+					#fff
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ddd;">
+					<span class="count">153</span>
+					#ddd
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eee;">
+					<span class="count">77</span>
+					#eee
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#0073aa;">
+					<span class="count">65</span>
+					#0073aa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#72777c;">
+					<span class="count">56</span>
+					#72777c
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:gray;">
+					<span class="count">53</span>
+					gray
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#5b9dd9;">
+					<span class="count">48</span>
+					#5b9dd9
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#ccc;">
+					<span class="count">43</span>
+					#ccc
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#555d66;">
+					<span class="count">41</span>
+					#555d66
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#666;">
+					<span class="count">40</span>
+					#666
+				</li>
+			
+				</ul>
+				<h3>Top 10 least-used colors</h3>
+		<ul>
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.075);">
+					<span class="count">1</span>
+					rgba(0,0,0,0.075)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(10,10,10,0.9);">
+					<span class="count">1</span>
+					rgba(10,10,10,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,1);">
+					<span class="count">1</span>
+					rgba(255,255,255,1)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(0,86,132,0.9);">
+					<span class="count">1</span>
+					rgba(0,86,132,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(150,150,150,0.9);">
+					<span class="count">1</span>
+					rgba(150,150,150,0.9)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.8);">
+					<span class="count">1</span>
+					rgba(255,255,255,0.8)
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#151515;">
+					<span class="count">1</span>
+					#151515
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#eaf2fa;">
+					<span class="count">1</span>
+					#eaf2fa
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:#007cb2;">
+					<span class="count">1</span>
+					#007cb2
+				</li>
+			
+		
+							<li class="chip" style="--chip-bg-color:red;">
+					<span class="count">1</span>
+					red
+				</li>
+			
+				</ul>
+				
+		</section>
+					<section class="audit audit--" id="important">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>Important Overrides</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+													<h3>Number of times `!important` is used: <span class="count">152</span></h3>
+				<h3>Number of times `!important` is used per file</h3>
+		<ol>
+									<li>
+					<span class="count">14</span>
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
 			
-									<li class="chip" style="--chip-bg-color:#f6e2ac;">
-						#f6e2ac
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#df3232;">
-						#df3232
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#5a5a5a;">
-						#5a5a5a
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fdfdfd;">
-						#fdfdfd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#c4c4c4;">
-						#c4c4c4
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e3e3e3;">
-						#e3e3e3
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#39424a;">
-						#39424a
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#40860a;">
-						#40860a
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#7e8993;">
-						#7e8993
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(204,0,0,0.8);">
-						rgba(204,0,0,0.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.5);">
-						rgba(255,255,255,0.5)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(222,222,222,0.75);">
-						rgba(222,222,222,0.75)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(51,51,51,0.5);">
-						rgba(51,51,51,0.5)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f1adad;">
-						#f1adad
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e35b5b;">
-						#e35b5b
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fbc5a9;">
-						#fbc5a9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f78b53;">
-						#f78b53
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffe399;">
-						#ffe399
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#c1e1b9;">
-						#c1e1b9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#83c373;">
-						#83c373
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#888;">
-						#888
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f7fcfe;">
-						#f7fcfe
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d64d21;">
-						#d64d21
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#6c7781;">
-						#6c7781
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#aa0000;">
-						#aa0000
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:blue;">
-						blue
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#006505;">
-						#006505
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d98500;">
-						#d98500
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.03);">
-						rgba(0,0,0,0.03)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#727272;">
-						#727272
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e1e1e1;">
-						#e1e1e1
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(160,165,170,0.15);">
-						rgba(160,165,170,0.15)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#c62d2d;">
-						#c62d2d
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#31843f;">
-						#31843f
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ff8573;">
-						#ff8573
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#faafaa;">
-						#faafaa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fecac2;">
-						#fecac2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#bb2a2a;">
-						#bb2a2a
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(241,241,241);">
-						rgb(241,241,241)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(95,95,95);">
-						rgb(95,95,95)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#fbfbfb;">
-						#fbfbfb
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#83b4d8;">
-						#83b4d8
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#dd3d36;">
-						#dd3d36
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#0074a2;">
-						#0074a2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f6c9cc;">
-						#f6c9cc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f1acb1;">
-						#f1acb1
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f66;">
-						#f66
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ffe9e9;">
-						#ffe9e9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#faa;">
-						#faa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e9ffe9;">
-						#e9ffe9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#afa;">
-						#afa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#cccccc;">
-						#cccccc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#e2e4e7;">
-						#e2e4e7
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#adc5d2;">
-						#adc5d2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#f8f9f9;">
-						#f8f9f9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#bfe7f3;">
-						#bfe7f3
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#826eb4;">
-						#826eb4
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.65);">
-						rgba(255,255,255,0.65)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(244,244,244,0.7);">
-						rgba(244,244,244,0.7)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.05);">
-						rgba(0,0,0,0.05)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(49,49,49,0.7);">
-						rgba(49,49,49,0.7)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#d5d2ca;">
-						#d5d2ca
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(153,153,153,0.1);">
-						rgba(153,153,153,0.1)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgb(153,153,153);">
-						rgb(153,153,153)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(238,238,238,0.9);">
-						rgba(238,238,238,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#656a6f;">
-						#656a6f
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,115,170,.8);">
-						rgba(0,115,170,.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#464b50;">
-						#464b50
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#c0461e;">
-						#c0461e
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0);">
-						rgba(255,255,255,0)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.9);">
-						rgba(255,255,255,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#00669b;">
-						#00669b
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#0085ba;">
-						#0085ba
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(46,68,83,0.15);">
-						rgba(46,68,83,0.15)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#008ec2;">
-						#008ec2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:red;">
-						red
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.08);">
-						rgba(0,0,0,0.08)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ebebeb;">
-						#ebebeb
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#007cb2;">
-						#007cb2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#dfdfdf;">
-						#dfdfdf
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eaf2fa;">
-						#eaf2fa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#151515;">
-						#151515
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.8);">
-						rgba(255,255,255,0.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(150,150,150,0.9);">
-						rgba(150,150,150,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,86,132,0.9);">
-						rgba(0,86,132,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#bc0b0b;">
-						#bc0b0b
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,1);">
-						rgba(255,255,255,1)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(10,10,10,0.9);">
-						rgba(10,10,10,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.075);">
-						rgba(0,0,0,0.075)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#3592b6;">
-						#3592b6
-					</li>
-				
-						</ul>
-								<h3>Top 10 most-used colors</h3>
-			<ul>
-			
-									<li class="chip" style="--chip-bg-color:#fff;">
-						<span class="count">214</span>
-						#fff
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ddd;">
-						<span class="count">153</span>
-						#ddd
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eee;">
-						<span class="count">77</span>
-						#eee
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#0073aa;">
-						<span class="count">65</span>
-						#0073aa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#72777c;">
-						<span class="count">56</span>
-						#72777c
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:gray;">
-						<span class="count">53</span>
-						gray
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#5b9dd9;">
-						<span class="count">48</span>
-						#5b9dd9
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#ccc;">
-						<span class="count">43</span>
-						#ccc
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#555d66;">
-						<span class="count">41</span>
-						#555d66
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#666;">
-						<span class="count">40</span>
-						#666
-					</li>
-				
-						</ul>
-								<h3>Top 10 least-used colors</h3>
-			<ul>
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,0,0,0.075);">
-						<span class="count">1</span>
-						rgba(0,0,0,0.075)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(10,10,10,0.9);">
-						<span class="count">1</span>
-						rgba(10,10,10,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,1);">
-						<span class="count">1</span>
-						rgba(255,255,255,1)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(0,86,132,0.9);">
-						<span class="count">1</span>
-						rgba(0,86,132,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(150,150,150,0.9);">
-						<span class="count">1</span>
-						rgba(150,150,150,0.9)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:rgba(255,255,255,0.8);">
-						<span class="count">1</span>
-						rgba(255,255,255,0.8)
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#151515;">
-						<span class="count">1</span>
-						#151515
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#eaf2fa;">
-						<span class="count">1</span>
-						#eaf2fa
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:#007cb2;">
-						<span class="count">1</span>
-						#007cb2
-					</li>
-				
-			
-									<li class="chip" style="--chip-bg-color:red;">
-						<span class="count">1</span>
-						red
-					</li>
-				
-						</ul>
-			</section>
-								<section class="audit audit--" id="important">
-	<header class="audit__header">
-   <h2 class="audit__title">
-      <strong>Important Overrides</strong> <em>audit</em>
-   </h2>
-   <a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
-</header>
-						<h3>Number of times `!important` is used: <span class="count">152</span></h3>
-								<h3>Number of times `!important` is used per file</h3>
-			<ol>
 												<li>
-						<span class="count">14</span>
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-				
-																<li>
-						<span class="count">13</span>
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-				
-																<li>
-						<span class="count">13</span>
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-				
-																<li>
-						<span class="count">13</span>
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-				
-																<li>
-						<span class="count">12</span>
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>wordpress/src/wp-includes/css/buttons.css</em>
-					</li>
-				
-																<li>
-						<span class="count">9</span>
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-				
-																<li>
-						<span class="count">8</span>
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-				
-																<li>
-						<span class="count">5</span>
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-				
-																<li>
-						<span class="count">5</span>
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-				
-																<li>
-						<span class="count">4</span>
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>wordpress/src/wp-includes/css/customize-preview.css</em>
-					</li>
-				
-																<li>
-						<span class="count">2</span>
-						<em>wordpress/src/wp-admin/css/about.css</em>
-					</li>
-				
-																<li>
-						<span class="count">2</span>
-						<em>wordpress/src/wp-admin/css/color-picker.css</em>
-					</li>
-				
-																<li>
-						<span class="count">2</span>
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-				
-																<li>
-						<span class="count">2</span>
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-				
-																<li>
-						<span class="count">2</span>
-						<em>wordpress/src/wp-includes/css/wp-pointer.css</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>wordpress/src/wp-admin/css/install.css</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>wordpress/src/wp-admin/css/l10n.css</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>wordpress/src/wp-admin/css/login.css</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
-					</li>
-				
-										</ol>
-								<h3>Top properties that use !important</h3>
-			<ol>
-												<li>
-						<span class="count">17</span>
-						<em>display</em>
-					</li>
-				
-																<li>
-						<span class="count">14</span>
-						<em>min-width</em>
-					</li>
-				
-																<li>
-						<span class="count">10</span>
-						<em>background</em>
-					</li>
-				
-																<li>
-						<span class="count">9</span>
-						<em>font</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>margin</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>box-shadow</em>
-					</li>
-				
-																<li>
-						<span class="count">7</span>
-						<em>text-decoration</em>
-					</li>
-				
-																<li>
-						<span class="count">6</span>
-						<em>word-wrap</em>
-					</li>
-				
-																<li>
-						<span class="count">6</span>
-						<em>width</em>
-					</li>
-				
-																<li>
-						<span class="count">6</span>
-						<em>border-color</em>
-					</li>
-				
-										</ol>
-			</section>
-								<section class="audit audit--" id="display-none">
-	<header class="audit__header">
-   <h2 class="audit__title">
-      <strong>Display: None</strong> <em>audit</em>
-   </h2>
-   <a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
-</header>
-						<h3>Number of times `display: none` is used: <span class="count">279</span></h3>
-								<h3>Places where `display: none` is used</h3>
-			<ol>
-							
-									<li>
-						<code>.about__container div.updated,.about__container div.error,.about__container .notice</code><br />
-						<em>wordpress/src/wp-admin/css/about.css</em>
-					</li>
-											
-									<li>
-						<code>.about-wrap div.updated,.about-wrap div.error,.about-wrap .notice</code><br />
-						<em>wordpress/src/wp-admin/css/about.css</em>
-					</li>
-											
-									<li>
-						<code>#adminmenu .wp-submenu-head</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-menu-arrow</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.folded ul#adminmenu li:hover a.wp-has-current-submenu:after</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>#adminmenu li span.count-0</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.folded #collapse-button .collapse-button-label</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>li#wp-admin-bar-menu-toggle</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-support #menu-appearance a[href=&quot;themes.php?page=custom-header&quot;],.customize-support #menu-appearance a[href=&quot;themes.php?page=custom-background&quot;]</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold ul#adminmenu li:hover a.wp-has-current-submenu:after</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold #collapse-menu .collapse-button-label</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold #adminmenuback,.auto-fold #adminmenuwrap</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold ul#adminmenu li.wp-has-submenu.wp-not-current-submenu:hover:after</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>#adminmenu .wp-submenu</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold #adminmenu .selected .wp-submenu:after,.auto-fold #adminmenu .wp-menu-open .wp-submenu:after</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.auto-fold #adminmenu .opensub .wp-submenu</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>#adminmenu .wp-submenu .wp-submenu-head</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>#adminmenuwrap,#adminmenuback</code><br />
-						<em>wordpress/src/wp-admin/css/admin-menu.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-picker-container .hidden</code><br />
-						<em>wordpress/src/wp-admin/css/color-picker.css</em>
-					</li>
-											
-									<li>
-						<code>.inner-sidebar</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.hidden,.js .closed .inside,.js .hide-if-js,.no-js .hide-if-no-js,.js.wp-core-ui .hide-if-js,.js .wp-core-ui .hide-if-js,.no-js.wp-core-ui .hide-if-no-js,.no-js .wp-core-ui .hide-if-no-js</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js .widefat thead .check-column input,.no-js .widefat tfoot .check-column input</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.icon32</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.approve,.unapproved .unapprove</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.filter-drawer,.wp-filter .favorites-form</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-filter .button.clear-filters</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.filtered-by</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.filters-applied .filter-group,.filters-applied .filter-drawer .buttons,.filters-applied .filter-drawer br</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.show-filters .favorites-form,.show-filters .content-filterable,.show-filters.filters-applied.loading-content .content-filterable,.loading-content .content-filterable,.error .content-filterable</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.filter-count</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>ul#dismissed-updates</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#screen-meta</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.metabox-prefs label a</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.help-tab-content</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.lp-show-latest p</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#plugin-information-title div.vignette</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#plugin-information .fyi h3,#plugin-information .fyi small</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.plugin-details-modal #TB_ajaxWindowTitle</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.plugin-details-modal .tb-close-icon</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>[role=&quot;treeitem&quot;][aria-expanded=&quot;false&quot;]&gt;ul</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.tree-folder&gt;li:last-child::after,.tree-folder li:last-child&gt;.tree-folder::after</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.accordion-section-content</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>.cannot-expand .accordion-section-title:after</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#collapse-menu,.post-format-select</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#wpfooter</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#comments-form .checkforspam</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#screen-meta #contextual-help-back,#screen-meta .contextual-help-sidebar</code><br />
-						<em>wordpress/src/wp-admin/css/common.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .control-section-outer</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>body:not(.ready) #publish-settings,body.trashing #customize-save-button-wrapper .save,body.trashing #publish-settings</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#sub-accordion-section-publish_settings .customize-section-description-container</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls .customize-info .accordion-section-title:after</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls .customize-info .customize-panel-description,#customize-controls .customize-info .customize-section-description,#customize-outer-theme-controls .customize-info .customize-section-description,#customize-controls .no-widget-areas-rendered-notice</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.accordion-sub-container.control-panel-content</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.ios .customize-panel-back</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-full-overlay.collapsed #customize-controls #customize-notifications-area</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-control .dropdown-status</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-control-header .inner</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .control-panel-themes&gt;.accordion-section-title:after</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.in-themes-panel.animating .control-panel-themes .filter-themes-count</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.themes-filter-bar .feature-filter-toggle .filter-count-filters</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-themes-full-container .customize-themes-section</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-themes-section .no-themes,.customize-themes-section .no-themes-local</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.themes-section-installed_themes .theme .notice-success:not(.updated-message)</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.control-panel-themes .customize-themes-mobile-back</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.control-panel-themes .customize-themes-full-container</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.showing-themes #customize-header-actions</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-customizer .theme-overlay</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.reorder-done,.reordering .reorder</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets .customize-section-title,#available-menu-items .customize-section-title</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets-filter input::-ms-clear,#available-menu-items-search input::-ms-clear</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets-filter .clear-results,#available-menu-items-search .clear-results,#available-menu-items-search.loading .clear-results.is-visible</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.no-widgets-found-message</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets .widget-tpl,#available-menu-items .item-tpl</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-controls-preview-toggle</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-footer-actions,.customize-controls-preview-toggle .controls,.preview-only .wp-full-overlay-sidebar-content,.preview-only .customize-controls-preview-toggle .preview</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item-reorder-nav</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.reordering .menu-item .item-controls,.reordering .menu-item .item-type</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-customizer #screen-options-wrap</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.control-section-nav_menu .field-link-target,.control-section-nav_menu .field-title-attribute,.control-section-nav_menu .field-css-classes,.control-section-nav_menu .field-xfn,.control-section-nav_menu .field-description</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item-bar .item-delete</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.adding-menu-items .menu-item-bar .item-edit</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>#available-menu-items .accordion-section-title .no-items,#available-menu-items .cannot-expand .accordion-section-title .spinner,#available-menu-items .cannot-expand .accordion-section-title&gt;button</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>#available-menu-items-search .accordion-section-title:after</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item-handle .spinner</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>li.assigned-to-menu-location .menu-delete-item</code><br />
-						<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.control-section.control-section-sidebar,.customize-control-sidebar_widgets label,.customize-control-sidebar_widgets .hide-if-js</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-control-widget_form .widget-control-save</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#widget-customizer-control-templates</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .widget-reorder-nav</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .move-widget-area</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .widget-area-select li:before</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-theme-controls .reordering .widget-title-action</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets .widget-action</code><br />
-						<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#dashboard-widgets .postbox-container .empty-container:after</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>.community-events-errors[aria-hidden=&quot;true&quot;],.community-events-errors [aria-hidden=&quot;true&quot;],.community-events-loading[aria-hidden=&quot;true&quot;],.community-events[aria-hidden=&quot;true&quot;],.community-events [aria-hidden=&quot;true&quot;]</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>.event-icon</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>.postbox .button-link .edit-box</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>#dashboard-widgets #postbox-container-3 .empty-container:after,#dashboard-widgets #postbox-container-4 .empty-container:after</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>.columns-prefs .columns-prefs-3,.columns-prefs .columns-prefs-4</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>#dashboard-widgets #postbox-container-4 .empty-container:after</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>#library-form .progress,#gallery-form .progress,.insert-gallery,.describe.startopen,.describe.startclosed</code><br />
-						<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
-					</li>
-											
-									<li>
-						<code>#media-upload .del-attachment</code><br />
-						<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
-					</li>
-											
-									<li>
-						<code>tr.not-image</code><br />
-						<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
-					</li>
-											
-									<li>
-						<code>table.not-image tr.image-only</code><br />
-						<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
-					</li>
-											
-									<li>
-						<code>#editable-post-name-full</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>body.post-new-php .submitbox .submitdelete</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js .category-tabs li.hide-if-no-js</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-hidden-children .wp-hidden-child,.ui-tabs-hide</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-editor-expand #content-resize-handle</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.mce-fullscreen #wp-content-wrap .mce-tinymce .mce-wp-dfw</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.post-php.mce-fullscreen #wpadminbar,.mce-fullscreen #wp-content-wrap .mce-wp-dfw</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.tagchecklist br</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.privacy-text-actions .success</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.hide-privacy-policy-tutorial .wp-policy-help,.hide-privacy-policy-tutorial .privacy-policy-tutorial</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js #postcustomstuff #enternew</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#select-featured-image .remove</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js #select-featured-image .choose</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>div.tabs-panel-inactive</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.ac_results</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#qt_content_dfw</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.post-type-attachment .screen-layout,.post-type-attachment .columns-prefs</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.screen-layout,.columns-prefs</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#content_wp_fullscreen</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.edit-term-notes</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>input[type=&quot;search&quot;]::-webkit-search-decoration</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-core-ui select::-ms-expand</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js label[for=&quot;bulk-action-selector-bottom&quot;],.no-js select#bulk-action-selector-bottom,.no-js input#doaction2,.no-js label[for=&quot;new_role2&quot;],.no-js select#new_role2,.no-js input#changeit2</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-cancel-pw .dashicons-no</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.pw-weak</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-pwd input::-ms-reveal</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>#pass1-text,.show-password #pass1</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>#pass1-text::-ms-clear</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.request-filesystem-credentials-dialog</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>#request-filesystem-credentials-form .cancel-button</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-pwd .button .text</code><br />
-						<em>wordpress/src/wp-admin/css/forms.css</em>
-					</li>
-											
-									<li>
-						<code>.button.hide-if-no-js,.hide-if-no-js</code><br />
-						<em>wordpress/src/wp-admin/css/install.css</em>
-					</li>
-											
-									<li>
-						<code>.column-response .post-com-count-no-pending,.column-comments .post-com-count-no-pending</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.fixed .column-comment .comment-author</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-list-table .toggle-row</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.locked-indicator</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.locked-info</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>tr.wp-locked .check-column label,tr.wp-locked .check-column input[type=&quot;checkbox&quot;],tr.wp-locked .row-actions .inline,tr.wp-locked .row-actions .trash</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.tablenav .no-pages,.tablenav .one-page .pagination-links</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.plugin-card-update-failed .plugin-card-bottom</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.tablenav br</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.tablenav.top .actions,.tablenav .view-switch</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.tablenav.top .displaying-num</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.tablenav.top .tablenav-pages.one-page</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.form-wrap&gt;p</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-list-table th.column-primary~th,.wp-list-table tr:not(.inline-edit-row):not(.no-items) td.column-primary~td:not(.check-column)</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>#comments-form .fixed .column-author,#commentsdiv .fixed .column-author</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.fixed .column-author.hidden~.column-comment .comment-author</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.column-response .post-com-count [aria-hidden=&quot;true&quot;],.column-comments .post-com-count [aria-hidden=&quot;true&quot;]</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.comments-box .toggle-row,.wp-list-table.plugins .toggle-row</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>#wpbody-content .wp-list-table.plugins .desc.hidden</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>table.plugin-install th.column-name,table.plugin-install th.column-version,table.plugin-install th.column-rating,table.plugin-install th.column-description</code><br />
-						<em>wordpress/src/wp-admin/css/list-tables.css</em>
-					</li>
-											
-									<li>
-						<code>.login .input::-ms-clear</code><br />
-						<em>wordpress/src/wp-admin/css/login.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js .hide-if-no-js</code><br />
-						<em>wordpress/src/wp-admin/css/login.css</em>
-					</li>
-											
-									<li>
-						<code>input::-ms-reveal</code><br />
-						<em>wordpress/src/wp-admin/css/login.css</em>
-					</li>
-											
-									<li>
-						<code>#wpbody-content #async-upload-wrap a</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.media-item .describe-toggle-off,.media-item.open .describe-toggle-on</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.media-item .startopen,.media-item .startclosed</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.js .html-uploader #plupload-upload-ui</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.drag-drop-inside p</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame.mode-grid .media-frame-title,.media-frame.mode-grid .media-frame-router,.media-frame.mode-grid .media-frame-menu</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.upload-php .mode-grid .hide-sidebar .media-sidebar</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.upload-php .mode-grid .media-sidebar .media-uploader-status.errors h2</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.imgedit-wait</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js .wp_attachment_image .button</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.imgedit-help</code><br />
-						<em>wordpress/src/wp-admin/css/media.css</em>
-					</li>
-											
-									<li>
-						<code>.has-no-menu-item .button-controls</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.metabox-holder-disabled .button-controls .select-all</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.hide-all</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.nav-menus-php .list-wrap</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.nav-menus-php .list li</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js .menu-item-edit-active .item-edit</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item .menu-item-transport:empty</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.no-js.nav-menus-php .item-edit:before</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-instructions-inactive</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item-settings .field-move .button-link</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.menu-item-edit-inactive .menu-item-settings</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.hidden-field</code><br />
-						<em>wordpress/src/wp-admin/css/nav-menus.css</em>
-					</li>
-											
-									<li>
-						<code>.revisions .diff-error</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.comparing-two-revisions .revisions-previous,.comparing-two-revisions .revisions-next,.revisions-meta .diff-meta-to strong</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.diff-meta-from</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.revisions-tooltip</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.revisions.pinned .revisions-tooltip</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.revisions-tooltip</code><br />
-						<em>wordpress/src/wp-admin/css/revisions.css</em>
-					</li>
-											
-									<li>
-						<code>.site-status-has-issues.hide</code><br />
-						<em>wordpress/src/wp-admin/css/site-health.css</em>
-					</li>
-											
-									<li>
-						<code>.site-status-all-clear.hide</code><br />
-						<em>wordpress/src/wp-admin/css/site-health.css</em>
-					</li>
-											
-									<li>
-						<code>.health-check-accordion-panel[hidden]</code><br />
-						<em>wordpress/src/wp-admin/css/site-health.css</em>
-					</li>
-											
-									<li>
-						<code>body.js .theme-browser.search-loading</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme-browser .theme .theme-author</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-support .theme-overlay .theme-actions a[href=&quot;themes.php?page=custom-header&quot;],.customize-support .theme-overlay .theme-actions a[href=&quot;themes.php?page=custom-background&quot;]</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme-overlay .theme-actions .active-theme,.theme-overlay.active .theme-actions .inactive-theme</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.single-theme .theme-overlay .theme-backdrop,.single-theme .theme-overlay .theme-header,.single-theme .theme</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme-browser .theme.active .theme-name span</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme:not(.active):hover .theme-actions,.theme:not(.active):focus .theme-actions,.theme:hover .more-details,.theme:focus .more-details</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.single-theme .current-label</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.upload-view-toggle .browse,.plugin-install-tab-upload .upload-view-toggle .upload</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.upload-theme,.upload-plugin</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>p.no-themes,p.no-themes-local</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme-install-php .add-new-theme</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-full-overlay.collapsed .collapse-sidebar-label</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-full-overlay-footer .devices</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.collapsed .wp-full-overlay-footer .devices button:before</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.no-customize-support .hide-if-no-customize,.customize-support .hide-if-customize,.no-customize-support.wp-core-ui .hide-if-no-customize,.no-customize-support .wp-core-ui .hide-if-no-customize,.customize-support.wp-core-ui .hide-if-customize,.customize-support .wp-core-ui .hide-if-customize</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-container</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.theme-install-overlay</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.install-theme-info</code><br />
-						<em>wordpress/src/wp-admin/css/themes.css</em>
-					</li>
-											
-									<li>
-						<code>.widget.widget-dirty .widget-control-close-wrapper</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-core-ui .media-widget-control.selected .placeholder,.wp-core-ui .media-widget-control.selected .not-selected,.wp-core-ui .media-widget-control .selected</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame.media-widget .image-details .embed-media-settings .setting.align,.media-frame.media-widget .attachment-display-settings .setting.align,.media-frame.media-widget .embed-media-settings .setting.align,.media-frame.media-widget .embed-media-settings .legend-inline,.media-frame.media-widget .embed-link-settings .setting.link-text,.media-frame.media-widget .replace-attachment,.media-frame.media-widget .checkbox-setting.autoplay</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#widgets-left .sidebar-name .toggle-indicator</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#available-widgets .widget-control-edit .edit,#available-widgets .widget-action .edit,#widgets-left .inactive-sidebar .widget-control-edit .add,#widgets-left .inactive-sidebar .widget-action .add,#widgets-right .widget-control-edit .add,#widgets-right .widget-action .add</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.js .widgets-holder-wrap.closed .widget,.js .widgets-holder-wrap.closed .sidebar-description,.js .widgets-holder-wrap.closed .remove-inactive-widgets,.js .widgets-holder-wrap.closed .description,.js .closed br.clear</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.widget-inside,.widget-description</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#removing-widget</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.widget-control-noform,#access-off,.widgets_access .widget-action,.widgets_access .handlediv,.widgets_access #access-on,.widgets_access .widget-holder .description,.no-js .widget-holder .description</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.widgets-chooser</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>.text-widget-fields [hidden]</code><br />
-						<em>wordpress/src/wp-admin/css/widgets.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar .menupop .ab-sub-wrapper,#wpadminbar .shortlink-input</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-admin-bar-my-account.with-avatar&gt;.ab-item:before</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar #adminbarsearch .adminbar-button</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>.no-customize-support .hide-if-no-customize,.customize-support .hide-if-customize,.no-customize-support #wpadminbar .hide-if-no-customize,.no-customize-support.wp-core-ui .hide-if-no-customize,.no-customize-support .wp-core-ui .hide-if-no-customize,.customize-support #wpadminbar .hide-if-customize,.customize-support.wp-core-ui .hide-if-customize,.customize-support .wp-core-ui .hide-if-customize</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar .ab-label</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar .ab-top-menu&gt;.menupop&gt;.ab-sub-wrapper a:empty</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar .quicklinks li .blavatar:before</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar #wp-admin-bar-search</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar #wp-admin-bar-user-actions.ab-submenu img.avatar</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-toolbar&gt;ul&gt;li</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar .menupop .menupop&gt;.ab-item:before</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar li#wp-admin-bar-wp-logo,#wpadminbar li#wp-admin-bar-updates</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar li#wp-admin-bar-comments</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-core-ui .button.hidden</code><br />
-						<em>wordpress/src/wp-includes/css/buttons.css</em>
-					</li>
-											
-									<li>
-						<code>.mce-floatpanel .mce-arrow</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>.block-library-classic__toolbar .mce-toolbar-grp .mce-toolbar:not(:first-child)</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>.tmce-active .quicktags-toolbar</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>#wp_editbtns,#wp_gallerybtns</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-link-wrap</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-link-backdrop</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-link-wrap .wp-link-text-field</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-link .river-waiting</code><br />
-						<em>wordpress/src/wp-includes/css/editor.css</em>
-					</li>
-											
-									<li>
-						<code>.ui-helper-hidden</code><br />
-						<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
-					</li>
-											
-									<li>
-						<code>.ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle</code><br />
-						<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame .hidden,.media-frame .setting.hidden</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.sidebar-for-errors .attachment-details,.sidebar-for-errors .compat-item,.sidebar-for-errors .media-sidebar .media-progress-bar,.sidebar-for-errors .upload-details</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-router .active:after</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame.hide-menu .media-frame-menu,.media-frame.hide-menu .media-frame-menu-heading,.media-frame.hide-router .media-frame-router,.media-frame.hide-toolbar .media-frame-toolbar</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.mode-grid .media-frame-actions-heading</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-core-ui .button.media-frame-menu-toggle</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-core-ui .attachment .check</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.attachments-browser .uploader-inline.hidden</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.mode-grid .attachments-browser .media-toolbar-mode-select .media-toolbar-primary</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-uploader-status .media-progress-bar</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.uploader-inline .media-uploader-status h2</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-uploader-status .upload-details</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-uploader-status .upload-dismiss-errors,.media-uploader-status .upload-errors</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.uploader-window,.wp-editor-wrap .uploader-editor</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-editor-wrap .uploader-editor .uploader-editor-title</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.uploader-window .media-progress-bar</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.uploader-inline .drop-instructions</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.uploader-inline .media-progress-bar</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-selection.empty,.media-selection.editing</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-selection.one .edit-selection</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-selection .attachment .filename</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.attachment-details .settings-save-status .saved</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.attachment-details.needs-refresh .attachment-info .edit-attachment</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame .embed-url input::-ms-clear</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.image-details .hidden</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-embed .setting input.hidden,.media-embed .setting textarea.hidden</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame:not(.hide-menu) .media-menu</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-selection .attachments</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>.media-frame-content .media-toolbar .instructions</code><br />
-						<em>wordpress/src/wp-includes/css/media-views.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-auth-check-wrap.hidden</code><br />
-						<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
-					</li>
-											
-									<li>
-						<code>#wp-auth-check-wrap .wp-auth-fallback</code><br />
-						<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
-					</li>
-											
-									<li>
-						<code>.dashicons-share</code><br />
-						<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-embed-share-tab[aria-hidden=&quot;true&quot;]</code><br />
-						<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
-					</li>
-											
-									<li>
-						<code>.wp-pointer</code><br />
-						<em>wordpress/src/wp-includes/css/wp-pointer.css</em>
-					</li>
-										</ol>
-			</section>
-								<section class="audit audit--" id="selectors">
-	<header class="audit__header">
-   <h2 class="audit__title">
-      <strong>Selectors</strong> <em>audit</em>
-   </h2>
-   <a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
-</header>
-						<h3>Total number of selectors: <span class="count">8372</span></h3>
-								<h3>Number of selectors with IDs: <span class="count">2254</span></h3>
-								<h3>Top 10 selectors with the highest specificity</h3>
-			<ol>
-							
-									<li>
-						<code>#wpadminbar&gt;#wp-toolbar&gt;#wp-admin-bar-top-secondary&gt;#wp-admin-bar-search #adminbarsearch input.adminbar-input:focus</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#wpadminbar&gt;#wp-toolbar&gt;#wp-admin-bar-top-secondary&gt;#wp-admin-bar-search #adminbarsearch input.adminbar-input</code><br />
-						<em>wordpress/src/wp-includes/css/admin-bar.css</em>
-					</li>
-											
-									<li>
-						<code>#side-sortables #postcustom #postcustomstuff #the-list textarea</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#dashboard-widgets-wrap #dashboard-widgets .postbox form .submit #publish</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>#wpbody #wpbody-content #dashboard-widgets.columns-1 .postbox-container</code><br />
-						<em>wordpress/src/wp-admin/css/dashboard.css</em>
-					</li>
-											
-									<li>
-						<code>.post-type-attachment #wpbody-content #post-body.columns-2 #postbox-container-1</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.post-type-attachment #poststuff #postbox-container-1 #side-sortables:empty</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.post-type-attachment #poststuff #post-body.columns-2 #side-sortables</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.is-dragging-metaboxes #poststuff #postbox-container-1 #side-sortables:empty</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.is-dragging-metaboxes #poststuff #post-body.columns-2 #side-sortables</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-										</ol>
-								<h3>Top 10 selectors by length</h3>
-			<ol>
-							
-									<li>
-						<code>.policy-text div&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>.policy-text&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .customize-changeset-locked-message</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.hide-privacy-policy-tutorial&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .currently-editing</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.policy-text div&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .action-buttons</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.customize-section-description-container+#customize-control-custom_css:last-child .customize-control-notifications-container</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-											
-									<li>
-						<code>.policy-text&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
-						<em>wordpress/src/wp-admin/css/edit.css</em>
-					</li>
-											
-									<li>
-						<code>#customize-controls .customize-section-title&gt;.customize-control-notifications-container:not(.has-overlay-notifications)</code><br />
-						<em>wordpress/src/wp-admin/css/customize-controls.css</em>
-					</li>
-										</ol>
-			</section>
-								<section class="audit audit--" id="media-queries">
-	<header class="audit__header">
-   <h2 class="audit__title">
-      <strong>Media Queries</strong> <em>audit</em>
-   </h2>
-   <a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
-</header>
-						<h3>Number of total media queries: <span class="count">176</span></h3>
-								<h3>Number of seemingly-unique media queries: <span class="count">81</span></h3>
-								<h3>Top 10 most-used media queries</h3>
-			<ol>
-												<li>
-						<span class="count">31</span>
-						<em>screen and (max-width:782px)</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>print</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>(-webkit-min-device-pixel-ratio:1.25)</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>(min-resolution:120dpi)</em>
-					</li>
-				
-																<li>
-						<span class="count">9</span>
-						<em>screen and (max-width:600px)</em>
-					</li>
-				
-																<li>
-						<span class="count">6</span>
-						<em>screen and (max-width:480px)</em>
-					</li>
-				
-																<li>
-						<span class="count">4</span>
-						<em>only screen and (max-width:480px)</em>
-					</li>
-				
-																<li>
-						<span class="count">4</span>
-						<em>only screen and (max-width:1120px)</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>only screen and (max-width:782px)</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>only screen and (max-width:799px)</em>
-					</li>
-				
-										</ol>
-								<h3>Number of unique breakpoint sizes: <span class="count">61</span></h3>
-								<h3>Top 10 most-used breakpoint sizes</h3>
-			<ol>
-												<li>
-						<span class="count">36</span>
-						<em>782px</em>
-					</li>
-				
-																<li>
-						<span class="count">12</span>
-						<em>600px</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>480px</em>
-					</li>
-				
-																<li>
-						<span class="count">5</span>
-						<em>320px</em>
-					</li>
-				
-																<li>
-						<span class="count">5</span>
-						<em>640px</em>
-					</li>
-				
-																<li>
-						<span class="count">4</span>
-						<em>1120px</em>
-					</li>
-				
-																<li>
-						<span class="count">4</span>
-						<em>1200px</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>799px</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>1600px</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>850px</em>
-					</li>
-				
-										</ol>
-								<h3>Top 10 least-used breakpoint sizes</h3>
-			<ol>
-												<li>
-						<span class="count">1</span>
-						<em>380px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>901px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>520px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>400px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>1250px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>1024px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>3333px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>1667px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>650px</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>780px</em>
-					</li>
-				
-										</ol>
-								<h3>Non-width related media queries</h3>
-			<ol>
-												<li>
-						<span class="count">11</span>
-						<em>(-webkit-min-device-pixel-ratio:1.25)</em>
-					</li>
-				
-																<li>
-						<span class="count">11</span>
-						<em>(min-resolution:120dpi)</em>
-					</li>
-				
-																<li>
-						<span class="count">3</span>
-						<em>(max-height:400px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:540px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:472px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:700px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:480px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(prefers-reduced-motion:reduce)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:550px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:520px)</em>
-					</li>
-				
-																<li>
-						<span class="count">1</span>
-						<em>(max-height:290px)</em>
-					</li>
-				
-										</ol>
-			</section>
+					<span class="count">13</span>
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
 			
+												<li>
+					<span class="count">13</span>
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+			
+												<li>
+					<span class="count">13</span>
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+			
+												<li>
+					<span class="count">12</span>
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>wordpress/src/wp-includes/css/buttons.css</em>
+				</li>
+			
+												<li>
+					<span class="count">9</span>
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+			
+												<li>
+					<span class="count">8</span>
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+			
+												<li>
+					<span class="count">5</span>
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+			
+												<li>
+					<span class="count">5</span>
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+			
+												<li>
+					<span class="count">4</span>
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>wordpress/src/wp-includes/css/customize-preview.css</em>
+				</li>
+			
+												<li>
+					<span class="count">2</span>
+					<em>wordpress/src/wp-admin/css/about.css</em>
+				</li>
+			
+												<li>
+					<span class="count">2</span>
+					<em>wordpress/src/wp-admin/css/color-picker.css</em>
+				</li>
+			
+												<li>
+					<span class="count">2</span>
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+			
+												<li>
+					<span class="count">2</span>
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+			
+												<li>
+					<span class="count">2</span>
+					<em>wordpress/src/wp-includes/css/wp-pointer.css</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>wordpress/src/wp-admin/css/install.css</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>wordpress/src/wp-admin/css/l10n.css</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>wordpress/src/wp-admin/css/login.css</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
+				</li>
+			
+							</ol>
+				<h3>Top properties that use !important</h3>
+		<ol>
+									<li>
+					<span class="count">17</span>
+					<em>display</em>
+				</li>
+			
+												<li>
+					<span class="count">14</span>
+					<em>min-width</em>
+				</li>
+			
+												<li>
+					<span class="count">10</span>
+					<em>background</em>
+				</li>
+			
+												<li>
+					<span class="count">9</span>
+					<em>font</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>margin</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>box-shadow</em>
+				</li>
+			
+												<li>
+					<span class="count">7</span>
+					<em>text-decoration</em>
+				</li>
+			
+												<li>
+					<span class="count">6</span>
+					<em>word-wrap</em>
+				</li>
+			
+												<li>
+					<span class="count">6</span>
+					<em>width</em>
+				</li>
+			
+												<li>
+					<span class="count">6</span>
+					<em>border-color</em>
+				</li>
+			
+							</ol>
+				
+		</section>
+					<section class="audit audit--" id="display-none">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>Display: None</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+													<h3>Number of times `display: none` is used: <span class="count">279</span></h3>
+				<h3>Places where `display: none` is used</h3>
+		<ol>
+					
+							<li>
+					<code>.about__container div.updated,.about__container div.error,.about__container .notice</code><br />
+					<em>wordpress/src/wp-admin/css/about.css</em>
+				</li>
+								
+							<li>
+					<code>.about-wrap div.updated,.about-wrap div.error,.about-wrap .notice</code><br />
+					<em>wordpress/src/wp-admin/css/about.css</em>
+				</li>
+								
+							<li>
+					<code>#adminmenu .wp-submenu-head</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-menu-arrow</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.folded ul#adminmenu li:hover a.wp-has-current-submenu:after</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>#adminmenu li span.count-0</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.folded #collapse-button .collapse-button-label</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>li#wp-admin-bar-menu-toggle</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-support #menu-appearance a[href=&quot;themes.php?page=custom-header&quot;],.customize-support #menu-appearance a[href=&quot;themes.php?page=custom-background&quot;]</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold ul#adminmenu li:hover a.wp-has-current-submenu:after</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold #collapse-menu .collapse-button-label</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold #adminmenuback,.auto-fold #adminmenuwrap</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold ul#adminmenu li.wp-has-submenu.wp-not-current-submenu:hover:after</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>#adminmenu .wp-submenu</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold #adminmenu .selected .wp-submenu:after,.auto-fold #adminmenu .wp-menu-open .wp-submenu:after</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.auto-fold #adminmenu .opensub .wp-submenu</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>#adminmenu .wp-submenu .wp-submenu-head</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>#adminmenuwrap,#adminmenuback</code><br />
+					<em>wordpress/src/wp-admin/css/admin-menu.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-picker-container .hidden</code><br />
+					<em>wordpress/src/wp-admin/css/color-picker.css</em>
+				</li>
+								
+							<li>
+					<code>.inner-sidebar</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.hidden,.js .closed .inside,.js .hide-if-js,.no-js .hide-if-no-js,.js.wp-core-ui .hide-if-js,.js .wp-core-ui .hide-if-js,.no-js.wp-core-ui .hide-if-no-js,.no-js .wp-core-ui .hide-if-no-js</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js .widefat thead .check-column input,.no-js .widefat tfoot .check-column input</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.icon32</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.approve,.unapproved .unapprove</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.filter-drawer,.wp-filter .favorites-form</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-filter .button.clear-filters</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.filtered-by</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.filters-applied .filter-group,.filters-applied .filter-drawer .buttons,.filters-applied .filter-drawer br</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.show-filters .favorites-form,.show-filters .content-filterable,.show-filters.filters-applied.loading-content .content-filterable,.loading-content .content-filterable,.error .content-filterable</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.filter-count</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>ul#dismissed-updates</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#screen-meta</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.metabox-prefs label a</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.help-tab-content</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.lp-show-latest p</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#plugin-information-title div.vignette</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#plugin-information .fyi h3,#plugin-information .fyi small</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.plugin-details-modal #TB_ajaxWindowTitle</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.plugin-details-modal .tb-close-icon</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>[role=&quot;treeitem&quot;][aria-expanded=&quot;false&quot;]&gt;ul</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.tree-folder&gt;li:last-child::after,.tree-folder li:last-child&gt;.tree-folder::after</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.accordion-section-content</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>.cannot-expand .accordion-section-title:after</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#collapse-menu,.post-format-select</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#wpfooter</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#comments-form .checkforspam</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#screen-meta #contextual-help-back,#screen-meta .contextual-help-sidebar</code><br />
+					<em>wordpress/src/wp-admin/css/common.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .control-section-outer</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>body:not(.ready) #publish-settings,body.trashing #customize-save-button-wrapper .save,body.trashing #publish-settings</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#sub-accordion-section-publish_settings .customize-section-description-container</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls .customize-info .accordion-section-title:after</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls .customize-info .customize-panel-description,#customize-controls .customize-info .customize-section-description,#customize-outer-theme-controls .customize-info .customize-section-description,#customize-controls .no-widget-areas-rendered-notice</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.accordion-sub-container.control-panel-content</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.ios .customize-panel-back</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-full-overlay.collapsed #customize-controls #customize-notifications-area</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-control .dropdown-status</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-control-header .inner</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .control-panel-themes&gt;.accordion-section-title:after</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.in-themes-panel.animating .control-panel-themes .filter-themes-count</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.themes-filter-bar .feature-filter-toggle .filter-count-filters</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-themes-full-container .customize-themes-section</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-themes-section .no-themes,.customize-themes-section .no-themes-local</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.themes-section-installed_themes .theme .notice-success:not(.updated-message)</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.control-panel-themes .customize-themes-mobile-back</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.control-panel-themes .customize-themes-full-container</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.showing-themes #customize-header-actions</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-customizer .theme-overlay</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.reorder-done,.reordering .reorder</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets .customize-section-title,#available-menu-items .customize-section-title</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets-filter input::-ms-clear,#available-menu-items-search input::-ms-clear</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets-filter .clear-results,#available-menu-items-search .clear-results,#available-menu-items-search.loading .clear-results.is-visible</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.no-widgets-found-message</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets .widget-tpl,#available-menu-items .item-tpl</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-controls-preview-toggle</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-footer-actions,.customize-controls-preview-toggle .controls,.preview-only .wp-full-overlay-sidebar-content,.preview-only .customize-controls-preview-toggle .preview</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item-reorder-nav</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.reordering .menu-item .item-controls,.reordering .menu-item .item-type</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-customizer #screen-options-wrap</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.control-section-nav_menu .field-link-target,.control-section-nav_menu .field-title-attribute,.control-section-nav_menu .field-css-classes,.control-section-nav_menu .field-xfn,.control-section-nav_menu .field-description</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item-bar .item-delete</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.adding-menu-items .menu-item-bar .item-edit</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>#available-menu-items .accordion-section-title .no-items,#available-menu-items .cannot-expand .accordion-section-title .spinner,#available-menu-items .cannot-expand .accordion-section-title&gt;button</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>#available-menu-items-search .accordion-section-title:after</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item-handle .spinner</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>li.assigned-to-menu-location .menu-delete-item</code><br />
+					<em>wordpress/src/wp-admin/css/customize-nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.control-section.control-section-sidebar,.customize-control-sidebar_widgets label,.customize-control-sidebar_widgets .hide-if-js</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-control-widget_form .widget-control-save</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#widget-customizer-control-templates</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .widget-reorder-nav</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .move-widget-area</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .widget-area-select li:before</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-theme-controls .reordering .widget-title-action</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets .widget-action</code><br />
+					<em>wordpress/src/wp-admin/css/customize-widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#dashboard-widgets .postbox-container .empty-container:after</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>.community-events-errors[aria-hidden=&quot;true&quot;],.community-events-errors [aria-hidden=&quot;true&quot;],.community-events-loading[aria-hidden=&quot;true&quot;],.community-events[aria-hidden=&quot;true&quot;],.community-events [aria-hidden=&quot;true&quot;]</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>.event-icon</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>.postbox .button-link .edit-box</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>#dashboard-widgets #postbox-container-3 .empty-container:after,#dashboard-widgets #postbox-container-4 .empty-container:after</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>.columns-prefs .columns-prefs-3,.columns-prefs .columns-prefs-4</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>#dashboard-widgets #postbox-container-4 .empty-container:after</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>#library-form .progress,#gallery-form .progress,.insert-gallery,.describe.startopen,.describe.startclosed</code><br />
+					<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
+				</li>
+								
+							<li>
+					<code>#media-upload .del-attachment</code><br />
+					<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
+				</li>
+								
+							<li>
+					<code>tr.not-image</code><br />
+					<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
+				</li>
+								
+							<li>
+					<code>table.not-image tr.image-only</code><br />
+					<em>wordpress/src/wp-admin/css/deprecated-media.css</em>
+				</li>
+								
+							<li>
+					<code>#editable-post-name-full</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>body.post-new-php .submitbox .submitdelete</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js .category-tabs li.hide-if-no-js</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-hidden-children .wp-hidden-child,.ui-tabs-hide</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-editor-expand #content-resize-handle</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.mce-fullscreen #wp-content-wrap .mce-tinymce .mce-wp-dfw</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.post-php.mce-fullscreen #wpadminbar,.mce-fullscreen #wp-content-wrap .mce-wp-dfw</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.tagchecklist br</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.privacy-text-actions .success</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.hide-privacy-policy-tutorial .wp-policy-help,.hide-privacy-policy-tutorial .privacy-policy-tutorial</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js #postcustomstuff #enternew</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#select-featured-image .remove</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js #select-featured-image .choose</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>div.tabs-panel-inactive</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.ac_results</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#qt_content_dfw</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.post-type-attachment .screen-layout,.post-type-attachment .columns-prefs</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.screen-layout,.columns-prefs</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#content_wp_fullscreen</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.edit-term-notes</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>input[type=&quot;search&quot;]::-webkit-search-decoration</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-core-ui select::-ms-expand</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js label[for=&quot;bulk-action-selector-bottom&quot;],.no-js select#bulk-action-selector-bottom,.no-js input#doaction2,.no-js label[for=&quot;new_role2&quot;],.no-js select#new_role2,.no-js input#changeit2</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-cancel-pw .dashicons-no</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.pw-weak</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-pwd input::-ms-reveal</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>#pass1-text,.show-password #pass1</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>#pass1-text::-ms-clear</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.request-filesystem-credentials-dialog</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>#request-filesystem-credentials-form .cancel-button</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-pwd .button .text</code><br />
+					<em>wordpress/src/wp-admin/css/forms.css</em>
+				</li>
+								
+							<li>
+					<code>.button.hide-if-no-js,.hide-if-no-js</code><br />
+					<em>wordpress/src/wp-admin/css/install.css</em>
+				</li>
+								
+							<li>
+					<code>.column-response .post-com-count-no-pending,.column-comments .post-com-count-no-pending</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.fixed .column-comment .comment-author</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-list-table .toggle-row</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.locked-indicator</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.locked-info</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>tr.wp-locked .check-column label,tr.wp-locked .check-column input[type=&quot;checkbox&quot;],tr.wp-locked .row-actions .inline,tr.wp-locked .row-actions .trash</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.tablenav .no-pages,.tablenav .one-page .pagination-links</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.plugin-card-update-failed .plugin-card-bottom</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.tablenav br</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.tablenav.top .actions,.tablenav .view-switch</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.tablenav.top .displaying-num</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.tablenav.top .tablenav-pages.one-page</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.form-wrap&gt;p</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-list-table th.column-primary~th,.wp-list-table tr:not(.inline-edit-row):not(.no-items) td.column-primary~td:not(.check-column)</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>#comments-form .fixed .column-author,#commentsdiv .fixed .column-author</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.fixed .column-author.hidden~.column-comment .comment-author</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.column-response .post-com-count [aria-hidden=&quot;true&quot;],.column-comments .post-com-count [aria-hidden=&quot;true&quot;]</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.comments-box .toggle-row,.wp-list-table.plugins .toggle-row</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>#wpbody-content .wp-list-table.plugins .desc.hidden</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>table.plugin-install th.column-name,table.plugin-install th.column-version,table.plugin-install th.column-rating,table.plugin-install th.column-description</code><br />
+					<em>wordpress/src/wp-admin/css/list-tables.css</em>
+				</li>
+								
+							<li>
+					<code>.login .input::-ms-clear</code><br />
+					<em>wordpress/src/wp-admin/css/login.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js .hide-if-no-js</code><br />
+					<em>wordpress/src/wp-admin/css/login.css</em>
+				</li>
+								
+							<li>
+					<code>input::-ms-reveal</code><br />
+					<em>wordpress/src/wp-admin/css/login.css</em>
+				</li>
+								
+							<li>
+					<code>#wpbody-content #async-upload-wrap a</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.media-item .describe-toggle-off,.media-item.open .describe-toggle-on</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.media-item .startopen,.media-item .startclosed</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.js .html-uploader #plupload-upload-ui</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.drag-drop-inside p</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame.mode-grid .media-frame-title,.media-frame.mode-grid .media-frame-router,.media-frame.mode-grid .media-frame-menu</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.upload-php .mode-grid .hide-sidebar .media-sidebar</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.upload-php .mode-grid .media-sidebar .media-uploader-status.errors h2</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.imgedit-wait</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js .wp_attachment_image .button</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.imgedit-help</code><br />
+					<em>wordpress/src/wp-admin/css/media.css</em>
+				</li>
+								
+							<li>
+					<code>.has-no-menu-item .button-controls</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.metabox-holder-disabled .button-controls .select-all</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.hide-all</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.nav-menus-php .list-wrap</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.nav-menus-php .list li</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js .menu-item-edit-active .item-edit</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item .menu-item-transport:empty</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.no-js.nav-menus-php .item-edit:before</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-instructions-inactive</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item-settings .field-move .button-link</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.menu-item-edit-inactive .menu-item-settings</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.hidden-field</code><br />
+					<em>wordpress/src/wp-admin/css/nav-menus.css</em>
+				</li>
+								
+							<li>
+					<code>.revisions .diff-error</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.comparing-two-revisions .revisions-previous,.comparing-two-revisions .revisions-next,.revisions-meta .diff-meta-to strong</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.diff-meta-from</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.revisions-tooltip</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.revisions.pinned .revisions-tooltip</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.revisions-tooltip</code><br />
+					<em>wordpress/src/wp-admin/css/revisions.css</em>
+				</li>
+								
+							<li>
+					<code>.site-status-has-issues.hide</code><br />
+					<em>wordpress/src/wp-admin/css/site-health.css</em>
+				</li>
+								
+							<li>
+					<code>.site-status-all-clear.hide</code><br />
+					<em>wordpress/src/wp-admin/css/site-health.css</em>
+				</li>
+								
+							<li>
+					<code>.health-check-accordion-panel[hidden]</code><br />
+					<em>wordpress/src/wp-admin/css/site-health.css</em>
+				</li>
+								
+							<li>
+					<code>body.js .theme-browser.search-loading</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme-browser .theme .theme-author</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-support .theme-overlay .theme-actions a[href=&quot;themes.php?page=custom-header&quot;],.customize-support .theme-overlay .theme-actions a[href=&quot;themes.php?page=custom-background&quot;]</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme-overlay .theme-actions .active-theme,.theme-overlay.active .theme-actions .inactive-theme</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.single-theme .theme-overlay .theme-backdrop,.single-theme .theme-overlay .theme-header,.single-theme .theme</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme-browser .theme.active .theme-name span</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme:not(.active):hover .theme-actions,.theme:not(.active):focus .theme-actions,.theme:hover .more-details,.theme:focus .more-details</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.single-theme .current-label</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.upload-view-toggle .browse,.plugin-install-tab-upload .upload-view-toggle .upload</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.upload-theme,.upload-plugin</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>p.no-themes,p.no-themes-local</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme-install-php .add-new-theme</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-full-overlay.collapsed .collapse-sidebar-label</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-full-overlay-footer .devices</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.collapsed .wp-full-overlay-footer .devices button:before</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.no-customize-support .hide-if-no-customize,.customize-support .hide-if-customize,.no-customize-support.wp-core-ui .hide-if-no-customize,.no-customize-support .wp-core-ui .hide-if-no-customize,.customize-support.wp-core-ui .hide-if-customize,.customize-support .wp-core-ui .hide-if-customize</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-container</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.theme-install-overlay</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.install-theme-info</code><br />
+					<em>wordpress/src/wp-admin/css/themes.css</em>
+				</li>
+								
+							<li>
+					<code>.widget.widget-dirty .widget-control-close-wrapper</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-core-ui .media-widget-control.selected .placeholder,.wp-core-ui .media-widget-control.selected .not-selected,.wp-core-ui .media-widget-control .selected</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame.media-widget .image-details .embed-media-settings .setting.align,.media-frame.media-widget .attachment-display-settings .setting.align,.media-frame.media-widget .embed-media-settings .setting.align,.media-frame.media-widget .embed-media-settings .legend-inline,.media-frame.media-widget .embed-link-settings .setting.link-text,.media-frame.media-widget .replace-attachment,.media-frame.media-widget .checkbox-setting.autoplay</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#widgets-left .sidebar-name .toggle-indicator</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#available-widgets .widget-control-edit .edit,#available-widgets .widget-action .edit,#widgets-left .inactive-sidebar .widget-control-edit .add,#widgets-left .inactive-sidebar .widget-action .add,#widgets-right .widget-control-edit .add,#widgets-right .widget-action .add</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.js .widgets-holder-wrap.closed .widget,.js .widgets-holder-wrap.closed .sidebar-description,.js .widgets-holder-wrap.closed .remove-inactive-widgets,.js .widgets-holder-wrap.closed .description,.js .closed br.clear</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.widget-inside,.widget-description</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#removing-widget</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.widget-control-noform,#access-off,.widgets_access .widget-action,.widgets_access .handlediv,.widgets_access #access-on,.widgets_access .widget-holder .description,.no-js .widget-holder .description</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.widgets-chooser</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>.text-widget-fields [hidden]</code><br />
+					<em>wordpress/src/wp-admin/css/widgets.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar .menupop .ab-sub-wrapper,#wpadminbar .shortlink-input</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-admin-bar-my-account.with-avatar&gt;.ab-item:before</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar #adminbarsearch .adminbar-button</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>.no-customize-support .hide-if-no-customize,.customize-support .hide-if-customize,.no-customize-support #wpadminbar .hide-if-no-customize,.no-customize-support.wp-core-ui .hide-if-no-customize,.no-customize-support .wp-core-ui .hide-if-no-customize,.customize-support #wpadminbar .hide-if-customize,.customize-support.wp-core-ui .hide-if-customize,.customize-support .wp-core-ui .hide-if-customize</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar .ab-label</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar .ab-top-menu&gt;.menupop&gt;.ab-sub-wrapper a:empty</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar .quicklinks li .blavatar:before</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar #wp-admin-bar-search</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar #wp-admin-bar-user-actions.ab-submenu img.avatar</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-toolbar&gt;ul&gt;li</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar .menupop .menupop&gt;.ab-item:before</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar li#wp-admin-bar-wp-logo,#wpadminbar li#wp-admin-bar-updates</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar li#wp-admin-bar-comments</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-core-ui .button.hidden</code><br />
+					<em>wordpress/src/wp-includes/css/buttons.css</em>
+				</li>
+								
+							<li>
+					<code>.mce-floatpanel .mce-arrow</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>.block-library-classic__toolbar .mce-toolbar-grp .mce-toolbar:not(:first-child)</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>.tmce-active .quicktags-toolbar</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>#wp_editbtns,#wp_gallerybtns</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-link-wrap</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-link-backdrop</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-link-wrap .wp-link-text-field</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-link .river-waiting</code><br />
+					<em>wordpress/src/wp-includes/css/editor.css</em>
+				</li>
+								
+							<li>
+					<code>.ui-helper-hidden</code><br />
+					<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
+				</li>
+								
+							<li>
+					<code>.ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle</code><br />
+					<em>wordpress/src/wp-includes/css/jquery-ui-dialog.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame .hidden,.media-frame .setting.hidden</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.sidebar-for-errors .attachment-details,.sidebar-for-errors .compat-item,.sidebar-for-errors .media-sidebar .media-progress-bar,.sidebar-for-errors .upload-details</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-router .active:after</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame.hide-menu .media-frame-menu,.media-frame.hide-menu .media-frame-menu-heading,.media-frame.hide-router .media-frame-router,.media-frame.hide-toolbar .media-frame-toolbar</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.mode-grid .media-frame-actions-heading</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-core-ui .button.media-frame-menu-toggle</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-core-ui .attachment .check</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.attachments-browser .uploader-inline.hidden</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.mode-grid .attachments-browser .media-toolbar-mode-select .media-toolbar-primary</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-uploader-status .media-progress-bar</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.uploader-inline .media-uploader-status h2</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-uploader-status .upload-details</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-uploader-status .upload-dismiss-errors,.media-uploader-status .upload-errors</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.uploader-window,.wp-editor-wrap .uploader-editor</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-editor-wrap .uploader-editor .uploader-editor-title</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.uploader-window .media-progress-bar</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.uploader-inline .drop-instructions</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.uploader-inline .media-progress-bar</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-selection.empty,.media-selection.editing</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-selection.one .edit-selection</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-selection .attachment .filename</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.attachment-details .settings-save-status .saved</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.attachment-details.needs-refresh .attachment-info .edit-attachment</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame .embed-url input::-ms-clear</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.image-details .hidden</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-embed .setting input.hidden,.media-embed .setting textarea.hidden</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame:not(.hide-menu) .media-menu</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-selection .attachments</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>.media-frame-content .media-toolbar .instructions</code><br />
+					<em>wordpress/src/wp-includes/css/media-views.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-auth-check-wrap.hidden</code><br />
+					<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
+				</li>
+								
+							<li>
+					<code>#wp-auth-check-wrap .wp-auth-fallback</code><br />
+					<em>wordpress/src/wp-includes/css/wp-auth-check.css</em>
+				</li>
+								
+							<li>
+					<code>.dashicons-share</code><br />
+					<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-embed-share-tab[aria-hidden=&quot;true&quot;]</code><br />
+					<em>wordpress/src/wp-includes/css/wp-embed-template.css</em>
+				</li>
+								
+							<li>
+					<code>.wp-pointer</code><br />
+					<em>wordpress/src/wp-includes/css/wp-pointer.css</em>
+				</li>
+							</ol>
+				
+		</section>
+					<section class="audit audit--" id="selectors">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>Selectors</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+													<h3>Total number of selectors: <span class="count">8372</span></h3>
+				<h3>Number of selectors with IDs: <span class="count">2254</span></h3>
+				<h3>Top 10 selectors with the highest specificity</h3>
+		<ol>
+					
+							<li>
+					<code>#wpadminbar&gt;#wp-toolbar&gt;#wp-admin-bar-top-secondary&gt;#wp-admin-bar-search #adminbarsearch input.adminbar-input:focus</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#wpadminbar&gt;#wp-toolbar&gt;#wp-admin-bar-top-secondary&gt;#wp-admin-bar-search #adminbarsearch input.adminbar-input</code><br />
+					<em>wordpress/src/wp-includes/css/admin-bar.css</em>
+				</li>
+								
+							<li>
+					<code>#side-sortables #postcustom #postcustomstuff #the-list textarea</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#dashboard-widgets-wrap #dashboard-widgets .postbox form .submit #publish</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>#wpbody #wpbody-content #dashboard-widgets.columns-1 .postbox-container</code><br />
+					<em>wordpress/src/wp-admin/css/dashboard.css</em>
+				</li>
+								
+							<li>
+					<code>.post-type-attachment #wpbody-content #post-body.columns-2 #postbox-container-1</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.post-type-attachment #poststuff #postbox-container-1 #side-sortables:empty</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.post-type-attachment #poststuff #post-body.columns-2 #side-sortables</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.is-dragging-metaboxes #poststuff #postbox-container-1 #side-sortables:empty</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.is-dragging-metaboxes #poststuff #post-body.columns-2 #side-sortables</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+							</ol>
+				<h3>Top 10 selectors by length</h3>
+		<ol>
+					
+							<li>
+					<code>.policy-text div&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>.policy-text&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .customize-changeset-locked-message</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.hide-privacy-policy-tutorial&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .currently-editing</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.policy-text div&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls #customize-notifications-area .notice.notification-overlay.notification-changeset-locked .action-buttons</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.customize-section-description-container+#customize-control-custom_css:last-child .customize-control-notifications-container</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+								
+							<li>
+					<code>.policy-text&gt;*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(div):not(.privacy-policy-tutorial):not(.wp-policy-help)</code><br />
+					<em>wordpress/src/wp-admin/css/edit.css</em>
+				</li>
+								
+							<li>
+					<code>#customize-controls .customize-section-title&gt;.customize-control-notifications-container:not(.has-overlay-notifications)</code><br />
+					<em>wordpress/src/wp-admin/css/customize-controls.css</em>
+				</li>
+							</ol>
+				
+		</section>
+					<section class="audit audit--" id="media-queries">
+
+			<header class="audit__header">
+				<h2 class="audit__title">
+					<strong>Media Queries</strong> <em>audit</em>
+				</h2>
+				<a class="btn back-to-top" href="#top" title="Back to top">⬆</a>
+			</header>
+
+													<h3>Number of total media queries: <span class="count">176</span></h3>
+				<h3>Number of seemingly-unique media queries: <span class="count">81</span></h3>
+				<h3>Top 10 most-used media queries</h3>
+		<ol>
+									<li>
+					<span class="count">31</span>
+					<em>screen and (max-width:782px)</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>print</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>(-webkit-min-device-pixel-ratio:1.25)</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>(min-resolution:120dpi)</em>
+				</li>
+			
+												<li>
+					<span class="count">9</span>
+					<em>screen and (max-width:600px)</em>
+				</li>
+			
+												<li>
+					<span class="count">6</span>
+					<em>screen and (max-width:480px)</em>
+				</li>
+			
+												<li>
+					<span class="count">4</span>
+					<em>only screen and (max-width:480px)</em>
+				</li>
+			
+												<li>
+					<span class="count">4</span>
+					<em>only screen and (max-width:1120px)</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>only screen and (max-width:782px)</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>only screen and (max-width:799px)</em>
+				</li>
+			
+							</ol>
+				<h3>Number of unique breakpoint sizes: <span class="count">61</span></h3>
+				<h3>Top 10 most-used breakpoint sizes</h3>
+		<ol>
+									<li>
+					<span class="count">36</span>
+					<em>782px</em>
+				</li>
+			
+												<li>
+					<span class="count">12</span>
+					<em>600px</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>480px</em>
+				</li>
+			
+												<li>
+					<span class="count">5</span>
+					<em>320px</em>
+				</li>
+			
+												<li>
+					<span class="count">5</span>
+					<em>640px</em>
+				</li>
+			
+												<li>
+					<span class="count">4</span>
+					<em>1120px</em>
+				</li>
+			
+												<li>
+					<span class="count">4</span>
+					<em>1200px</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>799px</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>1600px</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>850px</em>
+				</li>
+			
+							</ol>
+				<h3>Top 10 least-used breakpoint sizes</h3>
+		<ol>
+									<li>
+					<span class="count">1</span>
+					<em>380px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>901px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>520px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>400px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>1250px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>1024px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>3333px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>1667px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>650px</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>780px</em>
+				</li>
+			
+							</ol>
+				<h3>Non-width related media queries</h3>
+		<ol>
+									<li>
+					<span class="count">11</span>
+					<em>(-webkit-min-device-pixel-ratio:1.25)</em>
+				</li>
+			
+												<li>
+					<span class="count">11</span>
+					<em>(min-resolution:120dpi)</em>
+				</li>
+			
+												<li>
+					<span class="count">3</span>
+					<em>(max-height:400px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:540px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:472px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:700px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:480px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(prefers-reduced-motion:reduce)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:550px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:520px)</em>
+				</li>
+			
+												<li>
+					<span class="count">1</span>
+					<em>(max-height:290px)</em>
+				</li>
+			
+							</ol>
+				
+		</section>
+	
 		
 	<script>
 		const cssAudit = {};

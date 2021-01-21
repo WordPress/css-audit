@@ -1,0 +1,325 @@
+/*
+ * Config
+ */
+body {
+	--body-margin: 2rem;
+
+	/* Body colours */
+	--body-bg: #fff;
+	--body-fg: #111;
+
+	/* Nav & link colours */
+	--nav-bg: #eee;
+	--nav-bg-hover: #bbb;
+	--nav-fg: #11c;
+
+	/* Heading colours */
+	--h-fg: #222;
+	--h-bg: #eee;
+
+	/* <hr> */
+	--hr: 4px solid var(--h-bg);
+
+	/* ul li::marker */
+	--ul-marker: #1114;
+	--ul-marker-hover: #111f;
+
+	/* Border style for bordered components */
+	--component-border: 1px solid #aaa;
+
+	/* Consistent component margins */
+	--component-margin-sm: 1.5rem;
+	--component-margin-lg: 3rem;
+
+	/* Code boxes */
+	--code-bg: #eee;
+	--code-border: var(--component-border);
+
+	/* Colour chips */
+	--chip-text-shadow: #fff;
+	--chip-border: var(--component-border);
+	--count-bg: #eee;
+	--count-border: var(--component-border);
+}
+
+/*
+ * Dark mode
+ */
+body.is-dark-mode {
+	/* Body colours */
+	--body-bg: #111;
+	--body-fg: #fff;
+
+	/* Nav & link colours */
+	--nav-bg: #444;
+	--nav-bg-hover: #222;
+	--nav-fg: #bcf;
+
+	/* Heading colours */
+	--h-fg: #eee;
+	--h-bg: #222;
+
+	/* <hr> */
+	--hr: 4px solid var(--h-bg);
+
+	/* ul li::marker */
+	--ul-marker: #eee4;
+	--ul-marker-hover: #eeef;
+
+	/* Border style for bordered components */
+	--component-border: 1px solid #666;
+
+	/* Consistent component margins */
+	--component-margin-sm: 1.5rem;
+	--component-margin-lg: 3rem;
+
+	/* Code boxes */
+	--code-bg: #222;
+	--code-border: var(--component-border);
+
+	/* Colour chips */
+	--chip-text-shadow: #000;
+	--chip-border: var(--component-border);
+	--count-bg: #111;
+	--count-border: var(--component-border);
+}
+
+/*
+ * General
+ */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	background-color: var(--body-bg);
+	color: var(--body-fg);
+	font-family: sans-serif;
+	margin: var(--body-margin);
+}
+
+a {
+	color: var(--nav-fg);
+}
+
+h1, h2 {
+	font-weight: normal;
+}
+
+h1, h2, h3 {
+	color: var(--h-fg);
+	margin: 0 0 var(--component-margin-sm) 0;
+}
+
+hr {
+	border: 0;
+	border-bottom: var(--hr);
+}
+
+/*
+ * Header, nav, `back to top` button
+ */
+.site__header {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.nav {
+	margin-bottom: var(--component-margin-sm);
+}
+
+.nav ul {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+}
+
+.nav li {
+	margin-bottom: var(--component-margin-sm);
+	margin: 0 0.5em 0 0;
+}
+
+.nav a {
+	display: block;
+	height: 100%;
+}
+
+.nav a,
+.btn {
+	background-color: var(--nav-bg);
+	padding: 0.5em;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus,
+.btn:hover,
+.btn:focus {
+	background-color: var(--nav-bg-hover);
+}
+
+.nav a:focus,
+.btn:focus {
+	outline: 4px dashed var(--nav-fg);
+}
+
+.btn {
+	font-size: 1.2em;
+	margin-bottom: var(--component-margin-sm);
+	text-align: center;
+}
+
+/*
+ * Audits
+ */
+.audit__header {
+	align-items: baseline;
+	background-color: var(--h-bg);
+	display: flex;
+	justify-content: space-between;
+	margin-right: calc(-1 * var(--body-margin));
+	margin-left: calc(-1 * var(--body-margin));
+	margin-bottom: var(--component-margin-sm);
+	padding: var(--component-margin-sm) var(--body-margin) 0;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.audit {
+	margin-bottom: var(--component-margin-lg);
+}
+
+/*
+ * Code boxes
+ */
+code {
+	background-color: var(--code-bg);
+	border: var(--code-border);
+	border-radius: 1px;
+	display: inline-block;
+	font-family: monospace;
+	font-size: 1.2em;
+	padding: 0.5em;
+}
+
+/*
+ * Audit lists
+ */
+.audit ul,
+.audit ol {
+	padding: 0 0 0 2em;
+}
+
+.audit ol {
+	list-style-type: decimal-leading-zero;
+}
+
+.audit li {
+	margin: 0 0 2em 0;
+}
+
+.audit ol > li::marker {
+	color: var(--ul-marker);
+}
+
+.audit ol > li:hover::marker {
+	color: var(--ul-marker-hover);
+}
+
+/*
+	Audit: Colors
+*/
+.audit--colors ul {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: monospace;
+	font-size: 1.2em;
+	list-style: none;
+	padding: 0;
+ }
+
+.audit--colors .chip {
+	border: var(--chip-border);
+	height: 3em;
+	line-height: 3em;
+	margin: 0.5em;
+	text-align: center;
+	flex-basis: 18em;
+	flex-grow: 1;
+	background-color: var( --chip-bg-color );
+	font-family: monospace;
+	position: relative;
+}
+
+/*
+ * Improve visibility of colour chip
+ * text on low contrast backgrounds
+ */
+.audit--colors .chip:hover {
+	font-weight: bold;
+	text-shadow: 0 0 1px var(--chip-text-shadow),
+	  0 0 3px var(--chip-text-shadow),
+	  0 0 5px var(--chip-text-shadow),
+	  0 0 7px var(--chip-text-shadow);
+}
+
+.audit--colors .count {
+	left: -1em;
+	min-width: 3em;
+	padding: unset;
+	position: absolute;
+	top: -0.125em;
+}
+
+/*
+ * Count component on colour chips
+ */
+.count {
+	background-color: var(--count-bg);
+	border: var(--count-border);
+	border-radius: 50%;
+	box-sizing: border-box;
+	color: var(--count-fg);
+	display: inline-block;
+	height: auto;
+	min-width: 2.3em;
+	padding: 0.5em;
+	text-align: center;
+
+	/* Counteract .chip:hover */
+	font-weight: normal;
+	text-shadow: none;
+}
+
+/*
+ * Darkmode switch
+ */
+.button__theme-toggle {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+
+.button__theme-toggle::before {
+	content: "🌛";
+	font-size: 1.5rem;
+}
+
+body.is-dark-mode .button__theme-toggle::before {
+	content: "🌞";
+}
