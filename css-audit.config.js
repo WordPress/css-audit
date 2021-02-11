@@ -1,7 +1,8 @@
 module.exports = {
 	format: 'html',
-	filename: 'temp-typography',
+	all: true,
+	filename: 'wp-admin',
 	audits: [
 		'typography'
-	]
+	 ],
 };
