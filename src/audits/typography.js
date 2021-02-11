@@ -8,16 +8,16 @@ module.exports = function ( files = [] ) {
 		'font-size',
 		'font-weight',
 		'font-family',
-		'line-height'
+		'line-height',
 	];
 
-	const results = properties.map( property => {
-		return propertyValues( files, property ).results
-	}, []);
+	const results = properties.map( ( property ) => {
+		return propertyValues( files, property ).results;
+	} );
 
 	return {
 		audit: 'typography',
 		name: `Typography`,
-		results: results.flat()
+		results: results.flat(),
 	};
 };

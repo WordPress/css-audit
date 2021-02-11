@@ -29,9 +29,11 @@ const runAudits = ( cssFiles ) => {
 	}
 
 	const propertyValues = getArg( '--property-values' );
+	const isPropertyValuesArray =
+		Array.isArray( propertyValues ) && propertyValues.length;
 
 	// Multiple property value arguments are only supported in config.
-	if ( Array.isArray( propertyValues ) && propertyValues.length ) {
+	if ( isPropertyValuesArray ) {
 		propertyValues.forEach( ( values ) => {
 			audits.push(
 				require( './audits/property-values' )(
@@ -40,7 +42,7 @@ const runAudits = ( cssFiles ) => {
 				)
 			);
 		} );
-	} else {
+	} else if ( ! isPropertyValuesArray ) {
 		// Single property-value audit handling for CLI
 		if ( !! propertyValues ) {
 			audits.push(
