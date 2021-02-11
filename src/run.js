@@ -24,6 +24,9 @@ const runAudits = ( cssFiles ) => {
 	if ( runAll || runRecommended || getArg( '--media-queries' ) ) {
 		audits.push( require( './audits/media-queries' )( cssFiles ) );
 	}
+	if ( getArg( '--typography' ) ) {
+		audits.push( require( './audits/typography' )( cssFiles ) );
+	}
 
 	const propertyValues = getArg( '--property-values' );
 
