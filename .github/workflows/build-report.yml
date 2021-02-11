@@ -1,0 +1,43 @@
+name: Build Report
+on:
+  push:
+    branches:
+      # Run only on pushes to master
+      - master
+
+  schedule:
+    # Run every day at 9am UTC.
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 9 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout CSS Audit
+      uses: actions/checkout@v2
+
+    - name: Checkout WordPress Core
+      uses: actions/checkout@v2
+      with:
+        repository: WordPress/wordpress-develop
+        path: wordpress
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the audit report
+      run: npm run css-audit -- wordpress/src/wp-admin/css/*.css wordpress/src/wp-includes/css/*.css
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v5
+      with:
+        message: "[Automated] Update report"
+        add: "public"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
