@@ -9,6 +9,7 @@ module.exports = function ( files = [] ) {
 		'font-weight',
 		'font-family',
 		'line-height',
+		'letter-spacing'
 	];
 
 	const results = properties.map( ( property ) => {
