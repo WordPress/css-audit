@@ -14,7 +14,8 @@ module.exports = function ( files = [] ) {
 		root.walkRules( function ( { selector } ) {
 			const selectorList = selector.split( ',' );
 			selectorList.forEach( ( selectorName ) => {
-				selectorName = selectorName.trim();
+				// Remove excess whitespace from selectors.
+				selectorName = selectorName.replace( /\s+/g, ' ' ).trim();
 				const [ a, b, c ] = getSpecificityArray( selectorName );
 				const sum = 100 * a + 10 * b + c; // eslint-disable-line no-mixed-operators
 				selectors.push( {
