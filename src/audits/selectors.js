@@ -43,7 +43,6 @@ module.exports = function ( files = [] ) {
 		name: 'Selectors',
 		results: [
 			{
-				// This is not totally accurate, since nested `:not` selectors and keyframes are also counted.
 				id: 'count',
 				label: 'Total number of selectors',
 				value: selectors.length,
