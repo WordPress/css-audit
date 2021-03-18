@@ -7,8 +7,8 @@ const csstree = require( 'css-tree' );
  * specificity in the array accumulator as it processes each part of a selector.
  *
  * @param {Array<number>} specificity The specificity as an array.
- * @param {string} selector A valid CSS selector.
- * @return {number} The calculated specificity value.
+ * @param {Object} selector A selector node from the css-tree AST.
+ * @return {Array} The calculated specificity value.
  */
 function calculateSpecificity( [ a, b, c ], selector ) {
 	if ( ! selector.type ) {
@@ -73,7 +73,25 @@ function getSpecificity( selector ) {
 	return 100 * a + 10 * b + c;
 }
 
+/**
+ * Get the specificity value for a given CSS selector, as an array.
+ *
+ * @param {string} selector A valid CSS selector.
+ * @return {Array} The calculated specificity value.
+ */
+function getSpecificityArray( selector ) {
+	const node = csstree.parse( selector, { context: 'selector' } );
+	const selectorList = node.children.toArray();
+	const [ a, b, c ] = selectorList.reduce( calculateSpecificity, [
+		0,
+		0,
+		0,
+	] );
+	return [ a, b, c ];
+}
+
 module.exports = {
 	calculateSpecificity,
 	getSpecificity,
+	getSpecificityArray,
 };
