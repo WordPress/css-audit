@@ -1,3 +1,6 @@
+/**
+ * External dependencies
+ */
 const csstree = require( 'css-tree' );
 
 /**
