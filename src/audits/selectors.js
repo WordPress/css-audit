@@ -1,23 +1,22 @@
-const csstree = require( 'css-tree' );
+/**
+ * External dependencies
+ */
+const { parse } = require( 'postcss' );
 
-const { calculateSpecificity } = require( '../utils/get-specificity' );
+const { getSpecificityArray } = require( '../utils/get-specificity' );
 
 module.exports = function ( files = [] ) {
 	// let longest = 0;
 	const selectors = [];
 
 	files.forEach( ( { name, content } ) => {
-		const ast = csstree.parse( content );
-		csstree.walk( ast, {
-			visit: 'Selector',
-			enter( node ) {
-				const selectorName = csstree.generate( node );
-				const selectorList = node.children.toArray();
-				const [ a, b, c ] = selectorList.reduce( calculateSpecificity, [
-					0,
-					0,
-					0,
-				] );
+		const root = parse( content, { from: name } );
+		root.walkRules( function ( { selector } ) {
+			const selectorList = selector.split( ',' );
+			selectorList.forEach( ( selectorName ) => {
+				// Remove excess whitespace from selectors.
+				selectorName = selectorName.replace( /\s+/g, ' ' ).trim();
+				const [ a, b, c ] = getSpecificityArray( selectorName );
 				const sum = 100 * a + 10 * b + c; // eslint-disable-line no-mixed-operators
 				selectors.push( {
 					file: name,
@@ -27,7 +26,7 @@ module.exports = function ( files = [] ) {
 					c,
 					sum,
 				} );
-			},
+			} );
 		} );
 	} );
 
@@ -44,7 +43,6 @@ module.exports = function ( files = [] ) {
 		name: 'Selectors',
 		results: [
 			{
-				// This is not totally accurate, since nested `:not` selectors and keyframes are also counted.
 				id: 'count',
 				label: 'Total number of selectors',
 				value: selectors.length,

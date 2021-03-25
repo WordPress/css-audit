@@ -118,19 +118,16 @@ npm run css-audit -- v5.5/**/* --recommended
 
 ## Technical details
 
-Uses [`csstree`](https://github.com/csstree/csstree) to parse each CSS file's contents. This creates an AST, which each audit traverses to pull out the data.
+This tool parses each CSS file and creates an AST, which the audits traverse to pull out data. It uses [`postcss`](https://postcss.org/) for most audits, but [`csstree`](https://github.com/csstree/csstree) for the `media-queries` audit. PostCSS gives us the plugins ecosystem so that we can use `postcss-values-parser`, while csstree generates a much more detailed AST that robustly identifies media queries.
 
-- [csstree's docs](https://github.com/csstree/csstree/tree/master/docs) are very good
+- [PostCSS API documentation](https://postcss.org/api/)
+- [csstree documentation](https://github.com/csstree/csstree/tree/master/docs)
 - [AST Explorer](https://astexplorer.net/) — great tool for identifying how the CSS is parsed.
-
-Use this command to get just the css files from SVN:
-
-	svn export https://develop.svn.wordpress.org/trunk/src/wp-admin/css --depth files
-
-For other version comparisons, `/trunk/` could be replaced with `/branches/5.3/`.
 
 **Other notes…**
 
-Initially this used the `postcss` parser, but that didn't generate enough information for the `selectors` audit.
+Initially this used the `postcss` parser, but that didn't generate enough information for the `selectors` audit. The audits were build with `csstree` as the only parser.
+
+As work continued, it was clear `csstree` wasn't parsing values well enough for the colors audit (it would find colors in non-color values, like URIs). `postcss-values-parser` was brought in to fix this, and the colors audit was switched (back) to use `postcss`'s parser. Using the `walk*` functions simplified the audits, so the other audits were also updated. `csstree`'s parsing of media queries is better, so that audit stayed using `csstree`.
 
 Also explored using `CSSOM`, but it doesn't generate a true representation of the CSS content. Additional values overwrite the previous values (ex: fallbacks for background gradients). We need the parsed object to represent the CSS fully.
