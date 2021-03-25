@@ -3,6 +3,14 @@
  */
 const propertyValues = require( './property-values' );
 
+/**
+ * Run the property values audit with specific properties
+ * as a single audit.
+ *
+ * @param {array} files
+ *
+ * @returns Object containing audit data.
+ */
 module.exports = function ( files = [] ) {
 	const properties = [
 		'font-size',
