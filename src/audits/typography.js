@@ -13,11 +13,20 @@ const propertyValues = require( './property-values' );
  */
 module.exports = function ( files = [] ) {
 	const properties = [
-		'font-size',
-		'font-weight',
 		'font-family',
+		'font-size',
+		'font-style',
+		'font-weight',
 		'line-height',
 		'letter-spacing',
+		'text-align',
+		'text-decoration',
+		'text-indent',
+		'text-overflow',
+		'text-shadow',
+		'text-transform',
+		'white-space',
+		'word-break',
 	];
 
 	const results = properties.map( ( property ) => {
