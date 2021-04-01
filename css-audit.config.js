@@ -1,6 +1,12 @@
 module.exports = {
 	format: 'html',
-	all: true,
 	filename: 'wp-admin',
-	audits: [ 'typography' ],
+	audits: [
+		'colors',
+		'important',
+		'display-none',
+		'selectors',
+		'media-queries',
+		'typography',
+	],
 };
