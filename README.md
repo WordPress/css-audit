@@ -1,8 +1,12 @@
 # CSS Audit
 
-This is an experiment in using CSS parsers to … parse out information about a set of stylesheets. When run, it will generate information about your CSS, such as number of distinct colors used, most specific selectors, how many properties use `!important`, etc.
+This project contains an automated audit of the core WordPress CSS, including the number of distinct colors used, most specific selectors, how many properties use `!important`, and more. [View the audit report here.](https://ryelle.github.io/css-audit/public/wp-admin) This report is regenerated every day at 09:00 UTC, and runs over the latest CSS in [WordPress/wordpress-develop](https://github.com/WordPress/wordpress-develop/).
 
-To run this yourself, download or clone this repo, then install the dependencies. You will need [node & npm](https://nodejs.org/en/) installed.
+To generate this report, there is a tool `css-audit`, which runs a set of [audits](./src/audits).
+
+## Local Environment
+
+To run the audits yourself, download or clone this repo, then install the dependencies. You will need [node & npm](https://nodejs.org/en/) installed.
 
 ```
 $ git clone git@github.com:ryelle/css-audit.git
@@ -65,7 +69,7 @@ For example, generating a report for wp-admin using the below strategy for pulli
 npm run css-audit -- v5.5/**/* --format=html --all --filename=wp-admin
 ```
 
-In the configuration file, the argument `filename` can be added as a simple property: value combination, the same as `format` in the example.
+In the configuration file, the argument `filename` can be added as a simple property: value combination, the same as `format` in the example. See the [default `css-audit.config.js`](./css-audit.config.js).
 
 ## Getting core CSS files
 
@@ -115,6 +119,8 @@ npm run css-audit -- v5.5/**/* --recommended
 - `display-none`
   - Number of times `display: none` is used
   - Places where `display: none` is used
+- `typography`
+  - A collection of information about various typography-related properties
 
 ## Technical details
 
@@ -123,11 +129,3 @@ This tool parses each CSS file and creates an AST, which the audits traverse to 
 - [PostCSS API documentation](https://postcss.org/api/)
 - [csstree documentation](https://github.com/csstree/csstree/tree/master/docs)
 - [AST Explorer](https://astexplorer.net/) — great tool for identifying how the CSS is parsed.
-
-**Other notes…**
-
-Initially this used the `postcss` parser, but that didn't generate enough information for the `selectors` audit. The audits were build with `csstree` as the only parser.
-
-As work continued, it was clear `csstree` wasn't parsing values well enough for the colors audit (it would find colors in non-color values, like URIs). `postcss-values-parser` was brought in to fix this, and the colors audit was switched (back) to use `postcss`'s parser. Using the `walk*` functions simplified the audits, so the other audits were also updated. `csstree`'s parsing of media queries is better, so that audit stayed using `csstree`.
-
-Also explored using `CSSOM`, but it doesn't generate a true representation of the CSS content. Additional values overwrite the previous values (ex: fallbacks for background gradients). We need the parsed object to represent the CSS fully.
