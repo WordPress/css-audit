@@ -1,6 +1,6 @@
 # CSS Audit
 
-This project contains an automated audit of the core WordPress CSS, including the number of distinct colors used, most specific selectors, how many properties use `!important`, and more. [View the audit report here.](https://ryelle.github.io/css-audit/public/wp-admin) This report is regenerated every day at 09:00 UTC, and runs over the latest CSS in [WordPress/wordpress-develop](https://github.com/WordPress/wordpress-develop/).
+This project contains an automated audit of the core WordPress CSS, including the number of distinct colors used, most specific selectors, how many properties use `!important`, and more. [View the audit report here.](https://wordpress.github.io/css-audit/public/wp-admin) This report is regenerated every day at 09:00 UTC, and runs over the latest CSS in [WordPress/wordpress-develop](https://github.com/WordPress/wordpress-develop/).
 
 To generate this report, there is a tool `css-audit`, which runs a set of [audits](./src/audits).
 
@@ -9,7 +9,7 @@ To generate this report, there is a tool `css-audit`, which runs a set of [audit
 To run the audits yourself, download or clone this repo, then install the dependencies. You will need [node & npm](https://nodejs.org/en/) installed.
 
 ```
-$ git clone git@github.com:ryelle/css-audit.git
+$ git clone git@github.com:wordpress/css-audit.git
 $ cd css-audit
 $ npm install
 $ npm run css-audit -- <files...>
