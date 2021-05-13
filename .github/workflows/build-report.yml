@@ -2,8 +2,8 @@ name: Build Report
 on:
   push:
     branches:
-      # Run only on pushes to master
-      - master
+      # Run only on pushes to trunk
+      - trunk
 
   schedule:
     # Run every day at 9am UTC.
@@ -40,6 +40,7 @@ jobs:
         author_name: github-actions
         author_email: 41898282+github-actions[bot]@users.noreply.github.com
         message: "[Automated] Update report"
+        branch: "report"
         add: "public"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
