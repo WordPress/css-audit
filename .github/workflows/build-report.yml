@@ -4,11 +4,10 @@ on:
     branches:
       # Run only on pushes to report
       - report
-
-   schedule:
-     # Run every day at 9am UTC.
-     # * is a special character in YAML so you have to quote this string
-     - cron:  '0 9 * * *'
+  schedule:
+    # Run every day at 9am UTC.
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 9 * * *'
 
 jobs:
   run:
