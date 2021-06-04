@@ -1,0 +1,5 @@
+# This directory should be empty
+# in trunk, so ignore all files...
+*
+# ...except this one
+!.gitignore
