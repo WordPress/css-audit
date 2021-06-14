@@ -1,0 +1,17 @@
+name: Merge trunk -> report
+on:
+  push:
+    branches:
+      # Run on pushes to trunk
+      - 'trunk'
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge trunk -> report
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
