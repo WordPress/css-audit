@@ -8,7 +8,7 @@ on:
     # Run every day at 9am UTC.
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 9 * * *'
-
+  workflow_dispatch:
 jobs:
   run:
     runs-on: ubuntu-latest
