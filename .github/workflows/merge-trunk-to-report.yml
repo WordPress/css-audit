@@ -4,10 +4,15 @@ on:
     branches:
       # Run on pushes to trunk
       - 'trunk'
+  workflow_dispatch
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
+      # Set config to ignore conflicts in /public
+      # specified in .gitattributes
+      - run: git config merge.ours.driver true
+      # Checkout report and merge trunk into it
       - uses: actions/checkout@v2
       - name: Merge trunk -> report
         uses: devmasx/merge-branch@v1.3.1
