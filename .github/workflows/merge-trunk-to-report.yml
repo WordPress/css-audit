@@ -4,7 +4,7 @@ on:
     branches:
       # Run on pushes to trunk
       - 'trunk'
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
