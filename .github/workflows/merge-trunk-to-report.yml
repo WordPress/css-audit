@@ -1,4 +1,4 @@
-name: Merge trunk -> report
+name: Merge trunk into report branch
 on:
   push:
     branches:
