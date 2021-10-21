@@ -27,6 +27,9 @@ const runAudits = ( cssFiles ) => {
 	if ( getArg( '--typography' ) ) {
 		audits.push( require( './audits/typography' )( cssFiles ) );
 	}
+	if ( getArg( '--custom-props' ) ) {
+		audits.push( require( './audits/custom-properties' )( cssFiles ) );
+	}
 
 	const propertyValues = getArg( '--property-values' );
 	const isPropertyValuesArray =
