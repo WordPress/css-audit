@@ -5,7 +5,9 @@
 		{% for value in item.value %}
 			{% if value.name %}
 				<li>
-					<span class="count">{{value.count}}</span>
+					{% if value.count %}
+						<span class="count">{{value.count}}</span>
+					{% endif %}
 					<em>{{value.name}}</em>
 				</li>
 			{% endif %}
