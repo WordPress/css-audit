@@ -43,17 +43,29 @@ describe( 'Audit: Alphas', () => {
 		expect( getResultValue( results, 'unique' ) ).toBe( 4 );
 		expect( getResultValue( results, 'unique-colors' ) ).toBe( 5 );
 		expect( getResultValue( results, 'all-alphas' ) ).toEqual( [
-			0.125,
-			0.875,
-			0.95,
-			1,
+			{
+				count: 2,
+				name: 0.95,
+			},
+			{
+				count: 1,
+				name: 0.125,
+			},
+			{
+				count: 1,
+				name: 0.875,
+			},
+			{
+				count: 1,
+				name: 1,
+			},
 		] );
 		expect( getResultValue( results, 'all-colors' ) ).toEqual( [
-			'rgba(52, 0, 182, 0.95)',
-			'rgba(206, 234, 196, .95)',
 			'rgba( 119, 255, 214, 0.125)',
-			'rgba(201, 15, 59, .875)',
 			'rgba(0, 0, 0, 1)',
+			'rgba(201, 15, 59, .875)',
+			'rgba(206, 234, 196, .95)',
+			'rgba(52, 0, 182, 0.95)',
 		] );
 	} );
 
@@ -72,18 +84,33 @@ describe( 'Audit: Alphas', () => {
 		expect( getResultValue( results, 'unique' ) ).toBe( 5 );
 		expect( getResultValue( results, 'unique-colors' ) ).toBe( 5 );
 		expect( getResultValue( results, 'all-alphas' ) ).toEqual( [
-			0.05,
-			0.333,
-			0.5,
-			0.9,
-			1,
+			{
+				count: 1,
+				name: 0.9,
+			},
+			{
+				count: 1,
+				name: 0.333,
+			},
+			{
+				count: 1,
+				name: 1,
+			},
+			{
+				count: 1,
+				name: 0.5,
+			},
+			{
+				count: 1,
+				name: 0.05,
+			},
 		] );
 		expect( getResultValue( results, 'all-colors' ) ).toEqual( [
-			'hsla(95, 55%, 46%, 0.9)',
-			'hsl(290, 72%, 24%, .333)',
-			'rgb(41, 194, 191, 1)',
 			'hsl(198 92 20 / 0.5)',
+			'hsl(290, 72%, 24%, .333)',
+			'hsla(95, 55%, 46%, 0.9)',
 			'rgb(13 1 26 / 0.05)',
+			'rgb(41, 194, 191, 1)',
 		] );
 	} );
 
