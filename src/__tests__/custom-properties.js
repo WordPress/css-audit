@@ -32,6 +32,19 @@ describe( 'Audit: Custom Properties', () => {
 		expect( getResultValue( results, 'undefined' ) ).toHaveLength( 1 );
 	} );
 
+	it( 'should count custom properties used in other custom properties', () => {
+		const files = [
+			{
+				name: 'a.css',
+				content: `:root { --foo: red; --bar: 1px solid var(--foo); }
+					h1 { border: var(--bar); }`,
+			},
+		];
+		const { results } = audit( files );
+		expect( getResultValue( results, 'unused' ) ).toHaveLength( 0 );
+		expect( getResultValue( results, 'undefined' ) ).toHaveLength( 0 );
+	} );
+
 	it( 'should count the number of custom properties across multiple files', () => {
 		const files = [
 			{

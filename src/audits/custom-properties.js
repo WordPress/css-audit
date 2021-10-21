@@ -15,22 +15,19 @@ module.exports = function ( files = [] ) {
 					if ( ! definedProps.includes( prop ) ) {
 						definedProps.push( prop );
 					}
-				} else {
-					try {
-						const valueRoot = parseValue( value, {
-							ignoreUnknownWords: true,
-						} );
-						valueRoot.walkFuncs( ( node ) => {
-							if ( node.isVar ) {
-								if (
-									! usedProps.includes( node.first.value )
-								) {
-									usedProps.push( node.first.value );
-								}
-							}
-						} );
-					} catch ( error ) {}
 				}
+				try {
+					const valueRoot = parseValue( value, {
+						ignoreUnknownWords: true,
+					} );
+					valueRoot.walkFuncs( ( node ) => {
+						if ( node.isVar ) {
+							if ( ! usedProps.includes( node.first.value ) ) {
+								usedProps.push( node.first.value );
+							}
+						}
+					} );
+				} catch ( error ) {}
 			}
 		} );
 	} );
