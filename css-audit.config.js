@@ -3,6 +3,7 @@ module.exports = {
 	filename: 'wp-admin',
 	audits: [
 		'colors',
+		'alphas',
 		'important',
 		'display-none',
 		'selectors',
