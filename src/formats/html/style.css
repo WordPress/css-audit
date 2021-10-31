@@ -243,16 +243,18 @@ code {
 /*
 	Audit: Colors
 */
-.audit--colors ul {
+.audit--colors ul,
+.audit--alpha ul {
 	display: flex;
 	flex-wrap: wrap;
 	font-family: monospace;
 	font-size: 1.2em;
 	list-style: none;
 	padding: 0;
- }
+}
 
-.audit--colors .chip {
+.audit--colors .chip,
+.audit--alpha .chip {
 	border: var(--chip-border);
 	height: 3em;
 	line-height: 3em;
@@ -265,11 +267,24 @@ code {
 	position: relative;
 }
 
+.audit--colors .chip.is-transparent:before,
+.audit--alpha .chip.is-transparent:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background: repeating-conic-gradient(#f0f0f1 0% 25%, transparent 0% 50%) 50% / 20px 20px
+}
+
 /*
  * Improve visibility of colour chip
  * text on low contrast backgrounds
  */
-.audit--colors .chip:hover {
+.audit--colors .chip:hover,
+.audit--alpha .chip:hover {
 	font-weight: bold;
 	text-shadow: 0 0 1px var(--chip-text-shadow),
 	  0 0 3px var(--chip-text-shadow),
@@ -277,7 +292,8 @@ code {
 	  0 0 7px var(--chip-text-shadow);
 }
 
-.audit--colors .count {
+.audit--colors .count,
+.audit--alpha .count {
 	left: -1em;
 	min-width: 3em;
 	padding: unset;

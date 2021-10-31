@@ -1,0 +1,23 @@
+{% for item in data.results %}
+	{% if item.value is iterable %}
+		<h3>{{item.label}}</h3>
+		<ul>
+		{% for value in item.value %}
+
+			{% if value.name or value.name == '0' %}
+				<li class="chip is-transparent" style="--chip-bg-color:{{value.name}};">
+					<span class="count">{{value.count}}</span>
+					{{value.name}}
+				</li>
+			{% else %}
+				<li class="chip is-transparent" style="--chip-bg-color:{{value}};">
+					{{value}}
+				</li>
+			{% endif %}
+
+		{% endfor %}
+		</ul>
+	{% else %}
+		<h3>{{ item.label}}: {{ item.value }}</h3>
+	{% endif %}
+{% endfor %}
