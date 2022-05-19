@@ -17,11 +17,9 @@ module.exports = function ( files = [] ) {
 		csstree.walk( ast, {
 			visit: 'MediaQuery',
 			enter( node ) {
-				if ( node.children ) {
-					allQueries.push( csstree.generate( node ) );
-				}
+				allQueries.push( csstree.generate( node ) );
 				csstree.walk( node, {
-					visit: 'MediaFeature',
+					visit: 'Feature',
 					enter( sizeNode ) {
 						if (
 							sizeNode.name === 'max-width' ||
