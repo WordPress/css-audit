@@ -23,7 +23,7 @@
     "fs-extra": "10.0.0",
     "glob": "7.1.7",
     "minimist": "1.2.6",
-    "postcss": "8.2.15",
+    "postcss": "8.4.31",
     "postcss-values-parser": "5.0.0",
     "prettier": "npm:wp-prettier@^2.0.5",
     "tinycolor2": "1.4.2"
