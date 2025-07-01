@@ -14,6 +14,8 @@ describe( 'Calculate Specificity', () => {
 	it( 'should calculate for pseudo-classes', () => {
 		expect( getSpecificity( ':checked' ) ).toBe( 10 );
 		expect( getSpecificity( 'a:link' ) ).toBe( 11 );
+		expect( getSpecificity( 'body:lang(en)' ) ).toBe( 11 );
+		expect( getSpecificity( 'body:lang(en,ja)' ) ).toBe( 11 );
 	} );
 
 	it( 'should calculate for class selectors', () => {
@@ -35,5 +37,26 @@ describe( 'Calculate Specificity', () => {
 		expect(
 			getSpecificity( 'li > a[href*="en-US"] > .inline-warning' )
 		).toBe( 22 );
+	} );
+
+	it( 'should calculate for :is selectors', () => {
+		expect( getSpecificity( ':is(h1)' ) ).toBe( 1 );
+		expect( getSpecificity( ':is(h1, .class)' ) ).toBe( 10 );
+		expect( getSpecificity( ':is(h1, .class, #id)' ) ).toBe( 100 );
+		expect( getSpecificity( 'span:is(h1)' ) ).toBe( 2 );
+	} );
+
+	it( 'should calculate for :where selectors', () => {
+		expect( getSpecificity( ':where(h1)' ) ).toBe( 0 );
+		expect( getSpecificity( ':where(h1, .class)' ) ).toBe( 0 );
+		expect( getSpecificity( ':where(h1, .class, #id)' ) ).toBe( 0 );
+		expect( getSpecificity( 'span:where(h1)' ) ).toBe( 1 );
+	} );
+
+	it( 'should calculate for :not selectors', () => {
+		expect( getSpecificity( ':not(h1)' ) ).toBe( 1 );
+		expect( getSpecificity( ':not(h1, .class)' ) ).toBe( 10 );
+		expect( getSpecificity( ':not(h1, .class, #id)' ) ).toBe( 100 );
+		expect( getSpecificity( 'span:not(h1)' ) ).toBe( 2 );
 	} );
 } );

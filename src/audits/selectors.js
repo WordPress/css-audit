@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+const csstree = require( 'css-tree' );
 const { parse } = require( 'postcss' );
 
 const { getSpecificityArray } = require( '../utils/get-specificity' );
@@ -12,10 +13,11 @@ module.exports = function ( files = [] ) {
 	files.forEach( ( { name, content } ) => {
 		const root = parse( content, { from: name } );
 		root.walkRules( function ( { selector } ) {
-			const selectorList = selector.split( ',' );
-			selectorList.forEach( ( selectorName ) => {
-				// Remove excess whitespace from selectors.
-				selectorName = selectorName.replace( /\s+/g, ' ' ).trim();
+			const selectorList = csstree.parse( selector, {
+				context: 'selectorList',
+			} );
+			selectorList.children.forEach( ( _selector ) => {
+				const selectorName = csstree.generate( _selector );
 				const [ a, b, c ] = getSpecificityArray( selectorName );
 				const sum = 100 * a + 10 * b + c; // eslint-disable-line no-mixed-operators
 				selectors.push( {
