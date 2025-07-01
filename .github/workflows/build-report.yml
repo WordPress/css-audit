@@ -44,3 +44,4 @@ jobs:
         message: "[Automated] Update report"
         branch: "report"
         rebase: true
+        force: true
