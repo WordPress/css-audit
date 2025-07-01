@@ -14,19 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout CSS Audit
-      uses: actions/checkout@v2
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
         ref: report
+
     - name: Checkout WordPress Core
-      uses: actions/checkout@v2
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
         repository: WordPress/wordpress-develop
         path: wordpress
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v1
+    - name: Use Node.js
+      uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
       with:
-        node-version: 14.x
+        node-version-file: ".nvmrc"
+        cache: "npm"
 
     - name: Install dependencies
       run: npm install
@@ -34,13 +36,10 @@ jobs:
     - name: Build the audit report
       run: npm run css-audit -- wordpress/src/wp-admin/css/*.css wordpress/src/wp-includes/css/*.css
 
-    - name: Commit changes
-      uses: EndBug/add-and-commit@v5
+    - name: Commit and push
+      uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # 1.5
       with:
-        author_name: github-actions
-        author_email: 41898282+github-actions[bot]@users.noreply.github.com
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         message: "[Automated] Update report"
         branch: "report"
         add: "public"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
