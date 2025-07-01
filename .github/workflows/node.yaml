@@ -1,4 +1,4 @@
-name: Node.js CI
+name: JavaScript Tests
 
 on:
   push:
@@ -13,17 +13,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Use Node.js
+      uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version-file: ".nvmrc"
+        cache: "npm"
 
     - run: npm install
 

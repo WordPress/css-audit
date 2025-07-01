@@ -1,6 +1,6 @@
-const fs = require( 'fs-extra' );
+const fs = require( 'node:fs' );
 const path = require( 'path' );
-const { TwingEnvironment, TwingLoaderFilesystem } = require( 'twing' );
+const Twig = require( 'twig' );
 
 /**
  * Internal dependencies
@@ -23,9 +23,6 @@ function getTemplateFile( name ) {
 }
 
 module.exports = function ( reports ) {
-	const loader = new TwingLoaderFilesystem( templatePath );
-	const twing = new TwingEnvironment( loader, { debug: true } );
-
 	const reportName = getArg( '--filename' );
 	const reportTemplate = getTemplateFile( reportName );
 	const reportDestDir = path.join( __dirname, '..', '..', 'public' );
@@ -38,15 +35,18 @@ module.exports = function ( reports ) {
 	// Copy CSS src to /public
 	const cssSrc = path.join( __dirname, 'html', 'style.css' );
 	const cssDest = path.join( reportDestDir, 'style.css' );
-	fs.copyFile( cssSrc, cssDest );
+	fs.copyFileSync( cssSrc, cssDest );
 
-	twing
-		.render( reportTemplate, context )
-		.then( ( output ) => {
-			console.log( `Generated template for ${ reportName }.` );
-			fs.writeFileSync( reportDest, output );
-		} )
-		.catch( ( e ) => {
-			console.error( e );
-		} );
+	Twig.renderFile(
+		path.resolve( __dirname, 'html', reportTemplate ),
+		context,
+		( error, output ) => {
+			if ( error ) {
+				console.error( e );
+			} else {
+				console.log( `Generated template for ${ reportName }.` );
+				fs.writeFileSync( reportDest, output );
+			}
+		}
+	);
 };

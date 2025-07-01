@@ -8,10 +8,11 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
       - name: Merge trunk -> report
-        uses: devmasx/merge-branch@v1.3.1
+        uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # 1.5
         with:
-          type: now
-          target_branch: report
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: ${{ github.event.head_commit.message }}
+          branch: "report"
