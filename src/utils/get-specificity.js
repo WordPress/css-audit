@@ -14,10 +14,28 @@ function calculateSpecificity( [ a, b, c ], selector ) {
 	if ( ! selector.type ) {
 		return;
 	}
-	if ( 'lang' !== selector.name && selector.children ) {
-		return selector.children
-			.toArray()
-			.reduce( calculateSpecificity, [ a, b, c ] );
+
+	if ( 'PseudoClassSelector' === selector.type && 'lang' !== selector.name ) {
+		if ( 'where' === selector.name ) {
+			return [ a, b, c ];
+		}
+		if ( selector.children ) {
+			let maxSpec = [ 0, 0, 0 ];
+			let max = -1;
+			selector.children.forEach( ( list ) => {
+				if ( 'SelectorList' === list.type ) {
+					list.children.forEach( ( s ) => {
+						const _selector = csstree.generate( s );
+						const result = getSpecificity( _selector );
+						if ( result > max ) {
+							maxSpec = getSpecificityArray( _selector );
+							max = result;
+						}
+					} );
+				}
+			} );
+			return [ a + maxSpec[ 0 ], b + maxSpec[ 1 ], c + maxSpec[ 2 ] ];
+		}
 	}
 
 	switch ( selector.type ) {
@@ -65,11 +83,10 @@ function calculateSpecificity( [ a, b, c ], selector ) {
 function getSpecificity( selector ) {
 	const node = csstree.parse( selector, { context: 'selector' } );
 	const selectorList = node.children.toArray();
-	const [ a, b, c ] = selectorList.reduce( calculateSpecificity, [
-		0,
-		0,
-		0,
-	] );
+	const [ a, b, c ] = selectorList.reduce(
+		calculateSpecificity,
+		[ 0, 0, 0 ]
+	);
 	return 100 * a + 10 * b + c;
 }
 
@@ -82,11 +99,10 @@ function getSpecificity( selector ) {
 function getSpecificityArray( selector ) {
 	const node = csstree.parse( selector, { context: 'selector' } );
 	const selectorList = node.children.toArray();
-	const [ a, b, c ] = selectorList.reduce( calculateSpecificity, [
-		0,
-		0,
-		0,
-	] );
+	const [ a, b, c ] = selectorList.reduce(
+		calculateSpecificity,
+		[ 0, 0, 0 ]
+	);
 	return [ a, b, c ];
 }
 

@@ -63,4 +63,18 @@ describe( 'Audit: Selectors', () => {
 		const { value } = results.find( ( { id } ) => 'count' === id );
 		expect( value ).toBe( 2 );
 	} );
+
+	it( 'should handle modern CSS', () => {
+		expect( () => {
+			audit( [
+				{
+					name: 'a.css',
+					content: `h1, h2 { color: green; }
+					div:not([hidden]) { color: black; }
+					body :is(h1, h2) { color: red; }
+					body :where(h1, h2) { color: orange; }`,
+				},
+			] );
+		} ).not.toThrow( SyntaxError );
+	} );
 } );
