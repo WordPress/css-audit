@@ -34,9 +34,13 @@ jobs:
     - name: Build the audit report
       run: npm run css-audit -- wordpress/src/wp-admin/css/*.css wordpress/src/wp-includes/css/*.css
 
+    - name: Remove WordPress files
+      run: rm -rf wordpress
+
     - name: Commit and push
       uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # 1.5
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: "[Automated] Update report"
         branch: "report"
+        rebase: true
