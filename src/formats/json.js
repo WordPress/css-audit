@@ -1,3 +1,5 @@
+const { version } = require('../../package.json');
+
 /**
  * Convert the report data to a JSON string.
  *
@@ -5,5 +7,11 @@
  * @return {string} reports as a JSON string.
  */
 module.exports = function ( reports ) {
-	return JSON.stringify( reports.map( ( data ) => data ) );
+	const output = {
+		generatedAt: new Date().toISOString(),
+		version,
+		reports: reports.map( ( data ) => data ),
+	};
+
+	return JSON.stringify( output, null, 2 );
 };
