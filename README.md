@@ -121,6 +121,9 @@ npm run css-audit -- v5.5/**/* --recommended
   - Places where `display: none` is used
 - `typography`
   - A collection of information about various typography-related properties
+- `repeated-rules`
+  - Detects duplicate `property: value` pairs across different selectors
+  - Example: both `.foo` and `.bar` using `border: 1px solid red;`  
 
 ## Technical details
 
