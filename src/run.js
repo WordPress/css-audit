@@ -30,6 +30,10 @@ const runAudits = ( cssFiles ) => {
 	if ( getArg( '--alphas' ) ) {
 		audits.push( require( './audits/alphas' )( cssFiles ) );
 	}
+	if ( runAll || getArg( '--repeated-rules' ) ) {
+	    audits.push( require( './audits/repeated-rules' )( cssFiles ) );
+    }
+
 
 	const propertyValues = getArg( '--property-values' );
 	const isPropertyValuesArray =
