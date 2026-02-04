@@ -33,6 +33,8 @@ npm install
 
 Before running an audit, you need CSS files to analyze. You can download these directly from the official WordPress Subversion (SVN) repository.
 
+> **Note:** WordPress 6.4 is used as an example below. Check [wordpress.org/download/releases](https://wordpress.org/download/releases/) for available versions.
+
 ### Option A: Audit a Specific Version (e.g., WordPress 6.4)
 Use this to audit a released version or specific branch.
 
@@ -77,6 +79,7 @@ npm run css-audit -- wp-6.4/**/* --recommended
 --display-none    Run display: none audit.
 --selectors       Run selectors audit.
 --media-queries   Run media queries audit.
+--typography      Run typography audit.
 --property-values Run audit for a given set of property values, comma-separated.
 --recommended     Run recommended audits (colors, important, selectors). Default: true.
 --all             Run all audits (except property values).
@@ -140,9 +143,16 @@ This will output a `wp-admin-report.html` file in the `public/` directory.
   - Number of times `display: none` is used
   - Places where `display: none` is used
 - `typography`
-  - A collection of information about various typography-related properties
+  - Number of unique font sizes
+  - Number of unique font families
+  - Number of unique font weights
+  - Number of unique line heights
+  - Top 10 most-used font sizes
+  - Top 10 most-used font families
+  - Top 10 most-used font weights
+  - Top 10 most-used line heights
 
-## Contributing to WordPress
+## Contributing
 
 This project follows WordPress coding standards and contribution guidelines. We welcome contributions from the community!
 
@@ -162,6 +172,7 @@ If you find a bug, please [open an issue](https://github.com/WordPress/css-audit
 
 ## WordPress Resources
 
+- [WordPress Core Repository](https://github.com/WordPress/wordpress-develop/)
 - [WordPress Core Handbook](https://make.wordpress.org/core/handbook/)
 - [WordPress CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/)
 - [WordPress Design Handbook](https://make.wordpress.org/design/handbook/)
