@@ -21,7 +21,7 @@
     "eslint": "^8.57.1",
     "glob": "11.0.3",
     "minimist": "1.2.8",
-    "postcss": "8.5.6",
+    "postcss": "8.5.25",
     "postcss-values-parser": "6.0.2",
     "prettier": "npm:wp-prettier@3.0.3",
     "tinycolor2": "1.6.0"
