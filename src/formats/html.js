@@ -42,7 +42,7 @@ module.exports = function ( reports ) {
 		context,
 		( error, output ) => {
 			if ( error ) {
-				console.error( e );
+				console.error( error );
 			} else {
 				console.log( `Generated template for ${ reportName }.` );
 				fs.writeFileSync( reportDest, output );
